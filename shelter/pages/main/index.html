@@ -1,12 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shelter</title>
+
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/icons/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/icons/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../assets/icons/favicon/favicon-16x16.png">
+  <link rel="mask-icon" href="../../assets/icons/favicon/safari-pinned-tab.svg" color="#2d2d30">
+  <link rel="shortcut icon" href="../../assets/icons/favicon/favicon.ico">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="main.css" />
+
 </head>
+
 <body>
-  <a href="../pets/pets.html">Pets</a>
+  <header class="header">
+    <div class="container">
+        <div class="header__inner">
+            <div class="header__logo">
+                <h1 class="header__logo__title">Cozy House</h1>
+                <p class="header__logo__subtitle">Shelter for pets in Boston</p>
+            </div>
+
+            <input id="menu__toggle" type="checkbox" />
+            <label class="header__burger-menu" for="menu__toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <nav class="header__menu">
+                <ul class="header__menu__list">
+                    <li class="header__menu__list__item">
+                        <a
+                            href="../main/index.html"
+                            class="header__menu__list__link header__menu__list__link--active">
+                            About the shelter
+                        </a>
+                    </li>
+                    <li class="header__menu__list__item ">
+                        <a href="../pets/pets.html" class="header__menu__list__link" >
+                            Our pets
+                        </a>
+                    </li>
+                    <li class="header__menu__list__item" >
+                        <a href="#" class="header__menu__list__link"  data-status="disabled"> Help the shelter </a>
+                    </li>
+                    <li class="header__menu__list__item">
+                        <a href="#" class="header__menu__list__link" data-status="disabled"> Contacts </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
 </body>
+
 </html>

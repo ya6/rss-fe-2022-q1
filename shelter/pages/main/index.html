@@ -25,10 +25,11 @@
         .blue {
             border: 1px solid blue;
         }
+
         .green {
 
             border: 1px solid greenyellow;
-         }
+        }
     </style>
 </head>
 
@@ -57,10 +58,11 @@
                             </a>
                         </li>
                         <li class="header__menu__list__item">
-                            <a href="#" class="header__menu__list__link" data-status="disabled"> Help the shelter </a>
+                            <a href="#help" class="header__menu__list__link" data-status="disabled"> Help the shelter
+                            </a>
                         </li>
                         <li class="header__menu__list__item">
-                            <a href="#" class="header__menu__list__link" data-status="disabled"> Contacts </a>
+                            <a href="#contact" class="header__menu__list__link" data-status="disabled"> Contacts </a>
                         </li>
                     </ul>
                 </nav>
@@ -74,8 +76,8 @@
         <!-- HERO -->
         <section class="hero">
             <div class="container">
-                <div class="hero__inner red">
-                    <div class="hero__content blue ">
+                <div class="hero__inner">
+                    <div class="hero__content">
                         <h2 class="hero__title ">Not only people need a house</h2>
                         <p class="hero__subtitle ">
                             We offer to give a chance to a little and nice puppy with an
@@ -85,7 +87,7 @@
                         <a href="../pets/pets.html" class="hero__button ">Make a friend</a>
                     </div>
 
-                    <div class="hero__image red">
+                    <div class="hero__image">
                         <img src="../../assets/images/start-screen-puppy.png" alt="start-screen-puppy.png" />
                     </div>
                 </div>
@@ -132,12 +134,41 @@
                             </svg>
                         </button>
 
-                        <div class="pets__slider__cards ">
+                        <!-- <div class="pets__slider__cards ">
                             <div class="slider_way">
-                                <!-- cards here by js -->
+                            </div>
+                        </div> -->
+
+                        <div class="pets__slider__cards">
+                            <div class="pets__slider__card">
+                                <div class="pets__card__header">
+                                    <img src="../../assets/images/katrine.png" alt="katrine.png" />
+                                </div>
+                                <div class="pets__card__body">
+                                    <h4 class="pets__card__title">Katrine</h4>
+                                    <button class="pets__card__button">Learn more</button>
+                                </div>
                             </div>
 
+                            <div class="pets__slider__card">
+                                <div class="pets__card__header">
+                                    <img src="../../assets/images/jennifer.png" alt="jennifer.png" />
+                                </div>
+                                <div class="pets__card__body">
+                                    <h4 class="pets__card__title">Jennifer</h4>
+                                    <button class="pets__card__button">Learn more</button>
+                                </div>
+                            </div>
 
+                            <div class="pets__slider__card">
+                                <div class="pets__card__header">
+                                    <img src="../../assets/images/woody.png" alt="woody.png" />
+                                </div>
+                                <div class="pets__card__body">
+                                    <h4 class="pets__card__title">Woody</h4>
+                                    <button class="pets__card__button">Learn more</button>
+                                </div>
+                            </div>
                         </div>
 
                         <button id="next" class="pets__slider__arrow pets__slider__arrow--reverse">
@@ -180,7 +211,7 @@
             </div>
         </section>
 
-        <section class="help">
+        <section id="help" class="help">
             <div class="container">
                 <div class="help__inner">
                     <h3 class="help__title">How you can help our shelter</h3>
@@ -280,7 +311,7 @@
         </section>
     </main>
 
-    <footer class="footer">
+    <footer id="contact" class="footer">
         <div class="container">
             <div class="footer__inner">
                 <div class="footer__item">

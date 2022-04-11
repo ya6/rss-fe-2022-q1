@@ -572,8 +572,11 @@ ul {
   background-color: #f1cdb3;
 }
 
-
-
 body.scroll {
   overflow: hidden;
 }
+
+* {
+  scroll-behavior: smooth;
+}
+

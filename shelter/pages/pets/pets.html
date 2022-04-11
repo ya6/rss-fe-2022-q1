@@ -44,11 +44,6 @@
                     </a>
                 </div>
 
-                <input id="menu__toggle" type="checkbox">
-                <label class="header__burger-menu" for="menu__toggle">
-                    <span></span>
-                </label>
-
                 <nav class="header__menu">
                     <ul class="header__menu__list">
                         <li class="header__menu__list__item">
@@ -81,14 +76,9 @@
             <div class="container">
                 <div class="friends__inner">
                     <h3 class="friends__title">Our friends who are&nbsp;looking for a house</h3>
-                    <!-- 
-                    <div class="friends__cards">
-                        <div class="slider_way">
-                           
-                        </div> -->
 
-                        <div class="friends__cards red">
-                            
+                    <div class="friends__cards">
+
                         <div class="friends__card">
                             <div class="friends__card__header">
                                 <img src="../../assets/images/katrine.png" alt="katrine.png" />
@@ -172,68 +162,45 @@
                     </div>
 
                 </div>
-                <div class="pets__blackout"></div>
 
-                <div class="pets__popup">
-                    <div class="pets__popup__img">
-                        <img src="" alt="" />
+                <div class="friends__wrap__switches">
+                    <div class="friends__switches">
+                        <button class="friends__switch" disabled>
+                            <svg width="25" height="11" viewBox="0 0 25 11" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.94687 10.7852L0.913671 6.08789V4.98438L9.94687 0.287109V1.625L2.43711 5.53125L9.94687 9.44727V10.7852ZM24.018 10.7852L14.9848 6.08789V4.98438L24.018 0.287109V1.625L16.5082 5.53125L24.018 9.44727V10.7852Z"
+                                    fill="inherit" />
+                            </svg>
+                        </button>
+
+                        <button class="friends__switch" disabled>
+                            <svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.98242 10.7852L0.949219 6.08789V4.98438L9.98242 0.287109V1.625L2.47266 5.53125L9.98242 9.44727V10.7852Z"
+                                    fill="inherit" />
+                            </svg>
+                        </button>
+
+                        <button class="friends__switch friends__switch--number">1</button>
+
+                        <button class="friends__switch friends__switch--reverse">
+                            <svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.98242 10.7852L0.949219 6.08789V4.98438L9.98242 0.287109V1.625L2.47266 5.53125L9.98242 9.44727V10.7852Z"
+                                    fill="inherit" />
+                            </svg>
+                        </button>
+
+                        <button class="friends__switch friends__switch--reverse">
+                            <svg width="25" height="11" viewBox="0 0 25 11" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.94687 10.7852L0.913671 6.08789V4.98438L9.94687 0.287109V1.625L2.43711 5.53125L9.94687 9.44727V10.7852ZM24.018 10.7852L14.9848 6.08789V4.98438L24.018 0.287109V1.625L16.5082 5.53125L24.018 9.44727V10.7852Z"
+                                    fill="inherit" />
+                            </svg>
+                        </button>
                     </div>
-
-                    <div class="pets__popup__content">
-                        <p class="pets__popup__name"></p>
-                        <p class="pets__popup__type"></p>
-                        <p class="pets__popup__description"></p>
-
-                        <ul class="pets__popup__info">
-                            <li><strong>Age:</strong> <span id="age"></span></li>
-                            <li>
-                                <strong>Inoculations:</strong> <span id="inoculations"></span>
-                            </li>
-                            <li><strong>Diseases:</strong> <span id="diseases"></span></li>
-                            <li><strong>Parasites:</strong> <span id="parasites"></span></li>
-                        </ul>
-                    </div>
-
-                    <button class="pets__close">
-                        <img src="../../assets/icons/close.svg" alt="Close icon" />
-                    </button>
                 </div>
 
-                <div class="friends__switches">
-                    <button class="friends__switch" disabled>
-                        <svg width="25" height="11" viewBox="0 0 25 11" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M9.94687 10.7852L0.913671 6.08789V4.98438L9.94687 0.287109V1.625L2.43711 5.53125L9.94687 9.44727V10.7852ZM24.018 10.7852L14.9848 6.08789V4.98438L24.018 0.287109V1.625L16.5082 5.53125L24.018 9.44727V10.7852Z"
-                                fill="inherit" />
-                        </svg>
-                    </button>
-
-                    <button class="friends__switch" disabled>
-                        <svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M9.98242 10.7852L0.949219 6.08789V4.98438L9.98242 0.287109V1.625L2.47266 5.53125L9.98242 9.44727V10.7852Z"
-                                fill="inherit" />
-                        </svg>
-                    </button>
-
-                    <button class="friends__switch friends__switch--number">1</button>
-
-                    <button class="friends__switch friends__switch--reverse">
-                        <svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M9.98242 10.7852L0.949219 6.08789V4.98438L9.98242 0.287109V1.625L2.47266 5.53125L9.98242 9.44727V10.7852Z"
-                                fill="inherit" />
-                        </svg>
-                    </button>
-
-                    <button class="friends__switch friends__switch--reverse">
-                        <svg width="25" height="11" viewBox="0 0 25 11" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M9.94687 10.7852L0.913671 6.08789V4.98438L9.94687 0.287109V1.625L2.43711 5.53125L9.94687 9.44727V10.7852ZM24.018 10.7852L14.9848 6.08789V4.98438L24.018 0.287109V1.625L16.5082 5.53125L24.018 9.44727V10.7852Z"
-                                fill="inherit" />
-                        </svg>
-                    </button>
-                </div>
             </div>
             </div>
         </section>

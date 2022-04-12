@@ -15,8 +15,7 @@ ul {
 }
 
 .container {
-  width: 100%;
-  max-width: 1280px;
+  width: 1200px;
   margin: 0 auto;
   padding: 0 50px
 }
@@ -34,7 +33,7 @@ ul {
 .header__inner {
   margin: 0 auto;
   display: flex;
-  width: 94%;
+  /* width: 100%; */
   align-items: center;
   justify-content: space-between;
 }
@@ -115,7 +114,7 @@ ul {
 
 .hero__inner {
   padding-top: 110px;
-  padding-left: 40px;
+  /* padding-left: 40px; */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -177,8 +176,8 @@ ul {
 }
 
 .hero__image {
-  padding-top: 60px;
-  margin-right: 40px;
+  padding-top: 70px;
+  /* margin-right: 40px; */
   max-width: 698px;
   flex-shrink: 1;
 }
@@ -192,7 +191,7 @@ ul {
 
 .about {
   padding-top: 60px;
-  padding-bottom: 100px;
+  padding-bottom: 90px;
 }
 
 
@@ -248,7 +247,7 @@ ul {
 
 
 .pets {
-  padding-top: 35px;
+  padding-top: 55px;
   padding-bottom: 95px;
   background-color: #f6f6f6;
 }
@@ -401,13 +400,11 @@ ul {
   border: 2px solid #f1cdb3;
 }
 
-.pets__card__button:hover {
+.pets__slider__card:hover  .pets__card__button {
   background-color: #fddcc4;
-}
-
-.pets__card__button:hover {
   border: 2px solid #fddcc4;
 }
+
 
 .pets__slider__arrow {
   min-width: 52px;
@@ -482,7 +479,7 @@ ul {
 
 
 .help {
-  padding-top: 50px;
+  padding-top: 45px;
   padding-bottom: 75px;
 }
 
@@ -510,7 +507,7 @@ ul {
   margin-top: 20px;
   padding: 0 50px;
   display: flex;
-
+ 
   flex-wrap: wrap;
   column-gap: 120px;
   row-gap: 30px;
@@ -592,6 +589,7 @@ ul {
 }
 
 .addition__inner__content {
+  /* padding-top: 10px; */
   max-width: 380px;
 
   display: flex;
@@ -677,7 +675,7 @@ ul {
 
 .footer__inner {
   display: flex;
-  padding: 0 40px;
+  padding: 0 00px;
   justify-content: space-between;
 }
 

@@ -191,7 +191,7 @@ ul {
 }
 
 .hero__button:hover {
-  background-color: #fddcc4;
+  background-color: #FDDCC4;
 }
 
 .hero__image {
@@ -414,8 +414,8 @@ ul {
 }
 
 .pets__slider__card:hover .pets__card__button {
-  background-color: #fddcc4;
-  border: 2px solid #fddcc4;
+  background-color: #FDDCC4;
+  border: 2px solid #FDDCC4;
 }
 
 .pets__slider__arrow {
@@ -430,7 +430,7 @@ ul {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  border: 2px solid #fddcc4;
+  border: 2px solid #FDDCC4;
   border-radius: 50%;
   background-color: transparent;
   cursor: pointer;
@@ -440,7 +440,7 @@ ul {
 }
 
 .pets__slider__arrow:hover {
-  background-color: #fddcc4;
+  background-color: #FDDCC4;
 }
 
 .pets__slider__arrow:disabled {
@@ -483,7 +483,7 @@ ul {
 }
 
 .pets__button:hover {
-  background-color: #fddcc4;
+  background-color: #FDDCC4;
 }
 
 .help {
@@ -661,7 +661,7 @@ ul {
 }
 
 .addition__card-button:hover {
-  background-color: #fddcc4;
+  background-color: #FDDCC4;
 }
 
 .addition__card-button p {

@@ -33,21 +33,21 @@ ul {
   padding: 0 40px;
 }
 
-@media screen and (max-width: 1199.98px) {
+@media screen and (max-width: 1200px) {
   .container {
     padding: 0 30px;
   }
 }
 
-@media screen and (max-width: 767.98px) {
+@media screen and (max-width: 768px) {
   .container {
     padding: 0 10px;
   }
 }
 
 .header {
-  padding: 30px 0;
-  position: fixed;
+  padding: 30px 0  25px;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -60,11 +60,11 @@ ul {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .header__logo {
@@ -73,15 +73,16 @@ ul {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .header__logo__title {
-  margin-bottom: 10px;
+  margin: 0;
+  padding: 0;
   color: #545454;
   font-size: 2.13333rem;
   font-weight: 400;
@@ -90,11 +91,12 @@ ul {
 }
 
 .header__logo__subtitle {
+  padding-top: 10px;
   color: #292929;
   font-family: Arial, sans-serif;
-  font-size: .86667rem;
+  font-size: 0.86667rem;
   font-weight: 400;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.11em;
   line-height: 1.1;
 }
 
@@ -110,11 +112,11 @@ ul {
     margin: 0;
     padding: 80px 0;
     z-index: 998;
-    background-color: #F6F6F6;
+    background-color: #f6f6f6;
     -webkit-box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
             box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
-    -webkit-transition-duration: .25s;
-            transition-duration: .25s;
+    -webkit-transition-duration: 0.25s;
+            transition-duration: 0.25s;
   }
   .header__menu ul {
     -webkit-box-orient: vertical;
@@ -123,11 +125,11 @@ ul {
             flex-direction: column;
   }
   .header__menu ul li {
-    -webkit-transition-duration: .25s;
-    transition-duration: .25s;
+    -webkit-transition-duration: 0.25s;
+    transition-duration: 0.25s;
   }
   .header__menu ul li:hover {
-    background-color: #F1CDB3;
+    background-color: #f1cdb3;
   }
   .header__menu ul li a {
     display: block;
@@ -192,8 +194,8 @@ ul {
   width: 30px;
   height: 2px;
   background-color: #f1cdb3;
-  -webkit-transition-duration: .25s;
-  transition-duration: .25s;
+  -webkit-transition-duration: 0.25s;
+  transition-duration: 0.25s;
 }
 
 .header__burger-menu span::before {
@@ -215,7 +217,9 @@ ul {
   transform: rotate(45deg);
 }
 
-#menu__toggle:checked ~ .header__burger-menu > span::before {
+#menu__toggle:checked
+~ .header__burger-menu
+> span::before {
   top: 0;
   -webkit-transform: rotate(0);
   transform: rotate(0);
@@ -331,10 +335,10 @@ ul {
 .friends__card {
   border-radius: 9px;
   background-color: #fafafa;
-  -webkit-transition: background-color 0.14s linear, -webkit-box-shadow 0.14s linear;
-  transition: background-color 0.14s linear, -webkit-box-shadow 0.14s linear;
-  transition: box-shadow 0.14s linear, background-color 0.14s linear;
-  transition: box-shadow 0.14s linear, background-color 0.14s linear, -webkit-box-shadow 0.14s linear;
+  -webkit-transition: background-color 0.14s linear, -webkit-box-shadow 0.14s linear;
+  transition: background-color 0.14s linear, -webkit-box-shadow 0.14s linear;
+  transition: box-shadow 0.14s linear, background-color 0.14s linear;
+  transition: box-shadow 0.14s linear, background-color 0.14s linear, -webkit-box-shadow 0.14s linear;
 }
 
 .friends__card:hover {
@@ -621,6 +625,7 @@ ul {
   opacity: 0;
   visibility: hidden;
   background-color: #292929;
+  -webkit-transition: opacity 0.25s linear, visibility 0.25s linear;
   -webkit-transition: opacity 0.25s linear, visibility 0.25s linear;
   transition: opacity 0.25s linear, visibility 0.25s linear;
   position: fixed;
@@ -645,6 +650,7 @@ ul {
   z-index: 999;
   opacity: 0;
   visibility: hidden;
+  -webkit-transition: opacity 0.25s linear, visibility 0.25s linear;
   -webkit-transition: opacity 0.25s linear, visibility 0.25s linear;
   transition: opacity 0.25s linear, visibility 0.25s linear;
   background-color: #fff;
@@ -745,7 +751,7 @@ ul {
 @media (max-width: 1279px) {
   .pets__popup__description {
     margin-bottom: 20px;
-    font-size: .86667rem;
+    font-size: 0.86667rem;
     line-height: 1.1;
   }
 }

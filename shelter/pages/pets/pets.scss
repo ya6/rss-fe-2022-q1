@@ -64,6 +64,10 @@ ul {
   @media (max-width: 769px) {
     padding: 0 20px;
   }
+
+  @media (max-width: 769px) {
+    padding: 0 0px;
+  }
 }
 
 .header__logo {
@@ -167,11 +171,7 @@ ul {
 
 @media (max-width: 767px) {
   .header__burger-menu {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
     height: 22px;
   }
@@ -184,9 +184,8 @@ ul {
   display: block;
   width: 30px;
   height: 2px;
-  background-color: #f1cdb3;
-  -webkit-transition-duration: 0.25s;
-  transition-duration: 0.25s;
+  background-color: #292929;
+   transition-duration: 0.25s;
 }
 
 .header__burger-menu span::before {
@@ -204,7 +203,6 @@ ul {
 }
 
 #menu__toggle:checked ~ .header__burger-menu > span {
-  -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 
@@ -212,13 +210,11 @@ ul {
   ~ .header__burger-menu
   > span::before {
   top: 0;
-  -webkit-transform: rotate(0);
   transform: rotate(0);
 }
 
 #menu__toggle:checked ~ .header__burger-menu > span::after {
   top: 0;
-  -webkit-transform: rotate(-90deg);
   transform: rotate(-90deg);
 }
 
@@ -282,31 +278,19 @@ ul {
 
 .friends__cards {
   margin-top: 60px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   row-gap: 30px;
-  -webkit-column-gap: 40px;
   column-gap: 40px;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .slider_way {
   margin-top: 60px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   row-gap: 30px;
-  -webkit-column-gap: 40px;
   column-gap: 40px;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -402,7 +386,6 @@ ul {
   align-items: center;
   column-gap: 20px;
   justify-content: center;
-  
 }
 
 @media (max-width: 1020px) {
@@ -506,13 +489,14 @@ ul {
 @media (max-width: 700px) {
   .footer__inner {
     row-gap: 35px;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
     flex-direction: column;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
+  }
+}
+
+@media (max-width: 321px) {
+  .footer__inner {
+    padding: 0;
   }
 }
 
@@ -537,6 +521,20 @@ ul {
   }
 }
 
+@media (max-width: 321px) {
+  .footer__content-first {
+    padding: 0 12px;
+  }
+  .footer__content-second {
+     padding-top: 15px;
+  }
+  
+  .footer__item:last-child {
+    margin-top: 15px;
+    max-width: 260px;
+  }
+}
+
 .footer__title {
   margin-top: 16px;
   color: #fff;
@@ -544,6 +542,11 @@ ul {
   font-weight: 400;
   letter-spacing: 0.06em;
   line-height: 1.3;
+
+  @media (max-width: 321px) {
+    padding: 0 10px;
+    font-size: 1.6rem;
+  }
 }
 
 @media (max-width: 1020px) {
@@ -560,12 +563,16 @@ ul {
 
 .footer__content {
   height: 46px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
+}
+
+.footer__content {
+  @media (max-width: 321px) {
+    //  border: 1px solid gold;
+    //  display: flex;
+    //  justify-content:space-between;
+  }
 }
 
 .footer__content:first-of-type {
@@ -598,8 +605,6 @@ ul {
   opacity: 0;
   visibility: hidden;
   background-color: #292929;
-  -webkit-transition: opacity 0.25s linear,
-    visibility 0.25s linear;
   transition: opacity 0.25s linear, visibility 0.25s linear;
   position: fixed;
   top: 0;
@@ -612,19 +617,14 @@ ul {
 }
 
 .pets__popup {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   position: fixed;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   z-index: 999;
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: opacity 0.25s linear,
-    visibility 0.25s linear;
   transition: opacity 0.25s linear, visibility 0.25s linear;
   background-color: #fff;
   border-radius: 9px;
@@ -776,21 +776,14 @@ ul {
 .pets__close {
   width: 50px;
   height: 50px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   outline: none;
   cursor: pointer;
   border-radius: 50%;
   background-color: transparent;
   border: 2px solid #f1cdb3;
-  -webkit-transition: background-color 0.25s linear;
   transition: background-color 0.25s linear;
   position: absolute;
   top: 0;

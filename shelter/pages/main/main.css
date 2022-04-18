@@ -61,7 +61,7 @@ ul {
   }
 }
 
-@media (max-width: 321px) {
+@media (max-width: 351px) {
   .container {
     padding: 0 0px;
   }
@@ -575,7 +575,9 @@ ul {
 
 @media (max-width: 700px) {
   .pets {
-    padding-top: 42px;
+    padding: 0;
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
 }
 
@@ -1111,7 +1113,7 @@ ul {
 
 @media (max-width: 321px) {
   .addition {
-    padding-top: 35px;
+    padding-top: 40px;
   }
 }
 
@@ -1366,6 +1368,19 @@ ul {
 @media (max-width: 321px) {
   .footer__item:last-child {
     margin-top: 0px;
+    max-width: 260px;
+  }
+}
+
+@media (max-width: 321px) {
+  .footer__content-first {
+    padding: 0 12px;
+  }
+  .footer__content-second {
+    padding-top: 15px;
+  }
+  .footer__item:last-child {
+    margin-top: 15px;
     max-width: 260px;
   }
 }

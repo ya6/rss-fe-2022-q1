@@ -266,16 +266,16 @@ ul {
 @media (max-width: 1279px) {
   .hero__inner {
     padding-top: 110px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 
 @media (max-width: 991px) {
   .hero__inner {
     padding-top: 150px;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
   }
 }
 

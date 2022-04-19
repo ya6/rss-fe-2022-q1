@@ -217,11 +217,11 @@ ul {
 
   @media (max-width: 1279px) {
     padding-top: 110px;
+    flex-direction: column;
   }
 
   @media (max-width: 991px) {
     padding-top: 150px;
-    flex-direction: column;
   }
 }
 

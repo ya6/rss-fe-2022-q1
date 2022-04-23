@@ -1,39 +1,39 @@
 console.log('main.js');
+
 // FUNCS
-// toggler
-const openCloseBurger = () => {
-  // console.log('#openCloseBurger');
-  menuToggler.checked === true
-    ? MenuDrop.classList.add('show-dropdown')
-    : MenuDrop.classList.remove('show-dropdown');
+const formPet = (pet) => {
+  const card = `<div class="pets__slider__card">
+  <div class="pets__card__header">
+      <img src="${pet.img}" alt="${pet.name}" />
+  </div>
+  <div class="pets__card__body">
+      <h4 class="pets__card__title">${pet.name}</h4>
+      <button class="pets__card__button">Learn more</button>
+  </div>
+  </div>
+  `;
+  return card;
 };
 
 // DOM
-const MenuDrop = document.querySelector('.header__menu');
-const menuToggler = document.querySelector('#menu__toggle');
-const anchors = document.querySelectorAll(
-  '.header__menu__link__anchor'
+const cardsContainer = document.querySelector(
+  '.pets__slider__cards-1'
 );
 
 // START
-// set after reload
-menuToggler.checked = false;
+let pets = null;
+fetch('../../assets/pets.json')
+  .then((response) => response.json())
+  .then((petsArr) => {
+    console.log(petsArr);
 
-menuToggler.addEventListener('change', openCloseBurger);
+    pets = petsArr.slice(0, 3);
+    console.log(pets);
 
-// go and close after link
-for (let anchor of anchors) {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-
-    const blockID = anchor.getAttribute('href');
-
-    document.querySelector(blockID).scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
+    pets.forEach((pet) => {
+      cardsContainer.insertAdjacentHTML(
+        'beforeend',
+        formPet(pet)
+      );
     });
-
-    menuToggler.checked = false;
-    openCloseBurger();
   });
-}

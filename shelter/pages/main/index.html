@@ -215,6 +215,64 @@
 
             </div>
         </section>
+        <section id="friends" class="pets">
+            <div class="container ">
+                <div class="pest__inner ">
+                    <h3 class="pets__title">Our friends who are&nbsp;looking for a house</h3>
+
+                    <div class="pets__slider">
+
+                        <button id="prev" class="pets__slider__arrow">
+                            <svg width="14" height="6" viewBox="0 0 14 6" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14 2V4H3V6L0 3L3 0V2H14Z" fill="inherit" />
+                            </svg>
+                        </button>
+
+                        <div class="pets__slider__cards-1">
+
+                            <!-- cards go here -->
+
+                        </div>
+
+                        <button id="next" class="pets__slider__arrow pets__slider__arrow--reverse">
+                            <svg width="14" height="6" viewBox="0 0 14 6" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14 2V4H3V6L0 3L3 0V2H14Z" fill="inherit" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <a href="../pets/pets.html" class="pets__button">Get to know the rest</a>
+                </div>
+
+                <div class="pets__blackout"></div>
+
+                <div class="pets__popup">
+                    <div class="pets__popup__img">
+                        <img src="" alt="" />
+                    </div>
+
+                    <div class="pets__popup__content">
+                        <p class="pets__popup__name"></p>
+                        <p class="pets__popup__type"></p>
+                        <p class="pets__popup__description"></p>
+
+                        <ul class="pets__popup__info">
+                            <li><strong>Age:</strong> <span id="age"></span></li>
+                            <li>
+                                <strong>Inoculations:</strong> <span id="inoculations"></span>
+                            </li>
+                            <li><strong>Diseases:</strong> <span id="diseases"></span></li>
+                            <li><strong>Parasites:</strong> <span id="parasites"></span></li>
+                        </ul>
+                    </div>
+
+                    <button class="pets__close">
+                        <img src="../../assets/icons/close.svg" alt="Close icon" />
+                    </button>
+                </div>
+
+            </div>
+        </section>
 
         <section id="help" class="help">
             <div class="container">
@@ -358,6 +416,7 @@
         </div>
     </footer>
 <script src="../../assets/js/drop-menu-service.js"></script>
+<script src="main.js"></script>
 </body>
 
 </html>

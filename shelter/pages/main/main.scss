@@ -191,10 +191,18 @@ ul {
   transform: rotate(90deg);
 }
 
-#menu__toggle:checked ~ .header__menu {
+
+//menu open close js
+.show-dropdown {
   visibility: visible;
   right: 0;
 }
+
+
+// #menu__toggle:checked ~ .header__menu {
+//   visibility: visible;
+//   right: 0;
+// }
 
 #menu__toggle:checked ~ .header__logo {
   margin-left: 90px;
@@ -562,13 +570,8 @@ ul {
   background: blue;
 }
 .slider_way {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-column-gap: 90px;
   column-gap: 90px;
   overflow: hidden;
 }

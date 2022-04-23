@@ -1422,3 +1422,8 @@ ul {
 body.scroll {
   overflow: hidden;
 }
+
+.prevent-scroll{
+  position: fixed;
+  overflow-y:scroll;
+}

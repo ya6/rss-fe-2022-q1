@@ -51,7 +51,7 @@ ul {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 997;
+  z-index: 450;
   background-color: #fff;
 }
 
@@ -114,38 +114,54 @@ ul {
 
 @media (max-width: 767px) {
   .header__menu {
-    display: block;
-    position: fixed;
-    visibility: hidden;
-    top: 0;
-    right: -100%;
     width: 320px;
     height: 100%;
-    margin: 0;
-    padding: 80px 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    visibility: hidden;
     z-index: 998;
     background-color: #f6f6f6;
     -webkit-box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
             box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
-    -webkit-transition-duration: 0.25s;
-            transition-duration: 0.25s;
+    -webkit-transition-duration: 0.5s;
+            transition-duration: 0.5s;
   }
   .header__menu ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    row-gap: 43px;
   }
   .header__menu ul li {
     -webkit-transition-duration: 0.25s;
-    transition-duration: 0.25s;
+            transition-duration: 0.25s;
   }
   .header__menu ul li:hover {
     background-color: #f1cdb3;
   }
   .header__menu ul li a {
+    font-family: Arial, sans-serif;
+    font-size: 2.13333rem;
+    font-weight: 400;
+    line-height: 1.6;
     display: block;
-    padding: 12px 24px;
   }
 }
 
@@ -154,7 +170,7 @@ ul {
   display: -ms-flexbox;
   display: flex;
   -webkit-column-gap: 36px;
-  column-gap: 36px;
+          column-gap: 36px;
 }
 
 .header__menu__list__link {
@@ -178,12 +194,16 @@ ul {
 }
 
 .header__burger-menu {
+  position: fixed;
+  margin-right: 43px;
   display: none;
-  margin-right: 40px;
   width: 30px;
-  position: relative;
   cursor: pointer;
-  z-index: 999;
+  z-index: 1000;
+  -webkit-transition-duration: 0.25s;
+          transition-duration: 0.25s;
+  top: 49px;
+  right: 10px;
 }
 
 @media (max-width: 767px) {
@@ -191,61 +211,35 @@ ul {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    height: 22px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 8px;
   }
 }
 
-.header__burger-menu span,
-.header__burger-menu span::before,
-.header__burger-menu span::after {
-  position: absolute;
-  display: block;
-  width: 30px;
+.header__burger-menu span {
   height: 2px;
-  background-color: #292929;
-  -webkit-transition-duration: 0.25s;
-          transition-duration: 0.25s;
-}
-
-.header__burger-menu span::before {
-  content: '';
-  top: -8px;
-}
-
-.header__burger-menu span::after {
-  content: '';
-  top: 8px;
+  background-color: black;
 }
 
 #menu__toggle {
   display: none;
 }
 
-#menu__toggle:checked ~ .header__burger-menu > span {
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-}
-
-#menu__toggle:checked
-~ .header__burger-menu
-> span::before {
-  top: 0;
-  -webkit-transform: rotate(0);
-          transform: rotate(0);
-}
-
-#menu__toggle:checked ~ .header__burger-menu > span::after {
-  top: 0;
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
+#menu__toggle:checked ~ .header__burger-menu {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
 }
 
 .show-dropdown {
   visibility: visible;
   right: 0;
+}
+
+#menu__toggle:checked ~ .header__logo {
+  margin-left: 90px;
 }
 
 .main {
@@ -669,15 +663,16 @@ ul {
 }
 
 .pets__blackout {
+  position: fixed;
   height: 100vh;
   width: 100%;
-  z-index: 998;
+  z-index: 400;
   opacity: 0;
   visibility: hidden;
   background-color: #292929;
+  background-color: #292929;
   -webkit-transition: opacity 0.25s linear, visibility 0.25s linear;
   transition: opacity 0.25s linear, visibility 0.25s linear;
-  position: fixed;
   top: 0;
   left: 0;
 }
@@ -893,5 +888,10 @@ body.scroll {
 
 * {
   scroll-behavior: smooth;
+}
+
+.prevent-scroll {
+  position: fixed;
+  overflow-y: scroll;
 }
 /*# sourceMappingURL=pets.css.map */

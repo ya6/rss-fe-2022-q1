@@ -1682,4 +1682,9 @@ ul {
 body.scroll {
   overflow: hidden;
 }
+
+.prevent-scroll {
+  position: fixed;
+  overflow-y: scroll;
+}
 /*# sourceMappingURL=main.css.map */

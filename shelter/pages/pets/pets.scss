@@ -218,10 +218,17 @@ ul {
   transform: rotate(-90deg);
 }
 
-#menu__toggle:checked ~ .header__menu {
+//menu open close js
+.show-dropdown {
   visibility: visible;
   right: 0;
 }
+
+
+// #menu__toggle:checked ~ .header__menu {
+//   visibility: visible;
+//   right: 0;
+// }
 
 .main {
   margin-top: 120px;

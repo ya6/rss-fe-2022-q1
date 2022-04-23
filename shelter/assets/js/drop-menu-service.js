@@ -1,11 +1,23 @@
-console.log('main.js');
+console.log('drop-menu-service.js');
 // FUNCS
 // toggler
 const openCloseBurger = () => {
   // console.log('#openCloseBurger');
-  menuToggler.checked === true
+  /*menuToggler.checked === true
     ? MenuDrop.classList.add('show-dropdown')
     : MenuDrop.classList.remove('show-dropdown');
+    */
+
+    if (menuToggler.checked === true) {
+      MenuDrop.classList.add('show-dropdown');
+      blackout.classList.add('active');
+      document.body.style.overflowY = "hidden";
+    } else {
+      MenuDrop.classList.remove('show-dropdown');
+      blackout.classList.remove('active');
+      document.body.style.overflowY = "visible"
+
+    }
 };
 
 // DOM
@@ -13,6 +25,10 @@ const MenuDrop = document.querySelector('.header__menu');
 const menuToggler = document.querySelector('#menu__toggle');
 const anchors = document.querySelectorAll(
   '.header__menu__link__anchor'
+);
+
+const blackout = document.querySelector(
+  '.pets__blackout'
 );
 
 // START

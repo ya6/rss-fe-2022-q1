@@ -143,8 +143,8 @@ ul {
     background-color: #292929;
     -webkit-box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
             box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
-    -webkit-transition-duration: 0.25s;
-            transition-duration: 0.25s;
+    -webkit-transition-duration: 0.5s;
+            transition-duration: 0.5s;
   }
   .header__menu ul {
     display: -webkit-box;
@@ -1461,11 +1461,11 @@ ul {
 .pets__blackout {
   height: 100vh;
   width: 100%;
-  z-index: 998;
+  z-index: 500;
   opacity: 0;
   visibility: hidden;
   background-color: #292929;
-  -webkit-transition: opacity 0.25s linear, visibility 0.25s linear;
+  background-color: #292929;
   -webkit-transition: opacity 0.25s linear, visibility 0.25s linear;
   transition: opacity 0.25s linear, visibility 0.25s linear;
   position: fixed;

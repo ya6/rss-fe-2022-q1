@@ -568,6 +568,7 @@ ul {
 }
 
 .pets {
+  position: relative;
   padding-top: 80px;
   padding-bottom: 100px;
   background-color: #f6f6f6;
@@ -816,6 +817,7 @@ ul {
   background-color: #fff;
   -webkit-box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
           box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+  cursor: pointer;
 }
 
 .pets__slider__card:hover .pets__card__button {
@@ -1505,6 +1507,7 @@ ul {
   position: fixed;
   top: 0;
   left: 0;
+  cursor: pointer;
 }
 
 .pets__blackout.active {
@@ -1520,11 +1523,10 @@ ul {
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   z-index: 999;
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: opacity 0.25s linear, visibility 0.25s linear;
   -webkit-transition: opacity 0.25s linear, visibility 0.25s linear;
   transition: opacity 0.25s linear, visibility 0.25s linear;
   background-color: #fff;

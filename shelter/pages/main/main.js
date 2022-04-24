@@ -1,4 +1,4 @@
-// responsive slider. for now extremely difficult)
+// responsive slider. pop-up,  for now extremely difficult)
 
 const formPet = (pet) => {
   const card = `
@@ -22,9 +22,9 @@ const shuffle = (array) => {
 };
 
 const clearOpacity = () => {
-  blocks[2].style.opacity = 1;
-  blocks[1].style.opacity = 1;
   blocks[0].style.opacity = 1;
+  blocks[1].style.opacity = 1;
+  blocks[2].style.opacity = 1;
 };
 
 const slidePrev = (petsArr) => {
@@ -32,7 +32,7 @@ const slidePrev = (petsArr) => {
   blocks.push(__bl);
 
   blocks[0].style.transform = 'translate(-100%,0)';
-  blocks[1].style.transform = 'translate(0%,0)';
+  blocks[1].style.transform = 'translate(0,0)';
   blocks[2].style.opacity = 0;
   blocks[2].style.transform = 'translate(100%,0)';
 
@@ -95,12 +95,20 @@ const set = (petsArr) => {
       'beforeend',
       formPet(pet)
     );
+    slidesBox1.lastElementChild.addEventListener(
+      'click',
+      openPopUp
+    );
   });
 
   petsArr.slice(0, 3).forEach((pet) => {
     slidesBox2.insertAdjacentHTML(
       'beforeend',
       formPet(pet)
+    );
+    slidesBox2.lastElementChild.addEventListener(
+      'click',
+      openPopUp
     );
   });
 
@@ -109,7 +117,47 @@ const set = (petsArr) => {
       'beforeend',
       formPet(pet)
     );
+    slidesBox3.lastElementChild.addEventListener(
+      'click',
+      openPopUp
+    );
   });
+};
+
+// PopUp
+const openPopUp = (e) => {
+  const petsName = e.currentTarget.textContent
+    .trim()
+    .split('\n')[0];
+  const petsIndex = pets.findIndex(
+    (el) => el.name == petsName
+  );
+  petsPopup.classList.add('active');
+  petsBlackout.classList.add('active');
+  document.body.classList.add('prevent-scroll');
+
+  fillPopup(petsIndex);
+};
+
+const fillPopup = (index) => {
+  popupImg.src = pets[index].img;
+  popupImg.alt = pets[index].name;
+
+  popupName.textContent = pets[index].name;
+  popupType.textContent = `${pets[index].type} - ${pets[index].breed}`;
+  popupDescription.textContent = pets[index].description;
+
+  age.textContent = pets[index].age;
+  inoculations.textContent =
+    pets[index].inoculations.join(', ');
+  diseases.textContent = pets[index].diseases.join(', ');
+  parasites.textContent = pets[index].parasites.join(', ');
+};
+
+const closePopup = () => {
+  petsPopup.classList.remove('active');
+  petsBlackout.classList.remove('active');
+  document.body.classList.remove('prevent-scroll');
 };
 
 // DOM
@@ -140,6 +188,7 @@ const next = document.querySelector('#next');
 // START
 
 //get pest and form sides
+let pets = [];
 fetch('../../assets/pets.json')
   .then((response) => response.json())
   .then((petsArr) => {
@@ -150,5 +199,35 @@ fetch('../../assets/pets.json')
       slideNext(petsArr);
     });
 
+    pets = petsArr.slice();
+    pets = shuffle(pets);
+
     set(petsArr);
   });
+
+// PopUp
+
+// DOM
+const petsPopup = document.querySelector('.pets__popup');
+const petsClose = document.querySelector('.pets__close');
+const petsBlackout = document.querySelector(
+  '.pets__blackout'
+);
+
+const popupImg = document.querySelector(
+  '.pets__popup__img img'
+);
+const popupName = document.querySelector(
+  '.pets__popup__name'
+);
+const popupType = document.querySelector(
+  '.pets__popup__type'
+);
+const popupDescription = document.querySelector(
+  '.pets__popup__description'
+);
+
+// EVENTS
+petsBlackout.addEventListener('click', closePopup);
+
+petsClose.addEventListener('click', closePopup);

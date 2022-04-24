@@ -675,6 +675,7 @@ ul {
   transition: opacity 0.25s linear, visibility 0.25s linear;
   top: 0;
   left: 0;
+  cursor: pointer;
 }
 
 .pets__blackout.active {

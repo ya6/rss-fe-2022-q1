@@ -1,0 +1,71 @@
+console.log('pop-up-service.js');
+
+
+let pets = [];
+fetch('../../assets/pets.json')
+    .then((response) => {
+        return response.json();
+    })
+    .then((pets_array) => {
+
+        pets = pets_array.slice();
+        pets = shuffle(pets);
+
+    });
+
+    const petsPopup = document.querySelector('.pets__popup');
+    const petsClose = document.querySelector('.pets__close');
+    const petsBlackout = document.querySelector('.pets__blackout');
+
+
+
+
+
+    //popup
+
+
+petsBlackout.addEventListener('click', () => {
+    closePopup()
+})
+
+petsClose.addEventListener('click', () => {
+    closePopup()
+})
+
+
+function openPopup(index) {
+
+    fillPopup(index);
+    petsPopup.classList.add('active');
+    petsBlackout.classList.add('active');
+    document.body.classList.toggle('scroll');
+}
+
+
+function closePopup() {
+    petsPopup.classList.remove('active')
+    petsBlackout.classList.remove('active')
+    document.body.classList.remove('scroll')
+}
+
+
+function fillPopup(index) {
+
+    const popupImg = document.querySelector('.pets__popup__img img');
+    const popupName = document.querySelector('.pets__popup__name')
+    const popupType = document.querySelector('.pets__popup__type')
+    const popupDescription = document.querySelector('.pets__popup__description')
+
+    popupImg.src = pets[index].img;
+    popupImg.alt = pets[index].name;
+
+    popupName.textContent = pets[index].name;
+    popupType.textContent = `${pets[index].type} - ${pets[index].breed}`;
+    popupDescription.textContent = pets[index].description;
+
+    age.textContent = pets[index].age;
+    inoculations.textContent = pets[index].inoculations.join(', ');
+    diseases.textContent = pets[index].diseases.join(', ');
+    parasites.textContent = pets[index].parasites.join(', ');
+
+}

@@ -124,41 +124,41 @@ const set = (petsArr) => {
   });
 };
 
-// PopUp
-const openPopUp = (e) => {
-  const petsName = e.currentTarget.textContent
-    .trim()
-    .split('\n')[0];
-  const petsIndex = pets.findIndex(
-    (el) => el.name == petsName
-  );
-  petsPopup.classList.add('active');
-  petsBlackout.classList.add('active');
-  document.body.classList.add('prevent-scroll');
+// // PopUp
+// const openPopUp = (e) => {
+//   const petsName = e.currentTarget.textContent
+//     .trim()
+//     .split('\n')[0];
+//   const petsIndex = pets.findIndex(
+//     (el) => el.name == petsName
+//   );
+//   petsPopup.classList.add('active');
+//   petsBlackout.classList.add('active');
+//   document.body.classList.add('prevent-scroll');
 
-  fillPopup(petsIndex);
-};
+//   fillPopup(petsIndex);
+// };
 
-const fillPopup = (index) => {
-  popupImg.src = pets[index].img;
-  popupImg.alt = pets[index].name;
+// const fillPopup = (index) => {
+//   popupImg.src = pets[index].img;
+//   popupImg.alt = pets[index].name;
 
-  popupName.textContent = pets[index].name;
-  popupType.textContent = `${pets[index].type} - ${pets[index].breed}`;
-  popupDescription.textContent = pets[index].description;
+//   popupName.textContent = pets[index].name;
+//   popupType.textContent = `${pets[index].type} - ${pets[index].breed}`;
+//   popupDescription.textContent = pets[index].description;
 
-  age.textContent = pets[index].age;
-  inoculations.textContent =
-    pets[index].inoculations.join(', ');
-  diseases.textContent = pets[index].diseases.join(', ');
-  parasites.textContent = pets[index].parasites.join(', ');
-};
+//   age.textContent = pets[index].age;
+//   inoculations.textContent =
+//     pets[index].inoculations.join(', ');
+//   diseases.textContent = pets[index].diseases.join(', ');
+//   parasites.textContent = pets[index].parasites.join(', ');
+// };
 
-const closePopup = () => {
-  petsPopup.classList.remove('active');
-  petsBlackout.classList.remove('active');
-  document.body.classList.remove('prevent-scroll');
-};
+// const closePopup = () => {
+//   petsPopup.classList.remove('active');
+//   petsBlackout.classList.remove('active');
+//   document.body.classList.remove('prevent-scroll');
+// };
 
 // DOM
 
@@ -205,29 +205,29 @@ fetch('../../assets/pets.json')
     set(petsArr);
   });
 
-// PopUp
+// // PopUp
 
-// DOM
-const petsPopup = document.querySelector('.pets__popup');
-const petsClose = document.querySelector('.pets__close');
-const petsBlackout = document.querySelector(
-  '.pets__blackout'
-);
+// // DOM
+// const petsPopup = document.querySelector('.pets__popup');
+// const petsClose = document.querySelector('.pets__close');
+// const petsBlackout = document.querySelector(
+//   '.pets__blackout'
+// );
 
-const popupImg = document.querySelector(
-  '.pets__popup__img img'
-);
-const popupName = document.querySelector(
-  '.pets__popup__name'
-);
-const popupType = document.querySelector(
-  '.pets__popup__type'
-);
-const popupDescription = document.querySelector(
-  '.pets__popup__description'
-);
+// const popupImg = document.querySelector(
+//   '.pets__popup__img img'
+// );
+// const popupName = document.querySelector(
+//   '.pets__popup__name'
+// );
+// const popupType = document.querySelector(
+//   '.pets__popup__type'
+// );
+// const popupDescription = document.querySelector(
+//   '.pets__popup__description'
+// );
 
-// EVENTS
-petsBlackout.addEventListener('click', closePopup);
+// // EVENTS
+// petsBlackout.addEventListener('click', closePopup);
 
-petsClose.addEventListener('click', closePopup);
+// petsClose.addEventListener('click', closePopup);

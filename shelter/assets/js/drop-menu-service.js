@@ -19,7 +19,7 @@ const openCloseBurger = () => {
     MenuDrop.classList.add('show-dropdown');
     blackout.classList.add('active');
     document.body.classList.add('prevent-scroll');
-     disableScrolling();
+    //  disableScrolling();
 
     //trick for rets page fixed header)
     if (headerPosition !== null) {
@@ -30,7 +30,7 @@ const openCloseBurger = () => {
     MenuDrop.classList.remove('show-dropdown');
     blackout.classList.remove('active');
     document.body.classList.remove('prevent-scroll');
-     enableScrolling();
+    //  enableScrolling();
 
     if (headerPosition !== null) {
       headerPosition.style.position = 'fixed';
@@ -54,6 +54,7 @@ const blackout = document.querySelector('.pets__blackout');
 const headerPosition =
   document.querySelector('.header--position') || null;
 const main = document.querySelector('.main');
+console.log(headerPosition);
 
 // START
 // close menu after reload

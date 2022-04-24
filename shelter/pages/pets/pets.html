@@ -92,85 +92,7 @@
 
                     <div class="friends__cards">
 
-                        <div class="friends__card">
-                            <div class="friends__card__header">
-                                <img src="../../assets/images/katrine.png" alt="katrine.png" />
-                            </div>
-                            <div class="friends__card__body">
-                                <h4 class="friends__card__title">Katrine</h4>
-                                <button class="friends__card__button">Learn more</button>
-                            </div>
-                        </div>
-
-                        <div class="friends__card">
-                            <div class="friends__card__header">
-                                <img src="../../assets/images/jennifer.png" alt="jennifer.png" />
-                            </div>
-                            <div class="friends__card__body">
-                                <h4 class="friends__card__title">Jennifer</h4>
-                                <button class="friends__card__button">Learn more</button>
-                            </div>
-                        </div>
-
-                        <div class="friends__card">
-                            <div class="friends__card__header">
-                                <img src="../../assets/images/woody.png" alt="woody.png" />
-                            </div>
-                            <div class="friends__card__body">
-                                <h4 class="friends__card__title">Woody</h4>
-                                <button class="friends__card__button">Learn more</button>
-                            </div>
-                        </div>
-
-                        <div class="friends__card">
-                            <div class="friends__card__header">
-                                <img src="../../assets/images/sophia.png" alt="sophia.png" />
-                            </div>
-                            <div class="friends__card__body">
-                                <h4 class="friends__card__title">Sophia</h4>
-                                <button class="friends__card__button">Learn more</button>
-                            </div>
-                        </div>
-
-                        <div class="friends__card">
-                            <div class="friends__card__header">
-                                <img src="../../assets/images/timmy.png" alt="timmy.png" />
-                            </div>
-                            <div class="friends__card__body">
-                                <h4 class="friends__card__title">Timmy</h4>
-                                <button class="friends__card__button">Learn more</button>
-                            </div>
-                        </div>
-
-                        <div class="friends__card">
-                            <div class="friends__card__header">
-                                <img src="../../assets/images/charly.png" alt="charly.png" />
-                            </div>
-                            <div class="friends__card__body">
-                                <h4 class="friends__card__title">Charly</h4>
-                                <button class="friends__card__button">Learn more</button>
-                            </div>
-                        </div>
-
-                        <div class="friends__card">
-                            <div class="friends__card__header">
-                                <img src="../../assets/images/scarlett.png" alt="scarlett.png" />
-                            </div>
-                            <div class="friends__card__body">
-                                <h4 class="friends__card__title">Scarlett</h4>
-                                <button class="friends__card__button">Learn more</button>
-                            </div>
-                        </div>
-
-                        <div class="friends__card">
-                            <div class="friends__card__header">
-                                <img src="../../assets/images/freddie.png" alt="freddie.png" />
-                            </div>
-                            <div class="friends__card__body">
-                                <h4 class="friends__card__title">Freddie</h4>
-                                <button class="friends__card__button">Learn more</button>
-                            </div>
-                        </div>
+                       <!-- cards here -->
 
                     </div>
 
@@ -180,7 +102,8 @@
 
                 <div class="friends__wrap__switches">
                     <div class="friends__switches">
-                        <button class="friends__switch" disabled>
+
+                        <button class="friends__switch" id="first" >
                             <svg width="25" height="11" viewBox="0 0 25 11" xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M9.94687 10.7852L0.913671 6.08789V4.98438L9.94687 0.287109V1.625L2.43711 5.53125L9.94687 9.44727V10.7852ZM24.018 10.7852L14.9848 6.08789V4.98438L24.018 0.287109V1.625L16.5082 5.53125L24.018 9.44727V10.7852Z"
@@ -188,7 +111,7 @@
                             </svg>
                         </button>
 
-                        <button class="friends__switch" disabled>
+                        <button class="friends__switch"  id="prev" >
                             <svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M9.98242 10.7852L0.949219 6.08789V4.98438L9.98242 0.287109V1.625L2.47266 5.53125L9.98242 9.44727V10.7852Z"
@@ -198,7 +121,7 @@
 
                         <button class="friends__switch friends__switch--number">1</button>
 
-                        <button class="friends__switch friends__switch--reverse">
+                        <button class="friends__switch friends__switch--reverse" id="next">
                             <svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M9.98242 10.7852L0.949219 6.08789V4.98438L9.98242 0.287109V1.625L2.47266 5.53125L9.98242 9.44727V10.7852Z"
@@ -206,7 +129,7 @@
                             </svg>
                         </button>
 
-                        <button class="friends__switch friends__switch--reverse">
+                        <button class="friends__switch friends__switch--reverse" id="last">
                             <svg width="25" height="11" viewBox="0 0 25 11" xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M9.94687 10.7852L0.913671 6.08789V4.98438L9.94687 0.287109V1.625L2.43711 5.53125L9.94687 9.44727V10.7852ZM24.018 10.7852L14.9848 6.08789V4.98438L24.018 0.287109V1.625L16.5082 5.53125L24.018 9.44727V10.7852Z"
@@ -261,6 +184,9 @@
         </div>
     </footer>
     <script src="../../assets/js/drop-menu-service.js"></script>
+    <script src="pets.js"></script>
+    <script src="../../assets/js/pop-up-service.js"></script>
+
 </body>
 
 </html>

@@ -99,7 +99,6 @@ ul {
   line-height: 1.1;
 }
 
-
 @media (max-width: 767px) {
   .header__menu {
     width: 320px;
@@ -191,13 +190,11 @@ ul {
   transform: rotate(90deg);
 }
 
-
 //menu open close js
 .show-dropdown {
   visibility: visible;
   right: 0;
 }
-
 
 // #menu__toggle:checked ~ .header__menu {
 //   visibility: visible;
@@ -471,14 +468,12 @@ ul {
   padding-top: 80px;
   padding-bottom: 100px;
   background-color: #f6f6f6;
- 
 
   @media (max-width: 700px) {
-  padding: 0;
+    padding: 0;
     padding-top: 40px;
     padding-bottom: 40px;
-    }
-  
+  }
 }
 
 .pest__inner {
@@ -527,11 +522,14 @@ ul {
   }
 }
 
-.pets__slider__cards, .pets__slider__cards-1 {
+.slider_way {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   column-gap: 90px;
   overflow: hidden;
+  transition: transform 1s;
+  position: absolute;
 
   @media (max-width: 1020px) {
     column-gap: 40px;
@@ -543,10 +541,36 @@ ul {
     row-gap: 0px;
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: 767px) {
     width: 100%;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
+    justify-content: center;
+  }
+}
+
+.pets__slider__cards {
+  width: 100%;
+  // height: 440px;
+  position: relative;
+  display: flex;
+  display: block;
+  justify-content: space-between;
+  column-gap: 90px;
+  overflow: hidden;
+  height: 440px;
+  margin: 0 10px;
+
+  @media (max-width: 1020px) {
+    column-gap: 40px;
+  }
+
+  @media (max-width: 769px) {
+    padding: 0 px;
+
+    row-gap: 0px;
+  }
+
+  @media (max-width: 767px) {
+    width: 100%;
     justify-content: center;
   }
 }
@@ -568,12 +592,6 @@ ul {
   height: 300px;
   overflow: hidden;
   background: blue;
-}
-.slider_way {
-  display: flex;
-  justify-content: space-between;
-  column-gap: 90px;
-  overflow: hidden;
 }
 
 @keyframes next {
@@ -621,22 +639,15 @@ ul {
   }
 }
 
-@media (max-width: 755px) {
+@media (max-width: 767px) {
   .pets__slider__card:nth-child(2) {
     display: none;
   }
 }
 
 .pets__card__body {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -1137,15 +1148,14 @@ ul {
     padding: 0 12px;
   }
   .footer__content-second {
-     padding-top: 15px;
+    padding-top: 15px;
   }
-  
+
   .footer__item:last-child {
     margin-top: 15px;
     max-width: 260px;
   }
 }
-
 
 .footer__title {
   margin-top: 16px;
@@ -1423,7 +1433,7 @@ body.scroll {
   overflow: hidden;
 }
 
-.prevent-scroll{
+.prevent-scroll {
   position: fixed;
-  overflow-y:scroll;
+  overflow-y: scroll;
 }

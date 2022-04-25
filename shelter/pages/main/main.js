@@ -53,7 +53,7 @@ const slideNext = () => {
 
   setTimeout(() => {
     clearOpacity();
-    add(petsArr);
+    add(pets);
   }, 980);
 };
 
@@ -214,7 +214,7 @@ fetch('../../assets/pets.json')
     pets = petsArr.slice();
     pets = shuffle(pets);
 
-    set(petsArr);
+    set(pets);
   });
 
 // // PopUp

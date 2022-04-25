@@ -39,7 +39,7 @@ const slidePrev = (petsArr) => {
   setTimeout(() => {
     clearOpacity();
     add(petsArr);
-  }, 900);
+  }, 980);
 };
 
 const slideNext = () => {
@@ -54,7 +54,7 @@ const slideNext = () => {
   setTimeout(() => {
     clearOpacity();
     add(petsArr);
-  }, 900);
+  }, 980);
 };
 
 const add = (petsArr) => {

@@ -1,5 +1,3 @@
-@import url(c:\dev\ya6-JSFE2022Q1\shelter\assets\fonts\arial\stylesheet.css);
-@import url(c:\dev\ya6-JSFE2022Q1\shelter\assets\fonts\georgia\stylesheet.css);
 *,
 :before,
 :after {
@@ -516,6 +514,7 @@ ul {
 
 .friends__switch--number {
   background-color: #f1cdb3;
+  cursor: default;
 }
 
 .friends__switch--reverse {

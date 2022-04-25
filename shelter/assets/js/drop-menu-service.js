@@ -54,7 +54,7 @@ const blackout = document.querySelector('.pets__blackout');
 const headerPosition =
   document.querySelector('.header--position') || null;
 const main = document.querySelector('.main');
-console.log(headerPosition);
+// console.log(headerPosition);
 
 // START
 // close menu after reload

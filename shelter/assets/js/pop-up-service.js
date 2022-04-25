@@ -25,6 +25,11 @@ const openPopUp = (e) => {
     petsPopup.classList.add('active');
     petsBlackout.classList.add('active');
     document.body.classList.add('prevent-scroll');
+
+    if (headerPosition1 !== null) {
+      headerPosition1.style.position = 'static';
+      main1.style.marginTop = '5px';
+    }
   
     fillPopup(petsIndex);
   };
@@ -48,12 +53,22 @@ const openPopUp = (e) => {
     petsPopup.classList.remove('active');
     petsBlackout.classList.remove('active');
     document.body.classList.remove('prevent-scroll');
+    if (headerPosition1 !== null) {
+      headerPosition1.style.position = 'fixed';
+      main1.style.marginTop = '120px';
+    }
   };
 
 
   // PopUp
 
 // DOM
+
+const headerPosition1 =
+  document.querySelector('.header--position') || null;
+ const main1 = document.querySelector('.main');
+
+
 const petsPopup = document.querySelector('.pets__popup');
 const petsClose = document.querySelector('.pets__close');
 const petsBlackout = document.querySelector(

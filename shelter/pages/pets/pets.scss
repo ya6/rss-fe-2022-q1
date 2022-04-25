@@ -1,5 +1,5 @@
-@import '../../assets/fonts/arial/stylesheet.css';
-@import '../../assets/fonts/georgia/stylesheet.css';
+// @import '../../assets/fonts/arial/stylesheet.css';
+// @import '../../assets/fonts/georgia/stylesheet.css';
 
 *,
 :before,
@@ -443,6 +443,7 @@ ul {
 
 .friends__switch--number {
   background-color: #f1cdb3;
+  cursor: default;
 }
 
 .friends__switch--reverse {

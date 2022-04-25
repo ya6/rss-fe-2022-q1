@@ -79,12 +79,24 @@ const add = (petsArr) => {
   blocks[0].innerHTML = '';
   arr.slice(0, 3).forEach((pet) => {
     blocks[0].insertAdjacentHTML('beforeend', formPet(pet));
-  });
 
+    blocks[0].lastElementChild.addEventListener(
+      'click',
+      openPopUp
+    );
+
+  });
   blocks[2].innerHTML = '';
   arr.slice(2, 5).forEach((pet) => {
     blocks[2].insertAdjacentHTML('beforeend', formPet(pet));
+
+    blocks[2].lastElementChild.addEventListener(
+      'click',
+      openPopUp
+    );
+
   });
+
 };
 
 const set = (petsArr) => {

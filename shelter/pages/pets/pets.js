@@ -58,6 +58,11 @@ const setCards = (currentPage = 1, pages) => {
   cardsBox.innerHTML = '';
   petsOnPage.forEach((el) => {
     cardsBox.insertAdjacentHTML('beforeend', formPet(el));
+    cardsBox.lastElementChild.addEventListener(
+      'click',
+      openPopUp
+    );
+
   });
   switchNumber.textContent = currentPage;
   setTimeout(() => {

@@ -38,7 +38,7 @@ const slidePrev = (petsArr) => {
 
   setTimeout(() => {
     clearOpacity();
-    add(petsArr);
+    add(pets);
   }, 980);
 };
 

@@ -27,21 +27,23 @@ const clearOpacity = () => {
   blocks[2].style.opacity = 1;
 };
 
+let trigPrev = 1;
 const slidePrev = (petsArr) => {
   let __bl = blocks.shift();
   blocks.push(__bl);
-
   blocks[0].style.transform = 'translate(-100%,0)';
   blocks[1].style.transform = 'translate(0,0)';
   blocks[2].style.opacity = 0;
   blocks[2].style.transform = 'translate(100%,0)';
+  trigPrev = 0;
 
   setTimeout(() => {
-    clearOpacity();
     add(pets);
-  }, 980);
+    clearOpacity();
+    trigPrev = 1;
+  }, 1000);
 };
-
+let trigNext = 1;
 const slideNext = () => {
   let __bl = blocks.pop();
   blocks.unshift(__bl);
@@ -50,11 +52,13 @@ const slideNext = () => {
   blocks[0].style.transform = 'translate(-100%,0)';
   blocks[1].style.transform = 'translate(0%,0)';
   blocks[2].style.transform = 'translate(100%,0)';
+  trigNext = 0;
 
   setTimeout(() => {
     clearOpacity();
     add(pets);
-  }, 980);
+    trigNext = 1;
+  }, 1000);
 };
 
 const add = (petsArr) => {
@@ -84,7 +88,6 @@ const add = (petsArr) => {
       'click',
       openPopUp
     );
-
   });
   blocks[2].innerHTML = '';
   arr.slice(2, 5).forEach((pet) => {
@@ -94,9 +97,7 @@ const add = (petsArr) => {
       'click',
       openPopUp
     );
-
   });
-
 };
 
 const set = (petsArr) => {
@@ -136,42 +137,6 @@ const set = (petsArr) => {
   });
 };
 
-// // PopUp
-// const openPopUp = (e) => {
-//   const petsName = e.currentTarget.textContent
-//     .trim()
-//     .split('\n')[0];
-//   const petsIndex = pets.findIndex(
-//     (el) => el.name == petsName
-//   );
-//   petsPopup.classList.add('active');
-//   petsBlackout.classList.add('active');
-//   document.body.classList.add('prevent-scroll');
-
-//   fillPopup(petsIndex);
-// };
-
-// const fillPopup = (index) => {
-//   popupImg.src = pets[index].img;
-//   popupImg.alt = pets[index].name;
-
-//   popupName.textContent = pets[index].name;
-//   popupType.textContent = `${pets[index].type} - ${pets[index].breed}`;
-//   popupDescription.textContent = pets[index].description;
-
-//   age.textContent = pets[index].age;
-//   inoculations.textContent =
-//     pets[index].inoculations.join(', ');
-//   diseases.textContent = pets[index].diseases.join(', ');
-//   parasites.textContent = pets[index].parasites.join(', ');
-// };
-
-// const closePopup = () => {
-//   petsPopup.classList.remove('active');
-//   petsBlackout.classList.remove('active');
-//   document.body.classList.remove('prevent-scroll');
-// };
-
 // DOM
 
 const cardsContainer = document.querySelector(
@@ -205,10 +170,14 @@ fetch('../../assets/pets.json')
   .then((response) => response.json())
   .then((petsArr) => {
     prev.addEventListener('click', () => {
-      slidePrev(petsArr);
+      if (trigPrev === 1) {
+        slidePrev(petsArr);
+      }
     });
     next.addEventListener('click', () => {
-      slideNext(petsArr);
+      if (trigNext === 1) {
+        slideNext(petsArr);
+      }
     });
 
     pets = petsArr.slice();
@@ -216,30 +185,3 @@ fetch('../../assets/pets.json')
 
     set(pets);
   });
-
-// // PopUp
-
-// // DOM
-// const petsPopup = document.querySelector('.pets__popup');
-// const petsClose = document.querySelector('.pets__close');
-// const petsBlackout = document.querySelector(
-//   '.pets__blackout'
-// );
-
-// const popupImg = document.querySelector(
-//   '.pets__popup__img img'
-// );
-// const popupName = document.querySelector(
-//   '.pets__popup__name'
-// );
-// const popupType = document.querySelector(
-//   '.pets__popup__type'
-// );
-// const popupDescription = document.querySelector(
-//   '.pets__popup__description'
-// );
-
-// // EVENTS
-// petsBlackout.addEventListener('click', closePopup);
-
-// petsClose.addEventListener('click', closePopup);

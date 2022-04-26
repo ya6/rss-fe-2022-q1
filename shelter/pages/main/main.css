@@ -66,6 +66,7 @@ ul {
 }
 
 .header__inner {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -98,6 +99,22 @@ ul {
           align-items: center;
   margin: 0;
   padding: 0;
+}
+
+.move-logo {
+  position: relative;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-transition-duration: 1.0s;
+          transition-duration: 1.0s;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.up-logo {
+  z-index: 1500;
+  margin-right: 20px;
 }
 
 .header__logo__title {
@@ -199,7 +216,7 @@ ul {
 }
 
 .header__burger-menu {
-  margin-right: 43px;
+  margin-right: 13px;
   display: none;
   width: 30px;
   cursor: pointer;

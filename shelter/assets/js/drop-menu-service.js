@@ -19,6 +19,12 @@ const openCloseBurger = () => {
     MenuDrop.classList.add('show-dropdown');
     blackout.classList.add('active');
     document.body.classList.add('prevent-scroll');
+    logoBox.classList.add('move-logo');
+    logo.classList.add('up-logo');
+    console.log(logo);
+
+    //add remove logo
+
     //  disableScrolling();
 
     //trick for rets page fixed header)
@@ -30,6 +36,8 @@ const openCloseBurger = () => {
     MenuDrop.classList.remove('show-dropdown');
     blackout.classList.remove('active');
     document.body.classList.remove('prevent-scroll');
+    logoBox.classList.remove('move-logo');
+    logo.classList.remove('up-logo');
     //  enableScrolling();
 
     if (headerPosition !== null) {
@@ -54,6 +62,8 @@ const blackout = document.querySelector('.pets__blackout');
 const headerPosition =
   document.querySelector('.header--position') || null;
 const main = document.querySelector('.main');
+const logo = document.querySelector('.header__logo');
+const logoBox = document.querySelector('.header__inner');
 // console.log(headerPosition);
 
 // START

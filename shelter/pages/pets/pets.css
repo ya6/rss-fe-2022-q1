@@ -89,6 +89,22 @@ ul {
           align-items: center;
 }
 
+.move-logo {
+  position: relative;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-transition-duration: 1.0s;
+          transition-duration: 1.0s;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.up-logo {
+  z-index: 1500;
+  margin-right: 100px;
+}
+
 .header__logo__title {
   margin: 0;
   padding: 0;

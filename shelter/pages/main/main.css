@@ -221,8 +221,8 @@ ul {
   width: 30px;
   cursor: pointer;
   z-index: 999;
-  -webkit-transition-duration: 0.25s;
-          transition-duration: 0.25s;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
 }
 
 @media (max-width: 767px) {
@@ -1530,7 +1530,7 @@ ul {
   visibility: visible;
 }
 
-.pets__blackout:hover ~ .pets__popup > button {
+.pets__blackout:hover ~ .pets__popup button {
   background-color: #f1cdb3;
 }
 

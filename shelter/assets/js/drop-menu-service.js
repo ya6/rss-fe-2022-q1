@@ -21,9 +21,6 @@ const openCloseBurger = () => {
     document.body.classList.add('prevent-scroll');
     logoBox.classList.add('move-logo');
     logo.classList.add('up-logo');
-    console.log(logo);
-
-    //add remove logo
 
     //  disableScrolling();
 

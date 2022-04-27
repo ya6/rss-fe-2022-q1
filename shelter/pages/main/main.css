@@ -1530,6 +1530,10 @@ ul {
   visibility: visible;
 }
 
+.pets__blackout:hover ~ .pets__popup > button {
+  background-color: #f1cdb3;
+}
+
 .pets__popup {
   display: -webkit-box;
   display: -ms-flexbox;

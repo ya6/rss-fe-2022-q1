@@ -654,6 +654,11 @@ ul {
   visibility: visible;
 }
 
+.pets__blackout:hover ~ .pets__popup > button {
+  background-color: #f1cdb3;
+
+}
+
 .pets__popup__img {
   width: 500px;
   height: 500px;

@@ -1256,6 +1256,10 @@ margin-right: 20px
   opacity: 0.6;
   visibility: visible;
 }
+.pets__blackout:hover ~ .pets__popup > button {
+  background-color: #f1cdb3;
+
+}
 
 .pets__popup {
   

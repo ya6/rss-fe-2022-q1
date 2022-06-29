@@ -6,19 +6,19 @@ interface IApp {
 }
 
 class App implements IApp {
-  controller: AppController;
-  view: AppView;
+  private controller: AppController;
+  private view: AppView;
 
   constructor() {
     this.controller = new AppController();
     this.view = new AppView();
   }
 
-  start() {
+  public start() {
     document
       .querySelector('.sources')!
-      .addEventListener('click', (e) => this.controller.getNews(e, (data: any) => this.view.drawNews(data)));
-    this.controller.getSources((data: any) => this.view.drawSources(data));
+      .addEventListener('click', (e) => this.controller.getNews(e, (data: {}) => this.view.drawNews(data)));
+    this.controller.getSources((data: {}) => this.view.drawSources(data));
   }
 }
 

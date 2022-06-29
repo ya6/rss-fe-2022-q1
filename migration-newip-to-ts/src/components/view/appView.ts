@@ -7,8 +7,8 @@ interface IAppView {
 }
 
 export class AppView implements IAppView {
-  news: News;
-  sources: Sources;
+  private news: News;
+  private sources: Sources;
 
   constructor() {
     this.news = new News();
@@ -16,6 +16,8 @@ export class AppView implements IAppView {
   }
 
   drawNews(data: any) {
+    console.log(data);
+
     const values = data?.articles ? data?.articles : [];
     this.news.draw(values);
   }

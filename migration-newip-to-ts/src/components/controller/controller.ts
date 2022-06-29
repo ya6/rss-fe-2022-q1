@@ -1,32 +1,38 @@
 import AppLoader from './appLoader';
 
+enum EndpointEnum {
+  Sources = 'sources',
+  Everything = 'everything',
+
+}
+
 interface IAppController {
   getSources: (callback: any) => void
-  getNews: (e: any, callback: any) => void
+  getNews: (e: Event, callback: any) => void
 }
 
 class AppController extends AppLoader implements IAppController {
   getSources(callback: any) {
     super.getResp(
       {
-        endpoint: 'sources',
+        endpoint: EndpointEnum.Sources,
       },
       callback,
     );
   }
 
-  getNews(e: any, callback: any) {
-    let { target } = e;
-    const newsContainer = e.currentTarget;
+  getNews(e: Event, callback: any) {
+    let target = e.target as HTMLElement;
+    const newsContainer = e.currentTarget as HTMLElement;
 
-    while (target !== newsContainer) {
+    while (target !== newsContainer && target !== null && newsContainer !== null) {
       if (target.classList.contains('source__item')) {
         const sourceId = target.getAttribute('data-source-id');
         if (newsContainer.getAttribute('data-source') !== sourceId) {
-          newsContainer.setAttribute('data-source', sourceId);
+          newsContainer.setAttribute('data-source', sourceId!);
           super.getResp(
             {
-              endpoint: 'everything',
+              endpoint: EndpointEnum.Everything,
               options: {
                 sources: sourceId,
               },
@@ -36,7 +42,7 @@ class AppController extends AppLoader implements IAppController {
         }
         return;
       }
-      target = target.parentNode;
+      target = target.parentNode as HTMLElement;
     }
   }
 }

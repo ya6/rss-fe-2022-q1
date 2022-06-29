@@ -1,6 +1,11 @@
 import AppLoader from './appLoader';
 
-class AppController extends AppLoader {
+interface IAppController {
+  getSources: (callback: any) => void
+  getNews: (e: any, callback: any) => void
+}
+
+class AppController extends AppLoader implements IAppController {
   getSources(callback: any) {
     super.getResp(
       {

@@ -1,10 +1,14 @@
 import News from './news/news';
 import Sources from './sources/sources';
 
-export class AppView {
-  news;
+interface IAppView {
+  drawNews: (data: any) => void
+  drawSources: (data: any) => void
+}
 
-  sources;
+export class AppView implements IAppView {
+  news: News;
+  sources: Sources;
 
   constructor() {
     this.news = new News();

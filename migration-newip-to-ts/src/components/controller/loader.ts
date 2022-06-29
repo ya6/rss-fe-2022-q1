@@ -1,7 +1,17 @@
-class Loader {
-  baseLink;
+interface ILoader {
+  getResp: ({ endpoint, options }: {
+    endpoint?: string | undefined;
+    options?: {} | undefined;
+  }, callback?: () => void) => void
+  errorHandler: (res: any) => any
+  makeUrl: (options: any, endpoint: any) => string
+  load: (method: string, endpoint: string, callback: any, options?: {}) => void
 
-  options;
+}
+
+class Loader implements ILoader {
+  baseLink: string;
+  options: any;
 
   constructor(baseLink: string, options: any) {
     this.baseLink = baseLink;
@@ -9,7 +19,7 @@ class Loader {
   }
 
   getResp(
-    { endpoint = '', options = {} }, // fix add ''
+    { endpoint = '', options = {} },
     callback = () => {
       console.error('No callback for GET response');
     },
@@ -37,7 +47,7 @@ class Loader {
     return url.slice(0, -1);
   }
 
-  load(method: string, endpoint: any, callback: any, options = {}) {
+  load(method: string, endpoint: string, callback: any, options = {}) {
     fetch(this.makeUrl(options, endpoint), { method })
       .then(this.errorHandler)
       .then((res) => res.json())

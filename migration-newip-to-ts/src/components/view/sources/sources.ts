@@ -1,6 +1,10 @@
 import './sources.css';
 
-class Sources {
+interface ISources {
+ draw: (data: any) => void
+}
+
+class Sources implements ISources {
   draw(data: any) {
     const fragment = document.createDocumentFragment() as DocumentFragment;
     const sourceItemTemp = document.querySelector('#sourceItemTemp') as HTMLTemplateElement;
@@ -12,7 +16,7 @@ class Sources {
       fragment.append(sourceClone);
     });
 
-    document.querySelector('.sources')!.append(fragment); // fix!!!
+    document.querySelector('.sources')!.append(fragment);
   }
 }
 

@@ -5,6 +5,10 @@ enum EndpointEnum {
 
 }
 
+type OptionsType = {
+    [key: string]: string
+}
+
 interface ILoader {
   getResp: ({ endpoint, options }: {
     endpoint: EndpointEnum;
@@ -31,7 +35,6 @@ class Loader implements ILoader {
       console.error('No callback for GET response');
     },
   ) {
-    console.log('loader -> getResp', 'endpoint', endpoint, 'options', options); // ya
     this.load('GET', endpoint, callback, options);
   }
 
@@ -44,12 +47,13 @@ class Loader implements ILoader {
     return res;
   }
 
-  makeUrl(options: any, endpoint: EndpointEnum): Request | string {
-    const urlOptions = { ...this.options, ...options };
+  makeUrl(options: OptionsType, endpoint: EndpointEnum): Request | string {
+    const urlOptions: OptionsType = { ...this.options, ...options };
     let url = `${this.baseLink}${endpoint}?`;
 
     Object.keys(urlOptions).forEach((key) => {
-      url += `${key}=${urlOptions[key]}&`;
+      const value = urlOptions[key];
+      url += `${key}=${value}&`;
     });
 
     return url.slice(0, -1);
@@ -60,7 +64,7 @@ class Loader implements ILoader {
       .then(this.errorHandler)
       .then((res) => {
         const rez = res.json();
-        console.log('loader -> load', 'endpoint', endpoint, 'options', options, ' res.json()', rez); // ya
+
         return rez;
       })
       .then((data) => callback(data))

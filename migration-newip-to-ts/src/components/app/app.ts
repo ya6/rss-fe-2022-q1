@@ -1,6 +1,12 @@
 import AppController from '../controller/controller';
 import { AppView } from '../view/appView';
 
+type NewsSourcesType = {
+ status: string, sources: object[] }
+
+type NewsDataType = {
+ status: string, totalResults: number, articles: object[] }
+
 interface IApp {
   start: () => void
 }
@@ -17,8 +23,8 @@ class App implements IApp {
   public start() {
     document
       .querySelector('.sources')!
-      .addEventListener('click', (e) => this.controller.getNews(e, (data: {}) => this.view.drawNews(data)));
-    this.controller.getSources((data: {}) => this.view.drawSources(data));
+      .addEventListener('click', (e) => this.controller.getNews(e, (data: NewsDataType) => this.view.drawNews(data)));
+    this.controller.getSources((data: NewsSourcesType) => this.view.drawSources(data));
   }
 }
 

@@ -6,13 +6,16 @@ enum EndpointEnum {
 
 }
 
+type NewsSourcesType = {
+ status: string, sources: object[] }
+
 interface IAppController {
-  getSources: (callback: any) => void
-  getNews: (e: Event, callback: any) => void
+  getSources: (callback: (data?: NewsSourcesType) => void) => void
+  getNews: (e: Event, callback: () => void) => void | undefined
 }
 
 class AppController extends AppLoader implements IAppController {
-  getSources(callback: any) {
+  getSources(callback: (data?: NewsSourcesType) => void) {
     super.getResp(
       {
         endpoint: EndpointEnum.Sources,
@@ -21,7 +24,7 @@ class AppController extends AppLoader implements IAppController {
     );
   }
 
-  getNews(e: Event, callback: any) {
+  getNews(e: Event, callback: () => void): void | undefined {
     let target = e.target as HTMLElement;
     const newsContainer = e.currentTarget as HTMLElement;
 

@@ -9,14 +9,17 @@ type OptionsType = {
     [key: string]: string
 }
 
+type NewsDataType = {
+ status: string, totalResults: number, articles: object[] }
+
 interface ILoader {
   getResp: ({ endpoint, options }: {
     endpoint: EndpointEnum;
     options: {};
   }, callback?: () => void) => void
   errorHandler: (res: Response) => any
-  makeUrl: (options: {}, endpoint: EndpointEnum) => Request | string
-  load: (method: string, endpoint: EndpointEnum, callback: any, options?: {}) => void
+  makeUrl: (options: {}, endpoint: EndpointEnum) => string
+  load: (method: string, endpoint: EndpointEnum, callback: ()=>void, options?: {}) => void
 
 }
 
@@ -47,7 +50,7 @@ class Loader implements ILoader {
     return res;
   }
 
-  makeUrl(options: OptionsType, endpoint: EndpointEnum): Request | string {
+  makeUrl(options: OptionsType, endpoint: EndpointEnum): string {
     const urlOptions: OptionsType = { ...this.options, ...options };
     let url = `${this.baseLink}${endpoint}?`;
 
@@ -59,7 +62,12 @@ class Loader implements ILoader {
     return url.slice(0, -1);
   }
 
-  load(method: string, endpoint: EndpointEnum, callback: any, options = {}) {
+  load(
+    method: string,
+    endpoint: EndpointEnum,
+    callback: (data?: NewsDataType)=>void,
+    options = {},
+  ) {
     fetch(this.makeUrl(options, endpoint), { method })
       .then(this.errorHandler)
       .then((res) => {

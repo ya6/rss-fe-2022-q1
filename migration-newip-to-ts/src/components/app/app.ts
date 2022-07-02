@@ -23,8 +23,8 @@ class App implements IApp {
   public start() {
     document
       .querySelector('.sources')!
-      .addEventListener('click', (e) => this.controller.getNews(e, (data: NewsDataType) => this.view.drawNews(data)));
-    this.controller.getSources((data: NewsSourcesType) => this.view.drawSources(data));
+      .addEventListener('click', (e) => this.controller.getNews(e, (data?: NewsDataType) => this.view.drawNews(data!)));
+    this.controller.getSources((data?: NewsSourcesType) => this.view.drawSources(data!));
   }
 }
 

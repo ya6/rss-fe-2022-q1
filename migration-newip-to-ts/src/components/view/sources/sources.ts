@@ -20,8 +20,6 @@ class Sources implements ISources {
   public draw(data: Array<object>) {
     const fragment = document.createDocumentFragment() as DocumentFragment;
     const sourceItemTemp = document.querySelector('#sourceItemTemp') as HTMLTemplateElement;
-    console.log('Sources -> draw -> data', data[0]);
-    console.table({ a: 1 });
 
     // data.forEach((item: Partial<theNewsType>) => {
     // data.forEach((item: {name?: string; id?: string}) => {

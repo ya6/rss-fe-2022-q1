@@ -1,11 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     color: #fff;
-    background: #17181c;
+    background: gray;
     font-family: sans-serif;
 }
 
 header {
-    padding: 10px 30px;
+    padding: 20px 30px;
+      /* background: #141414; */
+       background: #414141;
+}
+.logo {
+    width: 20%;
 }
 
 header h1 {
@@ -14,10 +24,15 @@ header h1 {
 }
 
 footer {
+    background: #141414;
     height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
+
+}
+footer img {
+    height: 2rem;
 }
 footer .copyright {
     font-size: 14px;
@@ -33,3 +48,13 @@ footer .copyright a:hover {
 footer .copyright:before {
     content: '©';
 }
+
+footer .footer__item {
+    margin: 0 1rem;
+}
+footer .footer_text {
+    vertical-align: top;
+font-size: 1.8rem;
+    color: #fff;
+}
+

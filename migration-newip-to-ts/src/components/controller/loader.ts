@@ -9,7 +9,7 @@ type OptionsType = {
     [key: string]: string
 }
 
-type NewsDataType = {
+interface NewsDataType {
  status: string, totalResults: number, articles: object[] }
 
 interface ILoader {
@@ -23,11 +23,11 @@ interface ILoader {
 
 }
 
-class Loader implements ILoader {
-  private baseLink: string;
-  private options: OptionsType;
+class Loader<T extends string, U extends OptionsType> implements ILoader { // typing class
+  private baseLink: T;
+  private options: U;
 
-  constructor(baseLink: string, options: OptionsType) {
+  constructor(baseLink: T, options: U) {
     this.baseLink = baseLink;
     this.options = options;
   }

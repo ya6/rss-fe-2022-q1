@@ -31,11 +31,11 @@ class App implements IApp {
 export default App;
 
 // todo
-// Partial, pick
 // Сделать верстку адаптивной с дизайном на свое усмотрение 320 -1920
 // footer  гитхаб автора, год создания, логотип курса со ссылкой на курс
-// типизированны используемые классы
 
 // done
 // Generics
 // readonly
+// Partial,
+// Pick

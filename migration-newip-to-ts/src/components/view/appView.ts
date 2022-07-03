@@ -14,7 +14,7 @@ interface IAppView {
 
 export class AppView implements IAppView {
   private readonly news: News;
-  private readonly sources: Sources;
+  private sources: Sources;
 
   constructor() {
     this.news = new News();

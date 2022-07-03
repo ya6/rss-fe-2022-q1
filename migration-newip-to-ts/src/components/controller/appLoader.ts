@@ -1,6 +1,10 @@
 import Loader from './loader';
 
-class AppLoader extends Loader {
+type OptionsType = {
+    [key: string]: string
+}
+
+class AppLoader extends Loader<string, OptionsType> {
   constructor() {
     // super('', {
     super('https://newsapi.org/v2/', {

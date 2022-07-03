@@ -4,6 +4,17 @@ interface INews {
   draw(data: object[]): void
 }
 
+interface theNewsType {
+author: string,
+content1: string;
+description: string,
+publishedAt: string,
+source: { id: string, name: string },
+title: string,
+url: string
+urlToImage: string
+}
+
 class News implements INews {
   public draw(data: object[]) {
     const news: Array<object> = data.length >= 10 ? data
@@ -12,9 +23,11 @@ class News implements INews {
     const fragment = document.createDocumentFragment() as DocumentFragment;
     const newsItemTemp = document.querySelector('#newsItemTemp') as HTMLTemplateElement;
 
-    news.forEach((item: {publishedAt?: string; urlToImage?: string;
-        author?: string; source?: {name: string}; title?: string;
-        description?: string; url?: string }, idx: number) => {
+    news.forEach((item:Partial<theNewsType>, idx: number) => { // Partial
+      // news.forEach((item: {publishedAt?: string; urlToImage?: string;
+      //     author?: string; source?: {name: string}; title?: string;
+      //     description?: string; url?: string }, idx: number) => {
+
       const newsClone = newsItemTemp.content.cloneNode(true) as HTMLTemplateElement;
 
       if (idx % 2) newsClone.querySelector('.news__item')!.classList.add('alt');

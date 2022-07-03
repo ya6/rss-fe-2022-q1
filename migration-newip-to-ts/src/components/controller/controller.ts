@@ -11,11 +11,11 @@ type NewsSourcesType = {
 
 interface IAppController {
   getSources: (callback: (data?: NewsSourcesType) => void) => void
-  getNews: (e: Event, callback: () => void) => void | undefined
+  getNews: (e: Event, callback: () => void) => void
 }
 
 class AppController extends AppLoader implements IAppController {
-  getSources(callback: (data?: NewsSourcesType) => void) {
+  public getSources(callback: (data?: NewsSourcesType) => void) {
     super.getResp(
       {
         endpoint: EndpointEnum.Sources,
@@ -24,13 +24,13 @@ class AppController extends AppLoader implements IAppController {
     );
   }
 
-  getNews(e: Event, callback: () => void): void | undefined {
+  public getNews(e: Event, callback: () => void): void {
     let target = e.target as HTMLElement;
-    const newsContainer = e.currentTarget as HTMLElement;
+    const newsContainer: HTMLElement = e.currentTarget as HTMLElement;
 
     while (target !== newsContainer && target !== null && newsContainer !== null) {
       if (target.classList.contains('source__item')) {
-        const sourceId = target.getAttribute('data-source-id');
+        const sourceId: string | null = target.getAttribute('data-source-id');
         if (newsContainer.getAttribute('data-source') !== sourceId) {
           newsContainer.setAttribute('data-source', sourceId!);
           super.getResp(

@@ -15,33 +15,33 @@ type NewsDataType = {
 interface ILoader {
   getResp: ({ endpoint, options }: {
     endpoint: EndpointEnum;
-    options: {};
+    options: OptionsType;
   }, callback?: () => void) => void
-  errorHandler: (res: Response) => any
-  makeUrl: (options: {}, endpoint: EndpointEnum) => string
-  load: (method: string, endpoint: EndpointEnum, callback: ()=>void, options?: {}) => void
+  errorHandler: (res: Response) => Response
+  makeUrl: (options: OptionsType, endpoint: EndpointEnum) => string
+  load: (method: string, endpoint: EndpointEnum, callback: ()=>void, options?: OptionsType) => void
 
 }
 
 class Loader implements ILoader {
   private baseLink: string;
-  private options: {};
+  private options: OptionsType;
 
-  constructor(baseLink: string, options: {}) {
+  constructor(baseLink: string, options: OptionsType) {
     this.baseLink = baseLink;
     this.options = options;
   }
 
-  getResp(
+  public getResp(
     { endpoint = EndpointEnum.Empty, options = {} },
     callback = () => {
       console.error('No callback for GET response');
     },
-  ) {
+  ): void {
     this.load('GET', endpoint, callback, options);
   }
 
-  errorHandler(res: Response) {
+  public errorHandler(res: Response): Response {
     if (!res.ok) {
       if (res.status === 401 || res.status === 404) { console.log(`Sorry, but there is ${res.status} error: ${res.statusText}`); }
       throw Error(res.statusText);
@@ -50,28 +50,28 @@ class Loader implements ILoader {
     return res;
   }
 
-  makeUrl(options: OptionsType, endpoint: EndpointEnum): string {
+  public makeUrl(options: OptionsType, endpoint: EndpointEnum): string {
     const urlOptions: OptionsType = { ...this.options, ...options };
     let url = `${this.baseLink}${endpoint}?`;
 
     Object.keys(urlOptions).forEach((key) => {
-      const value = urlOptions[key];
+      const value: string = urlOptions[key];
       url += `${key}=${value}&`;
     });
 
     return url.slice(0, -1);
   }
 
-  load(
+  public load(
     method: string,
     endpoint: EndpointEnum,
     callback: (data?: NewsDataType)=>void,
     options = {},
-  ) {
+  ): void {
     fetch(this.makeUrl(options, endpoint), { method })
       .then(this.errorHandler)
       .then((res) => {
-        const rez = res.json();
+        const rez: Promise<NewsDataType> = res.json(); // Generic Promise
 
         return rez;
       })

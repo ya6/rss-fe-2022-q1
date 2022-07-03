@@ -1,11 +1,11 @@
 import './news.css';
 
 interface INews {
-  draw(data: Array<object>): void
+  draw(data: object[]): void
 }
 
 class News implements INews {
-  draw(data: object[]) {
+  public draw(data: object[]) {
     const news: Array<object> = data.length >= 10 ? data
       .filter((_: {}, idx: number) => idx < 10) : data;
 

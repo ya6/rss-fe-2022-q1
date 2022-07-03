@@ -1,11 +1,11 @@
 import './sources.css';
 
 interface ISources {
- draw: (data: object[]) => void
+ draw: (data: Array<object>) => void // Generic
 }
 
 class Sources implements ISources {
-  draw(data: object[]) {
+  public draw(data: Array<object>) {
     const fragment = document.createDocumentFragment() as DocumentFragment;
     const sourceItemTemp = document.querySelector('#sourceItemTemp') as HTMLTemplateElement;
 

@@ -21,7 +21,7 @@ body {
     flex-direction: column;
 }
 main {
-   min-height: 75vh;
+   min-height: 79vh;
 
 }
 
@@ -40,7 +40,7 @@ header h1 {
 
 footer {
     background: #141414;
-    height: 100px;
+    height: 10vh;
     display: flex;
     align-items: center;
     justify-content: center;

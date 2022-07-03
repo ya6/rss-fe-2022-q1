@@ -21,21 +21,29 @@ class App implements IApp {
   }
 
   public start(): void {
-    document
-      .querySelector('.sources')!
+    const container = document
+      .querySelector('.sources');
+    const tooltip = document
+      .querySelector('.tooltip');
+    container!.addEventListener('mouseover', (e) => {
+      const target = e.target as HTMLElement;
+      if (target.nodeName === 'DIV' && target.classList.contains('source__item')) {
+        const desc = `${target.dataset.sourceDesc}`;
+         tooltip!.classList.remove('hidden');
+        tooltip!.textContent = desc;
+      }
+    });
+   container!.addEventListener('mouseout', (e) => {
+     const target = e.target as HTMLElement;
+     if (target.nodeName === 'DIV' && target.classList.contains('source__item')) {
+       tooltip!.classList.add('hidden');
+         tooltip!.textContent = '';
+     }
+   });
+    container!
       .addEventListener('click', (e) => this.controller.getNews(e, (data?: NewsDataType) => this.view.drawNews(data!)));
     this.controller.getSources((data?: NewsSourcesType) => this.view.drawSources(data!));
   }
 }
 
 export default App;
-
-// todo
-// Сделать верстку адаптивной с дизайном на свое усмотрение 320 -1920
-// footer  гитхаб автора, год создания, логотип курса со ссылкой на курс
-
-// done
-// Generics
-// readonly
-// Partial,
-// Pick

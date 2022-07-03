@@ -9,36 +9,41 @@
 </head>
 
 <body>
-    <header>
-        <!-- <h1>News Portal</h1> -->
-        <div>
-            <img class="logo" src="./assets/img/logo.png" alt="NEW PORTALL">
-        </div>
-    </header>
-    <main>
-        <div class="sources buttons"></div>
-        <div class="news"></div>
-    </main>
-    <footer>
-        <div class="">
-            <span class="footer__item">
-                <a href="https://github.com/ya6">
-                    <img src="./assets/img/github-logo_white.png" alt="github">
-                    <span class="footer_text">ya6</span>
+    <div class="container">
+        <header>
+            <div>
+                <a href="/">
+                    <img class="logo" src="./assets/img/logo1.png" alt="NEWS PORTAL">
                 </a>
-            </span>
-            <span class="fotter__item">
-                <a href="https://rs.school/js/">
-                    <img src="./assets/img/rs_school_js.png" alt="fe2021Q3">
-                </a>
-            </span>
-            <span class="footer__item footer_text">2022</span>
-        </div>
-        <p class="copyright">
-            Copyright <a href="https://newsapi.org">NewsAPI</a>
-        </p>
-    </footer>
-
+            </div>
+        </header>
+        <main>
+            <div class="sources buttons">
+                <div class="tooltip hidden"></div>
+            </div>
+            <div class="news"></div>
+        </main>
+        <footer>
+            <div class="">
+                <span class="footer__item">
+                    <a href="https://github.com/ya6">
+                        <img src="./assets/img/github-logo_white.png" alt="github">
+                        <span class="footer_text">ya6</span>
+                    </a>
+                </span>
+                <span class="fotter__item">
+                    <a href="https://rs.school/js/">
+                        <img src="./assets/img/rs_school_js.png" alt="fe2022Q1">
+                    </a>
+                </span>
+                <span class="footer__item footer_text">2022</span>
+            </div>
+            <p class="copyright">
+                Copyright <a href="https://newsapi.org">NewsAPI</a>
+            </p>
+        </footer>
+    </div>
+    <!-- Templates -->
     <template id="sourceItemTemp">
         <div class="source__item">
             <span class="source__item-name"></span>
@@ -65,7 +70,6 @@
         </div>
     </template>
 
-    <!-- <script src="./index.js"></script> -->
 </body>
 
 </html>

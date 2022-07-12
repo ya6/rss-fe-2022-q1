@@ -1,19 +1,5 @@
 import './news.css';
-
-interface INews {
-  draw(data: object[]): void
-}
-
-interface theNewsType {
-author: string,
-content1: string;
-description: string,
-publishedAt: string,
-source: { id: string, name: string },
-title: string,
-url: string
-urlToImage: string
-}
+import { INews, NewsType } from '../../type/interfaces';
 
 class News implements INews {
   public draw(data: object[]) {
@@ -23,7 +9,7 @@ class News implements INews {
     const fragment = document.createDocumentFragment() as DocumentFragment;
     const newsItemTemp = document.querySelector('#newsItemTemp') as HTMLTemplateElement;
 
-    news.forEach((item:Partial<theNewsType>, idx: number) => { // Partial
+    news.forEach((item:Partial<NewsType>, idx: number) => { // Partial
       // news.forEach((item: {publishedAt?: string; urlToImage?: string;
       //     author?: string; source?: {name: string}; title?: string;
       //     description?: string; url?: string }, idx: number) => {

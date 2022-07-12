@@ -1,27 +1,5 @@
-enum EndpointEnum {
-  Sources = 'sources',
-  Everything = 'everything',
-  Empty = '',
-
-}
-
-type OptionsType = {
-    [key: string]: string
-}
-
-interface NewsDataType {
- status: string, totalResults: number, articles: object[] }
-
-interface ILoader {
-  getResp: ({ endpoint, options }: {
-    endpoint: EndpointEnum;
-    options: OptionsType;
-  }, callback?: () => void) => void
-  errorHandler: (res: Response) => Response
-  makeUrl: (options: OptionsType, endpoint: EndpointEnum) => string
-  load: (method: string, endpoint: EndpointEnum, callback: ()=>void, options?: OptionsType) => void
-
-}
+import { EndpointEnum, OptionsType } from '../type/type';
+import { NewsDataType, ILoader } from '../type/interfaces';
 
 class Loader<T extends string, U extends OptionsType> implements ILoader { // typing class
   private baseLink: T;

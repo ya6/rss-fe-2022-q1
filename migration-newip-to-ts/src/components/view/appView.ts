@@ -1,16 +1,7 @@
 import News from './news/news';
 import Sources from './sources/sources';
-
-type NewsDataType = {
- status: string, totalResults: number, articles: object[] }
-
-type NewsSourcesType = {
- status: string, sources: object[] }
-
-interface IAppView {
-  drawNews: (data: NewsDataType) => void
-  drawSources: (data: NewsSourcesType) => void
-}
+import { NewsDataType, NewsSourcesType } from '../type/type';
+import { IAppView } from '../type/interfaces';
 
 export class AppView implements IAppView {
   private readonly news: News;

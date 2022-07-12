@@ -1,18 +1,6 @@
 import AppLoader from './appLoader';
-
-enum EndpointEnum {
-  Sources = 'sources',
-  Everything = 'everything',
-
-}
-
-type NewsSourcesType = {
- status: string, sources: object[] }
-
-interface IAppController {
-  getSources: (callback: (data?: NewsSourcesType) => void) => void
-  getNews: (e: Event, callback: () => void) => void
-}
+import { EndpointEnum, NewsSourcesType } from '../type/type';
+import { IAppController } from '../type/interfaces';
 
 class AppController extends AppLoader implements IAppController {
   public getSources(callback: (data?: NewsSourcesType) => void) {

@@ -1,15 +1,7 @@
 import AppController from '../controller/controller';
 import { AppView } from '../view/appView';
-
-type NewsSourcesType = {
- status: string, sources: object[] }
-
-type NewsDataType = {
- status: string, totalResults: number, articles: object[] }
-
-interface IApp {
-  start: () => void
-}
+import { IApp } from '../type/interfaces';
+import { NewsSourcesType, NewsDataType } from '../type/type';
 
 class App implements IApp {
   private controller: AppController;

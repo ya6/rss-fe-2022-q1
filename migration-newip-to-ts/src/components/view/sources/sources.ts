@@ -1,21 +1,9 @@
 import './sources.css';
+import { TheNewsType, ISources } from '../../type/interfaces';
 
-interface theNewsType {
-id: string,
-name: string,
-description: string,
-url: string,
-category: string,
-language: string,
-country: string,
-}
- type nameType = Pick<theNewsType, 'name'>; // Pick
- type idType = Pick<theNewsType, 'id'>;
- type descType = Pick<theNewsType, 'description'>;
-
-interface ISources {
- draw: (data: Array<object>) => void // Generic
-}
+ type nameType = Pick<TheNewsType, 'name'>; // Pick
+ type idType = Pick<TheNewsType, 'id'>;
+ type descType = Pick<TheNewsType, 'description'>;
 
 class Sources implements ISources {
   public draw(data: Array<object>) {

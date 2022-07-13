@@ -1,4 +1,4 @@
-import { EndpointEnum, OptionsType } from '../type/type';
+import { EndpointEnum, OptionsType } from '../type/types';
 import { NewsDataType, ILoader } from '../type/interfaces';
 
 class Loader<T extends string, U extends OptionsType> implements ILoader { // typing class

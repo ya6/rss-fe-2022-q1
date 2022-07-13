@@ -1,6 +1,6 @@
 import News from './news/news';
 import Sources from './sources/sources';
-import { NewsDataType, NewsSourcesType } from '../type/type';
+import { NewsDataType, NewsSourcesType } from '../type/types';
 import { IAppView } from '../type/interfaces';
 
 export class AppView implements IAppView {

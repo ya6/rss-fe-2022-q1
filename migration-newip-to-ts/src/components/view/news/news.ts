@@ -1,19 +1,15 @@
 import './news.css';
-import { INews, NewsType } from '../../type/interfaces';
+import { INews, INewsType } from '../../type/interfaces';
 
 class News implements INews {
-  public draw(data: object[]) {
+  public draw(data: Array<object>) {
     const news: Array<object> = data.length >= 10 ? data
       .filter((_: {}, idx: number) => idx < 10) : data;
 
     const fragment = document.createDocumentFragment() as DocumentFragment;
     const newsItemTemp = document.querySelector('#newsItemTemp') as HTMLTemplateElement;
 
-    news.forEach((item:Partial<NewsType>, idx: number) => { // Partial
-      // news.forEach((item: {publishedAt?: string; urlToImage?: string;
-      //     author?: string; source?: {name: string}; title?: string;
-      //     description?: string; url?: string }, idx: number) => {
-
+    news.forEach((item:Partial<INewsType>, idx: number) => { // Partial
       const newsClone = newsItemTemp.content.cloneNode(true) as HTMLTemplateElement;
 
       if (idx % 2) newsClone.querySelector('.news__item')!.classList.add('alt');

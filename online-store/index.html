@@ -2,68 +2,81 @@
 <html>
 
 <head>
-    <meta charset="utf-8" />
-    <title>online-store</title>
-    <link rel="stylesheet" href="./assets/style.css">
+  <meta charset="utf-8" />
+  <title>online-store</title>
+  <link rel="stylesheet" href="./assets/style.css">
+  <style>
+    .brd {
+      border: 2px solid red;
+    }
+  </style>
 </head>
 
 <body>
-    <header class="header">
-        
-         <!-- logo -->
-        <div class="logo">logo</div>
-        <!-- nav -->
-        <nav class="nav">nav</nav>
-        <!-- search -->
-        <div class="search">search</div>
-        <!-- cart -->
-        <div class="cart">cart</div>
-    </header>
-    <!-- Page Title -->
-    <section class="title">SHOP</section>
-    <!-- Content -->
-    <main class="main">
-<section class="filters">
-    <h5>Find</h5>
-    <h5>Sort by</h5>
-    <h5>Category</h5>
-    <h5>Brand</h5>
-    <h5>Color</h5>
-    <h5>Price</h5>
-    <h5>Clear filters</h5>
-    
-   
-</section>
-<section class="content">
-    <div class="product-image">
-        <a href="#"><img src="images/shop/dress/1-1.jpg" alt="Checked Short Dress"></a>
-        <div class="sale-flash badge badge-secondary p-2">Out of Stock</div>
-        <div class="bg-overlay">
-            <div class="bg-overlay-content align-items-end justify-content-between" data-hover-animate="fadeIn"
-                data-hover-speed="400">
-                <a href="#" class="btn btn-dark mr-2"><i class="icon-shopping-basket"></i></a>
-                <a href="include/ajax/shop-item.html" class="btn btn-dark" data-lightbox="ajax"><i
-                        class="icon-line-expand"></i></a>
-            </div>
-            <div class="bg-overlay-bg bg-transparent"></div>
-        </div>
-    </div>
-</section>
-    </main>
-   
-    <!-- footer -->
-    <footer></footer>
+  <header class="header">
+
+    <!-- logo -->
+    <div class="logo">logo</div>
+    <!-- nav -->
+    <nav class="nav">nav</nav>
+    <!-- search -->
+    <div class="search">search</div>
+    <!-- cart -->
+    <div class="cart">cart</div>
+  </header>
+
+  <!-- Page Title -->
+  <section class="title">SHOP</section>
+
+  <!-- Content -->
+  <main class="main">
+    <section class="filters">
+      <h5>Find</h5>
+      <h5>Sort by</h5>
+      <h5>Category</h5>
+      <h5>Brand</h5>
+      <h5>Color</h5>
+      <h5>Price</h5>
+      <h5>Clear filters</h5>
+    </section>
+
+    <section class="content">
+
+      <div class="product">
+        <div class="product-image" style="background-image: url(./assets/img/shop/dress/1.jpg);"></div>
+        <h3 class="product-title">Dress</h3>
+        <h2 class="product-price">$12.00</h3>
+          <button class="product-button">Add to Cart</button>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- footer -->
+  <footer class="footer">footer</footer>
 
 </body>
 
 <template id="product">
-    <div class="p-item">
-        <img class="p-img" />
-        <div class="p-name"></div>
-        <div class="p-desc"></div>
-        <div class="p-price"></div>
-        <button class="cart p-add">Add To Cart</button>
-    </div>
+  <div class="p-item">
+    <img class="p-img" />
+    <div class="p-name"></div>
+    <div class="p-desc"></div>
+    <div class="p-price"></div>
+    <button class="cart p-add">Add To Cart</button>
+  </div>
 </template>
+
+<!-- 
+        <div class="sale-flash badge badge-secondary p-2">Out of Stock</div>
+        <div class="bg-overlay">
+          <div class="bg-overlay-content align-items-end justify-content-between" data-hover-animate="fadeIn"
+            data-hover-speed="400">
+            <a href="#" class="btn btn-dark mr-2"><i class="icon-shopping-basket"></i></a>
+            <a href="include/ajax/shop-item.html" class="btn btn-dark" data-lightbox="ajax"><i
+                class="icon-line-expand"></i></a>
+          </div>
+          <div class="bg-overlay-bg bg-transparent"></div>
+        </div> -->
 
 </html>

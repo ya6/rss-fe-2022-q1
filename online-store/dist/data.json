@@ -1,0 +1,134 @@
+[
+  {
+    "id": 1,
+    "category": "dress",
+    "title": "Checked Short Dress",
+    "brand": "H&M",
+    "size": "L",
+    "color": "gray",
+    "quantity": 5,
+    "price": 14.50,
+    "img": "./assets/img/shop/dress/1.jpg"
+  },
+  {
+    "id": 2,
+    "category": "dress",
+    "title": "Light Blue Denim",
+    "brand": "H&M",
+    "size": "L",
+    "color": "blue",
+    "quantity": 10,
+    "price": 19.50,
+    "img": "./assets/img/shop/dress/2.jpg"
+  },
+  {
+    "id": 3,
+    "category": "dress",
+    "title": "Pink Printed Dress",
+    "brand": "H&M",
+    "size": "L",
+    "color": "pink",
+    "quantity": 10,
+    "price": 39.95,
+    "img": "./assets/img/shop/dress/3.jpg"
+  },
+  {
+    "id": 10,
+    "category": "tshirts",
+    "title": "Blue Round-Neck",
+    "brand": "H&M",
+    "size": "L",
+    "color": "blue",
+    "quantity": 10,
+    "price": 9.50,
+    "img": "./assets/img/shop/tshirts/1.jpg"
+  },
+  {
+    "id": 11,
+    "category": "tshirts",
+    "title": "Black Polo Tshirt",
+    "brand": "H&M",
+    "size": "L",
+    "color": "black",
+    "quantity": 10,
+    "price": 11.95,
+    "img": "./assets/img/shop/tshirts/4.jpg"
+  },
+  {
+    "id": 21,
+    "category": "pants",
+    "title": "Slim Fit Chinos",
+    "brand": "H&M",
+    "size": "L",
+    "color": "sand",
+    "quantity": 10,
+    "price": 39.50,
+    "img": "./assets/img/shop/pants/1.jpg"
+  },
+  {
+    "id": 22,
+    "category": "pants",
+    "title": "Green Trousers",
+    "brand": "H&M",
+    "size": "L",
+    "color": "green",
+    "quantity": 10,
+    "price": 21.95,
+    "img": "./assets/img/shop/pants/5.jpg"
+  },
+  {
+    "id": 31,
+    "category": "shoes",
+    "title": "Dark Brown Boots",
+    "brand": "H&M",
+    "size": "L",
+    "color": "brown",
+    "quantity": 10,
+    "price": 49.50,
+    "img": "./assets/img/shop/shoes/1.jpg"
+  },
+  {
+    "id": 32,
+    "category": "shoes",
+    "title": "Men Grey Casual",
+    "brand": "H&M",
+    "size": "L",
+    "color": "gray",
+    "quantity": 10,
+    "price": 39.95,
+    "img": "./assets/img/shop/shoes/2.jpg"
+  },
+  {
+    "id": 41,
+    "category": "sunglasses",
+    "title": "Unisex Sunglasses",
+    "brand": "H&M",
+    "size": "L",
+    "color": "gray",
+    "quantity": 10,
+    "price": 15.50,
+    "img": "./assets/img/shop/sunglasses/1.jpg"
+  },
+  {
+    "id": 42,
+    "category": "sunglasses",
+    "title": "Men Aviator",
+    "brand": "H&M",
+    "size": "L",
+    "color": "brown",
+    "quantity": 10,
+    "price": 17.95,
+    "img": "./assets/img/shop/sunglasses/2.jpg"
+  },
+  {
+    "id": 51,
+    "category": "watches",
+    "title": "Silver Chrome Watch",
+    "brand": "H&M",
+    "size": "L",
+    "color": "brown",
+    "quantity": 2,
+    "price": 125.95,
+    "img": "./assets/img/shop/watches/1.jpg"
+  }
+]

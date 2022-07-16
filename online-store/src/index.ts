@@ -1,13 +1,23 @@
 import DB from './DB';
+import DOM from './DOM';
+import ProductCard from './ProductCard';
 
 console.log('index.ts');
 
-const testLoad = async () => {
+// DOM
+const container = document.querySelector('.content');
+
+const printProducts = async () => {
   const data = await DB.getAll();
   console.log(data.default);
-  const product = await DB.getByID(1);
-  console.log(product);
+
+  // create cards
+  const cards = ProductCard.generateCards(data.default);
+  console.log(cards);
+
+  // add elements to page
+  if (container !== null) {
+    DOM.appendElements(container, cards);
+  }
 };
-testLoad();
-// form cards
-// draw view
+printProducts();

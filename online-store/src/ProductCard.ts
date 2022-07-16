@@ -8,9 +8,6 @@ export default class ProductCard {
   }
 
   static createCard(el: ProductType) {
-    // const df = document.createDocumentFragment();
-    // const cardTemplate = document.querySelector('#template') as HTMLTemplateElement;
-    // const card = cardTemplate.content.cloneNode(true);
     const card = document.createElement('div');
     card.className = 'product';
     const content = `
@@ -18,7 +15,7 @@ export default class ProductCard {
     <h3 class="product-title">${el.title}</h3>
     <div class="product-values">
       <h2 class="product-price">$${el.price}</h3>
-      <h2 class="product-quantity">${el.quantity} itms</h3>
+      <h2 class="product-quantity">${el.quantity} items</h3>
     </div>
     <button class="product-button">Add to Cart</button>
     `;

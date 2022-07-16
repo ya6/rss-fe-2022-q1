@@ -16,7 +16,6 @@
         "@typescript-eslint"
     ],
     "rules": {
-    // "indent": ["error", "tab"],
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": ["error"],
     "eslint linebreak-style": [0, "error", "windows"],

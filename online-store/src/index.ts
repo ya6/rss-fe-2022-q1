@@ -2,26 +2,28 @@ import DB from './DB';
 import DOM from './DOM';
 import ProductCard from './ProductCard';
 import Filters from './Filters';
+import EventHandler from './EventHandler';
 import { FilterType } from './types';
-
-console.log('index.ts');
 
 // DOM
 const container = document.querySelector('.content');
 
+// events
+document.body.addEventListener('click', EventHandler.dispatch);
+
 const start = async () => {
   const data = await DB.getAll();
 
-  // filter data
-  // const filters:Array<FilterType> = [['color', 'gray'], ['category', 'shoes']];
-  const filters:Array<FilterType> = [];
+  // Filter data
 
-  const filteredData = Filters.filerCards(data.default, filters);
+  const filters:FilterType = { title: '' };
 
-  // create cards
+  const filteredData = Filters.complexFilter(data.default, filters);
+
+  // Create cards
   const cards = ProductCard.generateCards(filteredData);
 
-  // add elements to page
+  // Add elements to page
   if (container !== null) {
     DOM.appendElements(container, cards);
   }

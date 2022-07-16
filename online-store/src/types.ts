@@ -14,4 +14,7 @@ export type ProductType = {
 [key: string]: string | number
 }
 
-export type FilterType = [string, string]
+export type FilterType = {
+   [key: string]: string | number
+};
+// export type FilterType = [string, string]

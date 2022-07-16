@@ -1,16 +1,18 @@
 /* eslint-disable no-restricted-syntax */
 import { ProductType, FilterType } from './types';
 
+// it is an experimental complex filter)))
 export default class Filters {
-  static filerCards(data: Array<ProductType>, filers:Array<FilterType>) {
-    if (filers.length === 0) {
+  static complexFilter(data: Array<ProductType>, filers:FilterType) {
+    if (Object.values(filers).filter(Boolean).length === 0) {
       return data;
     }
+    const filtersArr = Object.entries(filers);
 
-    // const filtered = data.filter((el) => filers[0][1] === el[filers[0][0]]);
     const filtered = data.filter((el) => {
-      for (const oneFilter of filers) {
-        if (oneFilter[1] === el[oneFilter[0]]) {
+      for (const oneFilter of filtersArr) {
+        // if (oneFilter[1] === el[oneFilter[0]])
+        if (String(el[oneFilter[0]]).includes(String(oneFilter[1]))) {
           return el;
         }
       }

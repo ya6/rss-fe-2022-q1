@@ -7,7 +7,7 @@
     "size": "L",
     "color": "gray",
     "quantity": 5,
-    "price": 14.50,
+    "price": 14.55,
     "img": "./assets/img/shop/dress/1.jpg"
   },
   {
@@ -18,7 +18,7 @@
     "size": "L",
     "color": "blue",
     "quantity": 10,
-    "price": 19.50,
+    "price": 19.55,
     "img": "./assets/img/shop/dress/2.jpg"
   },
   {
@@ -40,7 +40,7 @@
     "size": "L",
     "color": "blue",
     "quantity": 10,
-    "price": 9.50,
+    "price": 9.55,
     "img": "./assets/img/shop/tshirts/1.jpg"
   },
   {
@@ -62,7 +62,7 @@
     "size": "L",
     "color": "sand",
     "quantity": 10,
-    "price": 39.50,
+    "price": 39.55,
     "img": "./assets/img/shop/pants/1.jpg"
   },
   {
@@ -84,7 +84,7 @@
     "size": "L",
     "color": "brown",
     "quantity": 10,
-    "price": 49.50,
+    "price": 49.55,
     "img": "./assets/img/shop/shoes/1.jpg"
   },
   {
@@ -106,7 +106,7 @@
     "size": "L",
     "color": "gray",
     "quantity": 10,
-    "price": 15.50,
+    "price": 15.55,
     "img": "./assets/img/shop/sunglasses/1.jpg"
   },
   {

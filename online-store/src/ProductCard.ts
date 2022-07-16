@@ -13,7 +13,11 @@ export default class ProductCard {
     <div class="product-image" style="background-image: url(${el.img});"></div>
     <h3 class="product-title">${el.title}</h3>
     <div class="product-values">
+      <h2 class="product-brand">${el.brand}</h3>
       <h2 class="product-price">$${el.price}</h3>
+    </div>
+    <div class="product-info">
+      <h2 class="product-year">${el.year}</h3>
       <h2 class="product-quantity">${el.quantity} items</h3>
     </div>
     <button class="product-button">Add to Cart</button>

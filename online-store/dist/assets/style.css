@@ -5,7 +5,7 @@
   --gray: gray;
   --l-gray: #f5f5f5;
   --tiffany: #1abc9c;
-  --dark: #282828;
+  --dark: #080707;
 }
 
 html,
@@ -43,8 +43,15 @@ a {
 }
 
 .logo {
-  flex: 1;
-  border: 1px solid #f5f5f5;
+  flex: 1.5;
+  border: 1px solid var(--l-gray);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-img {
+  display: block;
 }
 
 .nav {
@@ -52,30 +59,34 @@ a {
   border: 1px solid #f5f5f5;
 }
 
-.search {
-  flex: 1;
+.search-container {
+  flex: 2;
   border: 1px solid #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .cart {
-  flex: 1;
+  flex: 1.5;
   border: 1px solid #f5f5f5;
 }
 
 .title {
-  height: 20vh;
+  height: 7vh;
   background: #f5f5f5;
 }
 
 .main {
   display: flex;
   flex-direction: row;
-  padding: 1rem;
+  padding: 0 2rem;
 }
 
 .filters {
   flex: 1;
   border: 1px solid var(--l-gray);
+  margin-top: 1.5rem;
 }
 
 .content {
@@ -90,7 +101,6 @@ a {
   /* height: 500px; */
   position: relative;
   margin: 1.5rem 1rem;
-
 }
 
 .product-image {
@@ -154,7 +164,6 @@ a {
   color: var(--white);
 }
 
-
 .controls-category {
   display: block;
   border: none;
@@ -164,9 +173,8 @@ a {
 }
 
 .controls-category:hover {
- color: var(--dark);
+  color: var(--dark);
 }
-
 
 .short-paragraph {
   margin-top: 0.2rem;

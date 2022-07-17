@@ -1,35 +1,38 @@
 import DB from './DB';
-import DOM from './DOM';
-import ProductCard from './ProductCard';
-import Filters from './Filters';
+
 import EventHandler from './EventHandler';
-import { ProductType, FilterType } from './types';
+import { FilterType } from './types';
 import Controls from './Controls';
+import Storage from './Storage';
+import Controller from './Controller';
 
 export default class App {
-  dataAll:{data: Array<ProductType> | null} = { data: null };
   async start() {
-    const container = document.querySelector('.content');
-
     // events
     document.body.addEventListener('click', EventHandler.dispatch);
 
+    // db
     const data = await DB.getAll();
-    this.dataAll.data = data.default;
 
-    Controls.setCategories(data.default);
+    // filter
+    const filters:FilterType = {
+      category: '',
+      title: '',
+      brand: '',
+      size: '',
+      color: '',
+      quantity: 0,
+      price: 0,
 
-    // Filter data
-    const filters:FilterType = { title: '' };
+    };
 
-    const filteredData = Filters.complexFilter(data.default, filters);
+    Storage.saveToSession('filters', filters);
+    Storage.saveToSession('data', data.default);
 
-    // Create cards
-    const cards = ProductCard.generateCards(filteredData);
+    // draw controls
+    Controls.setControls(data.default); // to controller
 
-    // Add elements to page
-    if (container !== null) {
-      DOM.appendElements(container, cards);
-    }
+    // draw products
+    Controller.drawCards(data.default, filters);
   }
 }

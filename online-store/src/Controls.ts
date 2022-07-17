@@ -2,7 +2,7 @@ import DOM from './DOM';
 import { ProductType } from './types';
 
 export default class Controls {
-  static setCategories(data: Array<ProductType>) {
+  static setControls(data: Array<ProductType>) {
     const categoryContainer = document.querySelector('.category');
 
     let categories = new Set(data.map((el) => el.category));
@@ -57,20 +57,6 @@ export default class Controls {
       DOM.appendElements(priceContainer, [p, input]);
     }
 
-    const sortContainer = document.querySelector('.sort-by');
-
-    const div: HTMLElement = document.createElement('div');
-    const content = `
-    <p class = "short-paragraph">year</p>
-    <button>up</button>
-    <button>down</button>
-    `;
-
-    if (sortContainer !== null) {
-      div.insertAdjacentHTML('afterbegin', content);
-      DOM.appendElements(sortContainer, [div]);
-    }
-
     const yearContainer = document.querySelector('.year');
     let years = data.map((el) => el.year);
     years = years.sort((a, b) => Number(a) - Number(b));
@@ -122,9 +108,9 @@ export default class Controls {
     brands = new Set(brands);
     const brandsArr = [...brands];
     const brandsArr2 = brandsArr.map((el) => {
-      const option: HTMLElement = document.createElement('option');
-      option.className = '';
-      option.textContent = String(el);
+      const option1: HTMLElement = document.createElement('option');
+      option1.className = '';
+      option1.textContent = String(el);
 
       return option;
     });
@@ -133,6 +119,31 @@ export default class Controls {
       DOM.appendElements(select, [option]);
       DOM.appendElements(select, brandsArr2);
       DOM.appendElements(brandContainer, [select]);
+    }
+
+    // sorts
+    const sortContainer = document.querySelector('.sort-by');
+
+    const div: HTMLElement = document.createElement('div');
+    const content = `
+    <p class = "short-paragraph">year</p>
+    <button>up</button>
+    <button>down</button>
+    `;
+    const content1 = `
+    <p class = "short-paragraph">Title</p>
+    <button>up</button>
+    <button>down</button>
+    `;
+
+    if (sortContainer !== null) {
+      div.insertAdjacentHTML('afterbegin', content);
+      DOM.appendElements(sortContainer, [div]);
+    }
+
+    if (sortContainer !== null) {
+      div.insertAdjacentHTML('afterbegin', content1);
+      DOM.appendElements(sortContainer, [div]);
     }
   }
 }

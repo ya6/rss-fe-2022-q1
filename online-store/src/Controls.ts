@@ -3,6 +3,7 @@ import { ProductType } from './types';
 
 export default class Controls {
   static setControls(data: Array<ProductType>) {
+    // Category
     const categoryContainer = document.querySelector('.category');
 
     let categories = new Set(data.map((el) => el.category));
@@ -11,6 +12,8 @@ export default class Controls {
     const categoriesArr2 = categoriesArr.map((el) => {
       const button: HTMLElement = document.createElement('button');
       button.className = 'controls-category';
+      button.setAttribute('data-filter', `category ${el}`);
+
       button.textContent = String(el).charAt(0).toUpperCase() + String(el).slice(1);
 
       return button;
@@ -107,11 +110,8 @@ export default class Controls {
     let brands = new Set(data.map((el) => el.brand));
     brands = new Set(brands);
     const brandsArr = [...brands];
-    console.log(brandsArr);
 
     const brandsArr2 = brandsArr.map((el) => {
-      console.log(el);
-
       const option1: HTMLElement = document.createElement('option');
       option1.className = '456456';
       option1.textContent = String(el);
@@ -119,7 +119,6 @@ export default class Controls {
       return option1;
     });
 
-    console.log('->', brandsArr2);
     if (brandContainer !== null) {
       DOM.appendElements(select, [option]);
       DOM.appendElements(select, brandsArr2);

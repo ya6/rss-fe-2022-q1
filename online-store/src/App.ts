@@ -16,11 +16,11 @@ export default class App {
 
     // filter
     const filters:FilterType = {
-      category: '',
+      category: 'dress',
       title: '',
       brand: '',
       size: '',
-      color: '',
+      color: 'black',
       quantity: 0,
       price: 0,
 

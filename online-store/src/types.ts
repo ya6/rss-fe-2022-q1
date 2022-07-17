@@ -17,4 +17,3 @@ export type ProductType = {
 export type FilterType = {
    [key: string]: string | number
 };
-// export type FilterType = [string, string]

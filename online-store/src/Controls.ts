@@ -107,14 +107,19 @@ export default class Controls {
     let brands = new Set(data.map((el) => el.brand));
     brands = new Set(brands);
     const brandsArr = [...brands];
+    console.log(brandsArr);
+
     const brandsArr2 = brandsArr.map((el) => {
+      console.log(el);
+
       const option1: HTMLElement = document.createElement('option');
-      option1.className = '';
+      option1.className = '456456';
       option1.textContent = String(el);
 
-      return option;
+      return option1;
     });
 
+    console.log('->', brandsArr2);
     if (brandContainer !== null) {
       DOM.appendElements(select, [option]);
       DOM.appendElements(select, brandsArr2);

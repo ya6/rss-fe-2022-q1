@@ -10,8 +10,8 @@ export default class EventHandler {
     let control: string[];
     let idx;
     const filters = Storage.loadFromStorage('filters');
-    const data = Storage.loadFromStorage('data');
-    const cart = Storage.loadFromStorage('cart');
+    let data = Storage.loadFromStorage('data');
+    let cart = Storage.loadFromStorage('cart');
 
     if (e.target != null) {
       element = e.target as HTMLElement;
@@ -42,12 +42,17 @@ export default class EventHandler {
           item.inCart += 1;
           data[idx] = item;
           Storage.saveToStorage('data', data);
-          // Storage.loadFromStorage('data');
-          // console.log(data[idx].inCart);
 
           cart[control[1]] = item;
           Storage.saveToStorage('cart', cart);
-          Cart.showQ(cart);
+
+          break;
+
+        case 'clear-all':
+          Controller.clearAllData();
+          data = Storage.loadFromStorage('data');
+          cart = Storage.loadFromStorage('cart');
+
           break;
 
         default:
@@ -55,7 +60,8 @@ export default class EventHandler {
       }
       Storage.saveToStorage('filters', filters);
       // Create cards
-      Controller.drawCards(data, filters);
+      Controller.drawCards(Storage.loadFromStorage('data'), filters);
+      Cart.showQ(cart);
     }
   }
 }

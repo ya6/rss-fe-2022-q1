@@ -20,4 +20,11 @@ export default class Storage {
     if (itemStr === null) { item = {}; } else { item = JSON.parse(itemStr); }
     return item;
   }
+
+  static clearAll() {
+    const clearButton = document.querySelector('.clear-all');
+    if (clearButton !== null) {
+      localStorage.clear();
+    }
+  }
 }

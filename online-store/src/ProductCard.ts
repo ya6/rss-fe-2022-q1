@@ -20,7 +20,7 @@ export default class ProductCard {
       <h2 class="product-year">${el.year}</h3>
       <h2 class="product-quantity">${el.quantity} items</h3>
     </div>
-    <button class="product-button">Add to Cart</button>
+    <button class="product-button" data-filter="id ${el.id}">Add to Cart</button>
     `;
     card.insertAdjacentHTML('afterbegin', content);
     return card;

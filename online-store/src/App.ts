@@ -26,8 +26,9 @@ export default class App {
 
     };
 
-    Storage.saveToSession('filters', filters);
-    Storage.saveToSession('data', data.default);
+    Storage.saveToStorage('filters', filters);
+    Storage.saveToStorage('data', data.default);
+    Storage.saveToStorage('cart', {});
 
     // draw controls
     Controls.setControls(data.default); // to controller

@@ -9,7 +9,8 @@
     "color": "gray",
     "quantity": 5,
     "price": 14.55,
-    "img": "./assets/img/shop/dress/1.jpg"
+    "img": "./assets/img/shop/dress/1.jpg",
+    "inCart": 0
   },
   {
     "id": 2,
@@ -21,7 +22,8 @@
     "color": "blue",
     "quantity": 10,
     "price": 19.55,
-    "img": "./assets/img/shop/dress/2.jpg"
+    "img": "./assets/img/shop/dress/2.jpg",
+    "inCart": 0
   },
   {
     "id": 3,
@@ -33,7 +35,8 @@
     "color": "pink",
     "quantity": 10,
     "price": 39.95,
-    "img": "./assets/img/shop/dress/3.jpg"
+    "img": "./assets/img/shop/dress/3.jpg",
+    "inCart": 0
   },
   {
     "id": 10,
@@ -45,7 +48,8 @@
     "color": "blue",
     "quantity": 10,
     "price": 9.55,
-    "img": "./assets/img/shop/tshirts/1.jpg"
+    "img": "./assets/img/shop/tshirts/1.jpg",
+    "inCart": 0
   },
   {
     "id": 11,
@@ -57,7 +61,8 @@
     "color": "black",
     "quantity": 10,
     "price": 11.95,
-    "img": "./assets/img/shop/tshirts/4.jpg"
+    "img": "./assets/img/shop/tshirts/4.jpg",
+    "inCart": 0
   },
   {
     "id": 21,
@@ -69,7 +74,8 @@
     "color": "sand",
     "quantity": 10,
     "price": 39.55,
-    "img": "./assets/img/shop/pants/1.jpg"
+    "img": "./assets/img/shop/pants/1.jpg",
+    "inCart": 0
   },
   {
     "id": 22,
@@ -81,7 +87,8 @@
     "color": "green",
     "quantity": 10,
     "price": 21.95,
-    "img": "./assets/img/shop/pants/5.jpg"
+    "img": "./assets/img/shop/pants/5.jpg",
+    "inCart": 0
   },
   {
     "id": 31,
@@ -93,7 +100,8 @@
     "color": "brown",
     "quantity": 10,
     "price": 49.55,
-    "img": "./assets/img/shop/shoes/1.jpg"
+    "img": "./assets/img/shop/shoes/1.jpg",
+    "inCart": 0
   },
   {
     "id": 32,
@@ -105,7 +113,8 @@
     "color": "gray",
     "quantity": 10,
     "price": 39.95,
-    "img": "./assets/img/shop/shoes/2.jpg"
+    "img": "./assets/img/shop/shoes/2.jpg",
+    "inCart": 0
   },
   {
     "id": 41,
@@ -117,7 +126,8 @@
     "color": "gray",
     "quantity": 10,
     "price": 15.55,
-    "img": "./assets/img/shop/sunglasses/1.jpg"
+    "img": "./assets/img/shop/sunglasses/1.jpg",
+    "inCart": 0
   },
   {
     "id": 42,
@@ -129,7 +139,8 @@
     "color": "brown",
     "quantity": 10,
     "price": 17.95,
-    "img": "./assets/img/shop/sunglasses/2.jpg"
+    "img": "./assets/img/shop/sunglasses/2.jpg",
+    "inCart": 0
   },
   {
     "id": 51,
@@ -141,6 +152,7 @@
     "color": "brown",
     "quantity": 2,
     "price": 125.95,
-    "img": "./assets/img/shop/watches/1.jpg"
+    "img": "./assets/img/shop/watches/1.jpg",
+    "inCart": 0
   }
 ]

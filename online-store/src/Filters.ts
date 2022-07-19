@@ -1,10 +1,13 @@
 /* eslint-disable no-restricted-syntax */
+import Storage from './Storage';
 import { ProductType, FilterType } from './types';
 
 // it is an experimental complex filter)))
 export default class Filters {
   static complexFilter(data: Array<ProductType>, filers:FilterType) {
-    let filteredData = data;
+    // Storage.loadFromStorage('currentData');
+    let filteredData:Array<ProductType> = Storage.loadFromStorage('currentData');
+    // let filteredData = data;
 
     const {
       category = [],
@@ -15,6 +18,8 @@ export default class Filters {
       brand = '',
       size = '',
       quantity = 0,
+      titleSort = '',
+      yearSort = '',
     } = filers;
 
     if (title) {
@@ -37,6 +42,21 @@ export default class Filters {
     filteredData = filteredData.filter((card) => Number(card.price) <= Number(price));
     filteredData = filteredData.filter((card) => Number(card.quantity) <= Number(quantity));
     filteredData = filteredData.filter((card) => Number(card.year) <= Number(year));
+    if (brand) {
+      filteredData = filteredData.filter((card) => card.brand === brand);
+    }
+
+    if (titleSort) {
+      filteredData = titleSort === 'up'
+        ? filteredData.sort((a, b) => String(a.title).charCodeAt(0) - String(b.title).charCodeAt(0))
+        // eslint-disable-next-line max-len
+        : filteredData.sort((a, b) => String(b.title).charCodeAt(0) - String(a.title).charCodeAt(0));
+    }
+    if (yearSort) {
+      filteredData = yearSort === 'up'
+        ? filteredData.sort((a, b) => Number(b.year) - Number(a.year))
+        : filteredData.sort((a, b) => Number(a.year) - Number(b.year));
+    }
 
     return filteredData;
   }

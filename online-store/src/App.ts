@@ -30,6 +30,8 @@ export default class App {
       quantity: 100,
       price: 1000,
       year: 2023,
+      titleSort: '',
+      yearSort: '',
 
     };
     Storage.saveToStorage('filters', filters);
@@ -37,6 +39,6 @@ export default class App {
     // view
     Controller.drawControls();
     Controller.drawCartQ();
-    Controller.drawCards(currentData, filters);
+    Controller.drawCards(currentData, Storage.loadFromStorage('filters'));
   }
 }

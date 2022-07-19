@@ -120,13 +120,14 @@ export default class Controls {
     const select: HTMLElement = document.createElement('select');
     const option: HTMLElement = document.createElement('option');
     option.textContent = 'All';
+    option.setAttribute('data-filter', 'brand All');
     let brands = new Set(data.map((el) => el.brand));
     brands = new Set(brands);
     const brandsArr = [...brands];
 
     const brandsArr2 = brandsArr.map((el) => {
       const option1: HTMLElement = document.createElement('option');
-      option1.className = '456456';
+      option1.setAttribute('data-filter', `brand ${el}`);
       option1.textContent = String(el);
 
       return option1;
@@ -143,22 +144,19 @@ export default class Controls {
 
     const div: HTMLElement = document.createElement('div');
     const content = `
-    <p class = "short-paragraph">year</p>
-    <button>up</button>
-    <button>down</button>
+    <p class = "short-paragraph">Year</p>
+    <button data-filter = "sort upYear">up</button>
+    <button data-filter = "sort downYear down">down</button>
     `;
     const content1 = `
     <p class = "short-paragraph">Title</p>
-    <button>up</button>
-    <button>down</button>
+    <button data-filter = "sort upTitle">up</button>
+    <button data-filter = "sort downTitle">down</button>
     `;
 
     if (sortContainer !== null) {
       div.insertAdjacentHTML('afterbegin', content);
       DOM.appendElements(sortContainer, [div]);
-    }
-
-    if (sortContainer !== null) {
       div.insertAdjacentHTML('afterbegin', content1);
       DOM.appendElements(sortContainer, [div]);
     }

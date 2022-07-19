@@ -18,7 +18,7 @@ export default class EventHandler {
 
     if (e.target != null) {
       element = e.target as HTMLElement;
-      // console.log(element);
+      console.log(element);
 
       // if (element.getAttribute('data-filter') === null) {
       //   return;
@@ -69,6 +69,13 @@ export default class EventHandler {
           element!.parentNode!.firstElementChild!.textContent = element.value;
           break;
 
+        case 'brand':
+          if (control[1] === 'All') {
+            filters.brand = '';
+          // eslint-disable-next-line prefer-destructuring
+          } else { filters.brand = control[1]; }
+          break;
+
         case 'color':
           if (control[1] === 'All') {
             // eslint-disable-next-line no-restricted-syntax
@@ -83,6 +90,25 @@ export default class EventHandler {
           } else {
             filters.color.push(control[1]);
             element.classList.add('active-push');
+          }
+          break;
+
+        case 'sort':
+          if (control[1] === 'upTitle') {
+            filters.titleSort = 'up';
+          // eslint-disable-next-line prefer-destructuring
+          }
+          if (control[1] === 'downTitle') {
+            filters.titleSort = 'down';
+          // eslint-disable-next-line prefer-destructuring
+          }
+          if (control[1] === 'upYear') {
+            filters.yearSort = 'up';
+          // eslint-disable-next-line prefer-destructuring
+          }
+          if (control[1] === 'downYear') {
+            filters.yearSort = 'down';
+          // eslint-disable-next-line prefer-destructuring
           }
           break;
 

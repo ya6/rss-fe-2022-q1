@@ -32,11 +32,10 @@ export default class Controller {
   }
 
   static clearAllData() {
+    console.log('clearAllData');
+
     const authenticData = Storage.loadFromStorage('authenticData');
 
-    // Storage.clearAll();
-    localStorage.clear();
-    Storage.saveToStorage('authenticData', authenticData);
     Storage.saveToStorage('currentData', authenticData);
     Storage.saveToStorage('cart', {});
     const filters:FilterType = {
@@ -48,9 +47,12 @@ export default class Controller {
       quantity: 100,
       price: 1000,
       year: 2023,
+      titleSort: '',
+      yearSort: '',
 
     };
+
     Storage.saveToStorage('filters', filters);
-    // console.log(Storage.loadFromStorage('filters'));
+    Controller.drawCards(Storage.loadFromStorage('currentDta'), Storage.loadFromStorage('filters'));
   }
 }

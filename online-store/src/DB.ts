@@ -1,6 +1,6 @@
 export default class DB {
   static async getAll() {
-    console.log('DB getAll');
+    // console.log('DB getAll');
 
     // eslint-disable-next-line import/extensions
     const data = await import('../dist/data.json');

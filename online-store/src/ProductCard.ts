@@ -2,7 +2,7 @@ import { ProductType } from './types';
 
 export default class ProductCard {
   static generateCards(data: Array<ProductType>) {
-    console.log('ProductCard generateCards');
+    // console.log('ProductCard generateCards');
 
     const elements = data.map((el) => this.createCard(el));
     return elements;

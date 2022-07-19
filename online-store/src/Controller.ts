@@ -8,7 +8,7 @@ import Controls from './Controls';
 
 export default class Controller {
   static drawCards(data: Array<ProductType>, filters: FilterType) {
-    console.log('Controller drawCards');
+    // console.log('Controller drawCards');
 
     const container = document.querySelector('.content');
     const filteredData = Filters.complexFilter(data, filters);

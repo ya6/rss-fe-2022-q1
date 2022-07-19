@@ -12,6 +12,8 @@ export default class EventHandler {
     const filters = Storage.loadFromStorage('filters');
     let currentData = Storage.loadFromStorage('currentData');
     let cart = Storage.loadFromStorage('cart');
+    const categoryCont = document.querySelector('.category')?.children;
+    // console.log(categoryCont);
 
     if (e.target != null) {
       element = e.target as HTMLElement;
@@ -30,12 +32,22 @@ export default class EventHandler {
           break;
 
         case 'category':
-          // eslint-disable-next-line prefer-destructuring
-          // filters.category = control[1];
-          console.log('category', control[1]);
+          // console.log('category', control[1]);
           if (control[1] === 'All') {
+            // eslint-disable-next-line no-restricted-syntax
+            for (const el of categoryCont!) {
+              el.classList.remove('active');
+            }
             filters.category = [];
-          } else filters.category.push(control[1]);
+          } else if (element.classList.contains('active')) {
+            element.classList.remove('active');
+
+            filters.category = filters.category.filter((cat: string) => cat !== control[1]);
+          } else {
+            filters.category.push(control[1]);
+            element.classList.add('active');
+          }
+
           break;
 
         case 'id':

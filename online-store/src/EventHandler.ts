@@ -60,7 +60,7 @@ export default class EventHandler {
       }
       Storage.saveToStorage('filters', filters);
       // Create cards
-      Controller.drawCards(Storage.loadFromStorage('data'), filters);
+      Controller.drawCards(Storage.loadFromStorage('currentData'), filters);
       Cart.showQ(cart);
     }
   }

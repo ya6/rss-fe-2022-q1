@@ -7,9 +7,6 @@ import Cart from './Cart';
 import Controls from './Controls';
 
 export default class Controller {
-  static currentData = Storage.loadFromStorage('currentData');
-  static cart = Storage.loadFromStorage('cart');
-
   static drawCards(data: Array<ProductType>, filters: FilterType) {
     const container = document.querySelector('.content');
     const filteredData = Filters.complexFilter(data, filters);
@@ -25,16 +22,16 @@ export default class Controller {
   }
 
   static drawCartQ() {
-    Cart.showQ(Controller.cart);
+    Cart.showQ(Storage.loadFromStorage('cart'));
   }
 
   static drawControls() {
-    Controls.setControls(Controller.currentData);
+    Controls.setControls(Storage.loadFromStorage('currentData'));
   }
 
   static clearAllData() {
+    const authenticData = Storage.loadFromSession('currentData');
     Storage.clearAll();
-    const authenticData = Storage.loadFromSession('authenticData');
     Storage.saveToStorage('currentData', authenticData);
     Storage.saveToStorage('cart', {});
   }

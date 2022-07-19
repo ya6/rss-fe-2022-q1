@@ -4,6 +4,8 @@ import { ProductType, FilterType } from './types';
 // it is an experimental complex filter)))
 export default class Filters {
   static complexFilter(data: Array<ProductType>, filers:FilterType) {
+    console.log('complexFilter', data);
+
     const dataForFiltering = data;
     //
     if (Filters.isEmptyFilters(filers)) {

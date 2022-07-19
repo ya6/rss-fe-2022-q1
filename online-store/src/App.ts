@@ -31,6 +31,7 @@ export default class App {
     };
 
     Storage.saveToStorage('filters', filters);
+    Storage.saveToStorage('cart', {});
 
     Controller.drawControls();
     Controller.drawCartQ();

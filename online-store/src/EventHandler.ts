@@ -22,7 +22,6 @@ export default class EventHandler {
       // }
 
       control = element.getAttribute('data-filter')?.split(' ') || [];
-      // console.log(control);
 
       switch (control[0]) {
         case 'search':
@@ -32,7 +31,11 @@ export default class EventHandler {
 
         case 'category':
           // eslint-disable-next-line prefer-destructuring
-          filters.category = control[1];
+          // filters.category = control[1];
+          console.log('category', control[1]);
+          if (control[1] === 'All') {
+            filters.category = [];
+          } else filters.category.push(control[1]);
           break;
 
         case 'id':

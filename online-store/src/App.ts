@@ -22,7 +22,7 @@ export default class App {
 
     //  todo  to settings,
     const filters:FilterType = {
-      category: '',
+      category: [],
       title: '',
       brand: '',
       size: '',

@@ -19,7 +19,7 @@ export default class Controls {
     });
     const buttonAll: HTMLElement = document.createElement('button');
     buttonAll.className = 'controls-category';
-    buttonAll.setAttribute('data-filter', 'category');
+    buttonAll.setAttribute('data-filter', 'category All');
     buttonAll.textContent = 'All';
 
     if (categoryContainer !== null) {

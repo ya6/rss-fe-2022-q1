@@ -26,7 +26,7 @@ export default class Filters {
         return false;
       });
     }
-    console.log('-->', dataForFiltering1, filtered);
+    // console.log('-->', dataForFiltering1, filtered);
 
     return filtered;
   }

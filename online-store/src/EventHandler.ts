@@ -15,14 +15,14 @@ export default class EventHandler {
 
     if (e.target != null) {
       element = e.target as HTMLElement;
-      console.log(element);
+      // console.log(element);
 
       // if (element.getAttribute('data-filter') === null) {
       //   return;
       // }
 
       control = element.getAttribute('data-filter')?.split(' ') || [];
-      console.log(control);
+      // console.log(control);
 
       switch (control[0]) {
         case 'search':

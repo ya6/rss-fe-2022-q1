@@ -13,13 +13,17 @@ export default class Controls {
       const button: HTMLElement = document.createElement('button');
       button.className = 'controls-category';
       button.setAttribute('data-filter', `category ${el}`);
-
       button.textContent = String(el).charAt(0).toUpperCase() + String(el).slice(1);
 
       return button;
     });
+    const buttonAll: HTMLElement = document.createElement('button');
+    buttonAll.className = 'controls-category';
+    buttonAll.setAttribute('data-filter', 'category');
+    buttonAll.textContent = 'All';
 
     if (categoryContainer !== null) {
+      DOM.appendElements(categoryContainer, [buttonAll]);
       DOM.appendElements(categoryContainer, categoriesArr2);
     }
 

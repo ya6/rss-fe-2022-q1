@@ -36,7 +36,6 @@ export default class Controller {
     Storage.clearAll();
     const authenticData = Storage.loadFromSession('data');
     Storage.saveToStorage('data', authenticData);
-    Cart.showQ({});
-    Controller.drawCards(authenticData, {});
+    Storage.saveToStorage('cart', {});
   }
 }

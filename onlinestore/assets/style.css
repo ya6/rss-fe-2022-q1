@@ -193,6 +193,7 @@ a {
   background: var(--white);
   cursor: pointer;
   color: var(--gray);
+  font-size: 1.15rem;
 }
 
 .controls-category:hover {
@@ -273,5 +274,5 @@ footer .footer-text {
   font-weight: 600;
   /* border: 2px solid darkblue; */
   opacity: 0.5;
-box-shadow: none;
+  box-shadow: none;
 }

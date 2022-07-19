@@ -44,12 +44,13 @@ export default class Controller {
       title: '',
       brand: '',
       size: '',
-      color: '',
-      quantity: 0,
+      color: [],
+      quantity: 100,
       price: 1000,
+      year: 2023,
 
     };
     Storage.saveToStorage('filters', filters);
-    console.log(Storage.loadFromStorage('filters'));
+    // console.log(Storage.loadFromStorage('filters'));
   }
 }

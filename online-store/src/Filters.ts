@@ -11,6 +11,7 @@ export default class Filters {
       title = '',
       color = [],
       price = 0,
+      year = 0,
       brand = '',
       size = '',
       quantity = 0,
@@ -34,6 +35,8 @@ export default class Filters {
     }
 
     filteredData = filteredData.filter((card) => Number(card.price) <= Number(price));
+    filteredData = filteredData.filter((card) => Number(card.quantity) <= Number(quantity));
+    filteredData = filteredData.filter((card) => Number(card.year) <= Number(year));
 
     return filteredData;
   }

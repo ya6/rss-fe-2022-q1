@@ -73,6 +73,7 @@ export default class Controls {
       DOM.appendElements(priceContainer, [p, input]);
     }
 
+    // year
     const yearContainer = document.querySelector('.year');
     let years = data.map((el) => el.year);
     years = years.sort((a, b) => Number(a) - Number(b));
@@ -82,12 +83,11 @@ export default class Controls {
     p1.className = 'short-paragraph';
 
     const input1: HTMLElement = document.createElement('input');
+    input1.setAttribute('data-filter', 'year');
     input1.setAttribute('type', 'range');
-    input1.setAttribute('min', '0');
+    input1.setAttribute('min', String(years[0]));
     input1.setAttribute('max', String(pol1));
     input1.setAttribute('step', '1');
-    input1.setAttribute('id', 'pr');
-    input1.setAttribute('name', 'pr');
     input1.setAttribute('value', String(pol1));
 
     if (yearContainer !== null) {
@@ -104,18 +104,18 @@ export default class Controls {
     p2.className = 'short-paragraph';
 
     const input2: HTMLElement = document.createElement('input');
+    input2.setAttribute('data-filter', 'quantity');
     input2.setAttribute('type', 'range');
     input2.setAttribute('min', '0');
     input2.setAttribute('max', String(pol2));
     input2.setAttribute('step', '1');
-    input2.setAttribute('id', 'pr');
-    input2.setAttribute('name', 'pr');
     input2.setAttribute('value', String(pol2));
 
     if (quantityContainer !== null) {
       DOM.appendElements(quantityContainer, [p2, input2]);
     }
 
+    // brand
     const brandContainer = document.querySelector('.brand');
     const select: HTMLElement = document.createElement('select');
     const option: HTMLElement = document.createElement('option');

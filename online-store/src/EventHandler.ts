@@ -57,6 +57,18 @@ export default class EventHandler {
           element!.parentNode!.firstElementChild!.textContent = element.value;
           break;
 
+        case 'quantity':
+          element = element as HTMLInputElement;
+          filters.quantity = element.value;
+          element!.parentNode!.firstElementChild!.textContent = element.value;
+          break;
+
+        case 'year':
+          element = element as HTMLInputElement;
+          filters.year = element.value;
+          element!.parentNode!.firstElementChild!.textContent = element.value;
+          break;
+
         case 'color':
           if (control[1] === 'All') {
             // eslint-disable-next-line no-restricted-syntax

@@ -27,8 +27,9 @@ export default class App {
       brand: '',
       size: '',
       color: [],
-      quantity: 0,
+      quantity: 100,
       price: 1000,
+      year: 2023,
 
     };
     Storage.saveToStorage('filters', filters);

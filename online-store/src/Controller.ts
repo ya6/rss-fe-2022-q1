@@ -7,7 +7,7 @@ import Cart from './Cart';
 import Controls from './Controls';
 
 export default class Controller {
-  static data = Storage.loadFromStorage('data');
+  static currentData = Storage.loadFromStorage('currentData');
   static cart = Storage.loadFromStorage('cart');
 
   static drawCards(data: Array<ProductType>, filters: FilterType) {
@@ -29,13 +29,13 @@ export default class Controller {
   }
 
   static drawControls() {
-    Controls.setControls(Controller.data);
+    Controls.setControls(Controller.currentData);
   }
 
   static clearAllData() {
     Storage.clearAll();
-    const authenticData = Storage.loadFromSession('data');
-    Storage.saveToStorage('data', authenticData);
+    const authenticData = Storage.loadFromSession('authenticData');
+    Storage.saveToStorage('currentData', authenticData);
     Storage.saveToStorage('cart', {});
   }
 }

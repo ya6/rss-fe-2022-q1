@@ -12,6 +12,11 @@ export default class App {
 
     // db
     const data = await DB.getAll();
+    Storage.saveToStorage('authenticData', data.default);
+    const currentData = Storage.loadFromStorage('currentData') || data.default;
+    Storage.saveToStorage('currentData', currentData);
+
+    // console.log('currentData', currentData);
 
     //  todo  to settings,
     const filters:FilterType = {
@@ -26,11 +31,9 @@ export default class App {
     };
 
     Storage.saveToStorage('filters', filters);
-    Storage.saveToStorage('data', data.default);
-    Storage.saveToSession('data', data.default);
 
     Controller.drawControls();
     Controller.drawCartQ();
-    Controller.drawCards(data.default, filters);
+    Controller.drawCards(currentData, filters);
   }
 }

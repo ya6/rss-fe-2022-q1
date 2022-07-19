@@ -5,9 +5,8 @@ export default class Storage {
 
   static loadFromStorage(name: string) {
     const itemStr = localStorage.getItem(name);
-    let item = null;
-    if (itemStr === null) { item = {}; } else { item = JSON.parse(itemStr); }
-    return item;
+    if (itemStr === null) return itemStr;
+    return JSON.parse(itemStr);
   }
 
   static saveToSession(name: string, data:{}) {

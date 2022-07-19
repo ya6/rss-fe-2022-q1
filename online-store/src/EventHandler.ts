@@ -10,7 +10,7 @@ export default class EventHandler {
     let control: string[];
     let idx;
     const filters = Storage.loadFromStorage('filters');
-    let data = Storage.loadFromStorage('data');
+    let currentData = Storage.loadFromStorage('currentData');
     let cart = Storage.loadFromStorage('cart');
 
     if (e.target != null) {
@@ -36,12 +36,12 @@ export default class EventHandler {
           break;
 
         case 'id':
-          idx = data.findIndex((el:ProductType) => el.id === Number(control[1]));
-          item = data[idx];
+          idx = currentData.findIndex((el:ProductType) => el.id === Number(control[1]));
+          item = currentData[idx];
           item.quantity -= 1;
           item.inCart += 1;
-          data[idx] = item;
-          Storage.saveToStorage('data', data);
+          currentData[idx] = item;
+          Storage.saveToStorage('currentData', currentData);
 
           cart[control[1]] = item;
           Storage.saveToStorage('cart', cart);
@@ -50,7 +50,7 @@ export default class EventHandler {
 
         case 'clear-all':
           Controller.clearAllData();
-          data = Storage.loadFromStorage('data');
+          currentData = Storage.loadFromStorage('currentData');
           cart = Storage.loadFromStorage('cart');
 
           break;

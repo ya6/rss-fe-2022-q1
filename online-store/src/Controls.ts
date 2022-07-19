@@ -27,6 +27,7 @@ export default class Controls {
       DOM.appendElements(categoryContainer, categoriesArr2);
     }
 
+    // color
     const colorContainer = document.querySelector('.color');
     let colors = new Set(data.map((el) => el.color));
     colors = new Set(colors);
@@ -34,13 +35,20 @@ export default class Controls {
     const colorsArr2 = colorsArr.map((el) => {
       const div: HTMLElement = document.createElement('div');
       div.className = 'controls-color';
-      div.textContent = '-';
-
+      div.setAttribute('data-filter', `color ${el}`);
+      div.textContent = String(el);
       div.style.background = String(el);
-
       return div;
     });
+
+    const divAll: HTMLElement = document.createElement('div');
+    divAll.className = 'controls-color';
+    divAll.style.background = 'white';
+    divAll.setAttribute('data-filter', 'color All');
+    divAll.textContent = 'All';
+
     if (colorContainer !== null) {
+      DOM.appendElements(colorContainer, [divAll]);
       DOM.appendElements(colorContainer, colorsArr2);
     }
 

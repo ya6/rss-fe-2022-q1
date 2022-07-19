@@ -10,14 +10,14 @@ export default class EventHandler {
     let control: string[];
     let idx;
     const filters = Storage.loadFromStorage('filters');
-    let currentData = Storage.loadFromStorage('currentData');
-    let cart = Storage.loadFromStorage('cart');
+    const currentData = Storage.loadFromStorage('currentData');
+    const cart = Storage.loadFromStorage('cart');
     const categoryCont = document.querySelector('.category')?.children;
     // console.log(categoryCont);
 
     if (e.target != null) {
       element = e.target as HTMLElement;
-      // console.log(element);
+      console.log(element);
 
       // if (element.getAttribute('data-filter') === null) {
       //   return;
@@ -32,6 +32,25 @@ export default class EventHandler {
           break;
 
         case 'category':
+          // console.log('category', control[1]);
+          if (control[1] === 'All') {
+            // eslint-disable-next-line no-restricted-syntax
+            for (const el of categoryCont!) {
+              el.classList.remove('active');
+            }
+            filters.category = [];
+          } else if (element.classList.contains('active')) {
+            element.classList.remove('active');
+
+            filters.category = filters.category.filter((cat: string) => cat !== control[1]);
+          } else {
+            filters.category.push(control[1]);
+            element.classList.add('active');
+          }
+
+          break;
+
+        case 'color':
           // console.log('category', control[1]);
           if (control[1] === 'All') {
             // eslint-disable-next-line no-restricted-syntax
@@ -65,18 +84,16 @@ export default class EventHandler {
 
         case 'clear-all':
           Controller.clearAllData();
-          currentData = Storage.loadFromStorage('currentData');
-          cart = Storage.loadFromStorage('cart');
-
           break;
 
         default:
           break;
       }
-      Storage.saveToStorage('filters', filters);
+
       // Create cards
+      Storage.saveToStorage('filters', filters);
       Controller.drawCards(Storage.loadFromStorage('currentData'), filters);
-      Cart.showQ(cart);
+      Cart.showQ();
     }
   }
 }

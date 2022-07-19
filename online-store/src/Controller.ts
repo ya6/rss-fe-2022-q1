@@ -24,7 +24,7 @@ export default class Controller {
   }
 
   static drawCartQ() {
-    Cart.showQ(Storage.loadFromStorage('cart'));
+    Cart.showQ();
   }
 
   static drawControls() {
@@ -34,9 +34,22 @@ export default class Controller {
   static clearAllData() {
     const authenticData = Storage.loadFromStorage('authenticData');
 
-    Storage.clearAll();
-    Storage.saveToStorage('currentData', authenticData);
+    // Storage.clearAll();
+    localStorage.clear();
     Storage.saveToStorage('authenticData', authenticData);
+    Storage.saveToStorage('currentData', authenticData);
     Storage.saveToStorage('cart', {});
+    const filters:FilterType = {
+      category: [],
+      title: '',
+      brand: '',
+      size: '',
+      color: '',
+      quantity: 0,
+      price: 0,
+
+    };
+    Storage.saveToStorage('filters', filters);
+    console.log(Storage.loadFromStorage('filters'));
   }
 }

@@ -1,11 +1,12 @@
-import { CartType } from './types';
+import Storage from './Storage';
 
 export default class Cart {
   static add() {
 
   }
 
-  static showQ(cart: CartType) {
+  static showQ() {
+    const cart = Storage.loadFromStorage('cart');
     let count = 0;
     // eslint-disable-next-line no-restricted-syntax
     for (const key in cart) {

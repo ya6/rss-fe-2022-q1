@@ -9,9 +9,9 @@ export default class Filters {
     const {
       category = [],
       title = '',
+      color = [],
       brand = '',
       size = '',
-      color = '',
       quantity = 0,
       price = 0,
     } = filers;

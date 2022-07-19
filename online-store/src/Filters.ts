@@ -10,10 +10,10 @@ export default class Filters {
       category = [],
       title = '',
       color = [],
+      price = 0,
       brand = '',
       size = '',
       quantity = 0,
-      price = 0,
     } = filers;
 
     if (title) {
@@ -32,6 +32,8 @@ export default class Filters {
         filteredData = filteredData.filter((card) => color.some((col) => card.color === col));
       }
     }
+
+    filteredData = filteredData.filter((card) => Number(card.price) <= Number(price));
 
     return filteredData;
   }

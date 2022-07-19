@@ -28,7 +28,7 @@ export default class App {
       size: '',
       color: [],
       quantity: 0,
-      price: 0,
+      price: 1000,
 
     };
     Storage.saveToStorage('filters', filters);

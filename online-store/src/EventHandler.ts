@@ -51,8 +51,13 @@ export default class EventHandler {
 
           break;
 
+        case 'price':
+          element = element as HTMLInputElement;
+          filters.price = element.value;
+          element!.parentNode!.firstElementChild!.textContent = element.value;
+          break;
+
         case 'color':
-          // console.log('category', control[1]);
           if (control[1] === 'All') {
             // eslint-disable-next-line no-restricted-syntax
             for (const el of colorCont!) {
@@ -67,7 +72,6 @@ export default class EventHandler {
             filters.color.push(control[1]);
             element.classList.add('active-push');
           }
-
           break;
 
         case 'id':

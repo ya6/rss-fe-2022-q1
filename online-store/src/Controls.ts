@@ -52,6 +52,7 @@ export default class Controls {
       DOM.appendElements(colorContainer, colorsArr2);
     }
 
+    // price
     const priceContainer = document.querySelector('.price');
     let prices = data.map((el) => el.price);
     prices = prices.sort((a, b) => Number(a) - Number(b));
@@ -61,11 +62,11 @@ export default class Controls {
     p.className = 'short-paragraph';
 
     const input: HTMLElement = document.createElement('input');
+    input.setAttribute('data-filter', 'price');
     input.setAttribute('type', 'range');
     input.setAttribute('min', '0');
     input.setAttribute('max', String(pol));
-    input.setAttribute('id', 'pr');
-    input.setAttribute('name', 'pr');
+    input.setAttribute('step', '0.05');
     input.setAttribute('value', String(pol));
 
     if (priceContainer !== null) {

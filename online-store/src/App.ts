@@ -26,7 +26,7 @@ export default class App {
       title: '',
       brand: '',
       size: '',
-      color: '',
+      color: [],
       quantity: 0,
       price: 0,
 

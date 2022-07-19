@@ -27,6 +27,12 @@ export default class Filters {
       }
     }
 
+    if (Array.isArray(color)) {
+      if (color.length) {
+        filteredData = filteredData.filter((card) => color.some((col) => card.color === col));
+      }
+    }
+
     return filteredData;
   }
 }

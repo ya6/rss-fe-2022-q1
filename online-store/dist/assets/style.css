@@ -269,3 +269,9 @@ footer .footer-text {
   color: darkblue;
   font-weight: 600;
 }
+.active-push {
+  font-weight: 600;
+  /* border: 2px solid darkblue; */
+  opacity: 0.5;
+box-shadow: none;
+}

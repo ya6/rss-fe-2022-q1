@@ -13,11 +13,12 @@ export default class EventHandler {
     const currentData = Storage.loadFromStorage('currentData');
     const cart = Storage.loadFromStorage('cart');
     const categoryCont = document.querySelector('.category')?.children;
-    // console.log(categoryCont);
+    const colorCont = document.querySelector('.color')?.children;
+    // console.log(colorCont);
 
     if (e.target != null) {
       element = e.target as HTMLElement;
-      console.log(element);
+      // console.log(element);
 
       // if (element.getAttribute('data-filter') === null) {
       //   return;
@@ -54,17 +55,17 @@ export default class EventHandler {
           // console.log('category', control[1]);
           if (control[1] === 'All') {
             // eslint-disable-next-line no-restricted-syntax
-            for (const el of categoryCont!) {
-              el.classList.remove('active');
+            for (const el of colorCont!) {
+              el.classList.remove('active-push');
             }
-            filters.category = [];
-          } else if (element.classList.contains('active')) {
-            element.classList.remove('active');
+            filters.color = [];
+          } else if (element.classList.contains('active-push')) {
+            element.classList.remove('active-push');
 
-            filters.category = filters.category.filter((cat: string) => cat !== control[1]);
+            filters.color = filters.color.filter((col: string) => col !== control[1]);
           } else {
-            filters.category.push(control[1]);
-            element.classList.add('active');
+            filters.color.push(control[1]);
+            element.classList.add('active-push');
           }
 
           break;

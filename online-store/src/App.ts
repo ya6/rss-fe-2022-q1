@@ -10,13 +10,15 @@ export default class App {
     // events
     document.body.addEventListener('click', EventHandler.dispatch);
 
-    // db
+    // init
     const data = await DB.getAll();
     Storage.saveToStorage('authenticData', data.default);
     const currentData = Storage.loadFromStorage('currentData') || data.default;
     Storage.saveToStorage('currentData', currentData);
 
-    // console.log('currentData', currentData);
+    if (!Storage.loadFromStorage('cart')) {
+      Storage.saveToStorage('cart', {});
+    }
 
     //  todo  to settings,
     const filters:FilterType = {
@@ -29,10 +31,9 @@ export default class App {
       price: 0,
 
     };
-
     Storage.saveToStorage('filters', filters);
-    Storage.saveToStorage('cart', {});
 
+    // view
     Controller.drawControls();
     Controller.drawCartQ();
     Controller.drawCards(currentData, filters);

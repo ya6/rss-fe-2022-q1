@@ -20,21 +20,25 @@ export default class App {
       Storage.saveToStorage('cart', {});
     }
 
-    //  todo  to settings,
-    const filters:FilterType = {
-      category: [],
-      title: '',
-      brand: '',
-      size: '',
-      color: [],
-      quantity: 100,
-      price: 1000,
-      year: 2023,
-      titleSort: '',
-      yearSort: '',
+    if (!Storage.loadFromStorage('filters')) {
+      const filters:FilterType = {
+        category: [],
+        title: '',
+        brand: '',
+        size: '',
+        color: [],
+        quantity: 100,
+        price: 1000,
+        year: 2023,
+        titleSort: '',
+        yearSort: '',
 
-    };
-    Storage.saveToStorage('filters', filters);
+      };
+
+      Storage.saveToStorage('filters', filters);
+    }
+
+    //  todo  to settings,
 
     // view
     Controller.drawControls();

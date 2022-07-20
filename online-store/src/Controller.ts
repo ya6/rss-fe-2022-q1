@@ -81,7 +81,11 @@ export default class Controller {
       p2.textContent = input2.value;
     }
 
-    
+    const select = document.querySelector('.select') as HTMLSelectElement;
+
+    if (select) {
+      select.value = '';
+    }
 
     Controller.clearFilters();
   }
@@ -93,9 +97,9 @@ export default class Controller {
       brand: '',
       size: '',
       color: [],
-      quantity: 100,
-      price: 1000,
-      year: 2023,
+      quantity: 10,
+      price: 125.95,
+      year: 2022,
 
     };
     const categoryCont = document.querySelector('.category')?.children;

@@ -34,9 +34,9 @@ export default class App {
         brand: '',
         size: '',
         color: [],
-        quantity: 100,
-        price: 1000,
-        year: 2023,
+        quantity: 10,
+        price: 125.95,
+        year: 2022,
 
       };
 

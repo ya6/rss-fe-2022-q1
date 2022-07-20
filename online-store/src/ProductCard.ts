@@ -9,7 +9,7 @@ export default class ProductCard {
   static createCard(el: ProductType) {
     const card = document.createElement('div');
     card.className = 'product';
-    const content = `
+    let content = `
     <div class="product-image" style="background-image: url(${el.img});"></div>
     <h3 class="product-title">${el.title}</h3>
     <div class="product-values">
@@ -22,6 +22,9 @@ export default class ProductCard {
     </div>
     <button class="product-button" data-filter="id ${el.id}">Add to Cart</button>
     `;
+    if (el.inCart > 0) {
+      content += `<button class="del-button" data-filter="del ${el.id}">Del from Cart</button>`;
+    }
     card.insertAdjacentHTML('afterbegin', content);
     return card;
   }

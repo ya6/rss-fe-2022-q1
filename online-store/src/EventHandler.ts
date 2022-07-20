@@ -96,27 +96,40 @@ export default class EventHandler {
         case 'sort':
           if (control[1] === 'upTitle') {
             filters.titleSort = 'up';
-          // eslint-disable-next-line prefer-destructuring
           }
           if (control[1] === 'downTitle') {
             filters.titleSort = 'down';
-          // eslint-disable-next-line prefer-destructuring
           }
           if (control[1] === 'upYear') {
             filters.yearSort = 'up';
-          // eslint-disable-next-line prefer-destructuring
           }
           if (control[1] === 'downYear') {
             filters.yearSort = 'down';
-          // eslint-disable-next-line prefer-destructuring
           }
           break;
 
         case 'id':
           idx = currentData.findIndex((el:ProductType) => el.id === Number(control[1]));
           item = currentData[idx];
-          item.quantity -= 1;
-          item.inCart += 1;
+          if (item.quantity > 0) {
+            item.quantity -= 1;
+            item.inCart += 1;
+          }
+          currentData[idx] = item;
+          Storage.saveToStorage('currentData', currentData);
+
+          cart[control[1]] = item;
+          Storage.saveToStorage('cart', cart);
+
+          break;
+
+        case 'del':
+          idx = currentData.findIndex((el:ProductType) => el.id === Number(control[1]));
+          item = currentData[idx];
+          if (item.inCart > 0) {
+            item.quantity += 1;
+            item.inCart -= 1;
+          }
           currentData[idx] = item;
           Storage.saveToStorage('currentData', currentData);
 

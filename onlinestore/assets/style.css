@@ -170,6 +170,24 @@ a {
   color: var(--gray);
 }
 
+.del-button {
+  display: block;
+  width: 100%;
+  font-size: 1.25rem;
+  font-weight: 600;
+  background: rgb(252, 212, 139);
+;
+  padding: 0.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+.del-button:hover {
+  background: orange;
+  padding: 0.5rem;
+  cursor: pointer;
+  color: var(--white);
+}
 .product-button {
   display: block;
   width: 100%;
@@ -180,6 +198,7 @@ a {
   border: none;
   cursor: pointer;
 }
+
 .product-button:hover {
   background: var(--tiffany);
   padding: 0.5rem;

@@ -19,7 +19,16 @@ export default class EventHandler {
 
     if (e.target != null) {
       element = e.target as HTMLElement;
-      // console.log(element);
+
+      // for google
+      if (element.tagName === 'SELECT') {
+        element = e.target as HTMLSelectElement;
+
+        if (element.value === 'All') {
+          filters.brand = '';
+          // eslint-disable-next-line prefer-destructuring
+        } else { filters.brand = element.value; }
+      }
 
       // if (element.getAttribute('data-filter') === null) {
       //   return;
@@ -71,6 +80,8 @@ export default class EventHandler {
           break;
 
         case 'brand':
+          element = element as HTMLSelectElement;
+
           if (control[1] === 'All') {
             filters.brand = '';
           // eslint-disable-next-line prefer-destructuring

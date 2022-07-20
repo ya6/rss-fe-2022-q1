@@ -57,6 +57,7 @@ a {
 .nav {
   flex: 5;
   border: 1px solid #f5f5f5;
+  text-align: center;
 }
 
 .search-container {

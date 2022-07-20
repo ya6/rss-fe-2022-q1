@@ -10,6 +10,7 @@ export default class EventHandler {
     let control: string[];
     let idx;
     let isClearAll = false;
+    let count = 0;
     const filters = Storage.loadFromStorage('filters');
     const currentData = Storage.loadFromStorage('currentData');
     const cart = Storage.loadFromStorage('cart');
@@ -109,17 +110,29 @@ export default class EventHandler {
           break;
 
         case 'id':
-          idx = currentData.findIndex((el:ProductType) => el.id === Number(control[1]));
-          item = currentData[idx];
-          if (item.quantity > 0) {
-            item.quantity -= 1;
-            item.inCart += 1;
-          }
-          currentData[idx] = item;
-          Storage.saveToStorage('currentData', currentData);
 
-          cart[control[1]] = item;
-          Storage.saveToStorage('cart', cart);
+          // eslint-disable-next-line no-restricted-syntax
+          for (const key in cart) {
+            if (Object.prototype.hasOwnProperty.call(cart, key)) {
+              count += Number(cart[key].inCart);
+            }
+          }
+          if (count === 20) {
+            alert('Извините, все слоты заполнены');
+          } else {
+            idx = currentData.findIndex((el:ProductType) => el.id === Number(control[1]));
+            item = currentData[idx];
+            if (item.quantity > 0) {
+              item.quantity -= 1;
+              item.inCart += 1;
+            }
+
+            currentData[idx] = item;
+            Storage.saveToStorage('currentData', currentData);
+
+            cart[control[1]] = item;
+            Storage.saveToStorage('cart', cart);
+          }
 
           break;
 

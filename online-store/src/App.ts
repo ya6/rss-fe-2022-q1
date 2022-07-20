@@ -19,6 +19,13 @@ export default class App {
     if (!Storage.loadFromStorage('cart')) {
       Storage.saveToStorage('cart', {});
     }
+    if (!Storage.loadFromStorage('sort')) {
+      const sort:FilterType = {
+        titleSort: '',
+        yearSort: '',
+      };
+      Storage.saveToStorage('sort', sort);
+    }
 
     if (!Storage.loadFromStorage('filters')) {
       const filters:FilterType = {
@@ -30,8 +37,6 @@ export default class App {
         quantity: 100,
         price: 1000,
         year: 2023,
-        titleSort: '',
-        yearSort: '',
 
       };
 
@@ -42,7 +47,8 @@ export default class App {
 
     // view
     Controller.drawControls();
+    Controller.restoreFilters();
     Controller.drawCartQ();
-    Controller.drawCards(currentData, Storage.loadFromStorage('filters'));
+    Controller.drawCards(currentData, Storage.loadFromStorage('filters'), Storage.loadFromStorage('sort'));
   }
 }

@@ -12,6 +12,7 @@ export default class EventHandler {
     let isClearAll = false;
     let count = 0;
     const filters = Storage.loadFromStorage('filters');
+    const sort = Storage.loadFromStorage('sort');
     const currentData = Storage.loadFromStorage('currentData');
     const cart = Storage.loadFromStorage('cart');
     const categoryCont = document.querySelector('.category')?.children;
@@ -43,7 +44,6 @@ export default class EventHandler {
           break;
 
         case 'category':
-
           if (control[1] === 'All') {
             // eslint-disable-next-line no-restricted-syntax
             for (const el of categoryCont!) {
@@ -107,16 +107,24 @@ export default class EventHandler {
 
         case 'sort':
           if (control[1] === 'upTitle') {
-            filters.titleSort = 'up';
+            sort.titleSort = 'up';
+            element.classList.add('active-push');
+            element.nextElementSibling?.classList.remove('active-push');
           }
           if (control[1] === 'downTitle') {
-            filters.titleSort = 'down';
+            sort.titleSort = 'down';
+            element.classList.add('active-push');
+            element.previousElementSibling?.classList.remove('active-push');
           }
           if (control[1] === 'upYear') {
-            filters.yearSort = 'up';
+            sort.yearSort = 'up';
+            element.classList.add('active-push');
+            element.nextElementSibling?.classList.remove('active-push');
           }
           if (control[1] === 'downYear') {
-            filters.yearSort = 'down';
+            sort.yearSort = 'down';
+            element.classList.add('active-push');
+            element.previousElementSibling?.classList.remove('active-push');
           }
           break;
 
@@ -178,8 +186,9 @@ export default class EventHandler {
 
       if (!isClearAll) {
         Storage.saveToStorage('filters', filters);
+        Storage.saveToStorage('sort', sort);
       }
-      Controller.drawCards(Storage.loadFromStorage('currentData'), Storage.loadFromStorage('filters'));
+      Controller.drawCards(Storage.loadFromStorage('currentData'), Storage.loadFromStorage('filters'), Storage.loadFromStorage('sort'));
       Cart.showQ();
     }
   }

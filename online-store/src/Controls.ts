@@ -119,6 +119,7 @@ export default class Controls {
     const brandContainer = document.querySelector('.brand');
     const select: HTMLElement = document.createElement('select');
     const option: HTMLElement = document.createElement('option');
+    select.className = 'select';
     option.textContent = 'All';
     option.setAttribute('data-filter', 'brand All');
     let brands = new Set(data.map((el) => el.brand));

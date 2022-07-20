@@ -3,7 +3,7 @@ import Storage from './Storage';
 import { ProductType, FilterType } from './types';
 
 export default class Filters {
-  static complexFilter(data: Array<ProductType>, filers:FilterType) {
+  static complexFilter(data: Array<ProductType>, filers:FilterType, sort: FilterType) {
     let filteredData:Array<ProductType> = Storage.loadFromStorage('currentData');
 
     const {
@@ -15,9 +15,13 @@ export default class Filters {
       brand = '',
       size = '',
       quantity = 0,
+
+    } = filers;
+
+    const {
       titleSort = '',
       yearSort = '',
-    } = filers;
+    } = sort;
 
     if (title) {
       filteredData = filteredData.filter((card) => String(card.title).toLowerCase()

@@ -19,6 +19,7 @@ export default class ProductCard {
     <div class="product-info">
       <h2 class="product-year">${el.year}</h3>
       <h2 class="product-quantity">${el.quantity} items</h3>
+      <h2 class="product-color" style="background: ${el.color}"></h3>
     </div>
     <button class="product-button" data-filter="id ${el.id}">Add to Cart</button>
     `;

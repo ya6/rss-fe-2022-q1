@@ -2,12 +2,9 @@
 import Storage from './Storage';
 import { ProductType, FilterType } from './types';
 
-// it is an experimental complex filter)))
 export default class Filters {
   static complexFilter(data: Array<ProductType>, filers:FilterType) {
-    // Storage.loadFromStorage('currentData');
     let filteredData:Array<ProductType> = Storage.loadFromStorage('currentData');
-    // let filteredData = data;
 
     const {
       category = [],

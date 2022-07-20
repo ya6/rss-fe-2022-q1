@@ -210,6 +210,10 @@ a {
   gap: 0.8rem;
 }
 
+.filter-wrap {
+  margin: 0.5rem 0;
+}
+
 .controls-color {
   width: 3rem;
   height: 1.2rem;

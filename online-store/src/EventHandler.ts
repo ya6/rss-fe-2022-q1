@@ -125,6 +125,11 @@ export default class EventHandler {
 
           break;
 
+        case 'clear-filters':
+          isClearAll = true;
+          Controller.clearFilters();
+          break;
+
         case 'clear-all':
           isClearAll = true;
           Controller.clearAllData();

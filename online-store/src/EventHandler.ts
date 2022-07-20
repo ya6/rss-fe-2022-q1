@@ -9,16 +9,16 @@ export default class EventHandler {
     let item = null;
     let control: string[];
     let idx;
+    let isClearAll = false;
     const filters = Storage.loadFromStorage('filters');
     const currentData = Storage.loadFromStorage('currentData');
     const cart = Storage.loadFromStorage('cart');
     const categoryCont = document.querySelector('.category')?.children;
     const colorCont = document.querySelector('.color')?.children;
-    // console.log(colorCont);
 
     if (e.target != null) {
       element = e.target as HTMLElement;
-      console.log(element);
+      // console.log(element);
 
       // if (element.getAttribute('data-filter') === null) {
       //   return;
@@ -33,7 +33,7 @@ export default class EventHandler {
           break;
 
         case 'category':
-          // console.log('category', control[1]);
+
           if (control[1] === 'All') {
             // eslint-disable-next-line no-restricted-syntax
             for (const el of categoryCont!) {
@@ -126,6 +126,7 @@ export default class EventHandler {
           break;
 
         case 'clear-all':
+          isClearAll = true;
           Controller.clearAllData();
           break;
 
@@ -133,9 +134,10 @@ export default class EventHandler {
           break;
       }
 
-      // Create cards
-      Storage.saveToStorage('filters', filters);
-      Controller.drawCards(Storage.loadFromStorage('currentData'), filters);
+      if (!isClearAll) {
+        Storage.saveToStorage('filters', filters);
+      }
+      Controller.drawCards(Storage.loadFromStorage('currentData'), Storage.loadFromStorage('filters'));
       Cart.showQ();
     }
   }

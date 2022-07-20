@@ -14,7 +14,7 @@ export default class Cart {
         count += Number(cart[key].inCart);
       }
     }
-    // console.log(count);
+
     const CartQ = document.querySelector('.cart-count');
     if (CartQ !== null) {
       CartQ.textContent = String(count);

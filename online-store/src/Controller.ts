@@ -8,8 +8,6 @@ import Controls from './Controls';
 
 export default class Controller {
   static drawCards(data: Array<ProductType>, filters: FilterType) {
-    // console.log('Controller drawCards');
-
     const container = document.querySelector('.content');
     const filteredData = Filters.complexFilter(data, filters);
     let cards = null;
@@ -32,8 +30,6 @@ export default class Controller {
   }
 
   static clearAllData() {
-    console.log('clearAllData');
-
     const authenticData = Storage.loadFromStorage('authenticData');
 
     Storage.saveToStorage('currentData', authenticData);
@@ -53,6 +49,5 @@ export default class Controller {
     };
 
     Storage.saveToStorage('filters', filters);
-    Controller.drawCards(Storage.loadFromStorage('currentDta'), Storage.loadFromStorage('filters'));
   }
 }

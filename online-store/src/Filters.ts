@@ -13,7 +13,6 @@ export default class Filters {
       price = 0,
       year = 0,
       brand = '',
-      size = '',
       quantity = 0,
 
     } = filers;

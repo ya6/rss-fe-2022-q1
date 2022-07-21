@@ -90,12 +90,6 @@ export default class Controller {
       p2.textContent = input2.value;
     }
 
-    const select = document.querySelector('.select') as HTMLSelectElement;
-
-    if (select) {
-      select.value = '';
-    }
-
     const sortBy = document.querySelector('.sort-wrap');
 
     // eslint-disable-next-line no-restricted-syntax
@@ -156,6 +150,11 @@ export default class Controller {
       input2.value = '100';
       p2.textContent = input2.value;
     }
+    const select = document.querySelector('.select') as HTMLSelectElement;
+    if (select) {
+      select.value = '';
+    }
+
     Storage.saveToStorage('filters', filters);
   }
 

@@ -87,6 +87,13 @@ export default class Controller {
       select.value = '';
     }
 
+    const sortBy = document.querySelector('.sort-wrap');
+
+    // eslint-disable-next-line no-restricted-syntax
+    for (const node of sortBy!.children) {
+      node.classList.remove('active-push');
+    }
+
     Controller.clearFilters();
   }
 
@@ -145,6 +152,7 @@ export default class Controller {
 
   static restoreFilters() {
     const filters = Storage.loadFromStorage('filters');
+    const sort = Storage.loadFromStorage('sort');
     const categoryCont = document.querySelector('.category')?.children;
 
     // eslint-disable-next-line no-restricted-syntax
@@ -194,6 +202,21 @@ export default class Controller {
     const select = document.querySelector('.select') as HTMLSelectElement;
     if (select) {
       select.value = filters.brand;
+    }
+
+    const sortBy = document.querySelector('.sort-wrap');
+
+    // eslint-disable-next-line no-restricted-syntax
+    for (const node of sortBy!.children) {
+      if (sort.titleSort === 'up' && node.getAttribute('data-filter') === 'sort upTitle') {
+        node.classList.add('active-push');
+      } else if (sort.titleSort === 'down' && node.getAttribute('data-filter') === 'sort downTitle') {
+        node.classList.add('active-push');
+      } else if (sort.yearSort === 'down' && node.getAttribute('data-filter') === 'sort downYear') {
+        node.classList.add('active-push');
+      } else if (sort.yearSort === 'up' && node.getAttribute('data-filter') === 'sort upYear') {
+        node.classList.add('active-push');
+      }
     }
   }
 }

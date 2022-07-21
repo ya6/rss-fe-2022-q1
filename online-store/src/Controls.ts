@@ -144,10 +144,11 @@ export default class Controls {
     const sortContainer = document.querySelector('.sort-by');
 
     const div: HTMLElement = document.createElement('div');
+    div.className = 'sort-wrap';
     const content = `
     <p class = "short-paragraph">Year</p>
     <button data-filter = "sort upYear">up</button>
-    <button data-filter = "sort downYear down">down</button>
+    <button data-filter = "sort downYear">down</button>
     `;
     const content1 = `
     <p class = "short-paragraph">Title</p>

@@ -30,6 +30,11 @@ export default class EventHandler {
           // eslint-disable-next-line prefer-destructuring
         } else { filters.brand = element.value; }
       }
+      const searchInput = document.querySelector('#search') as HTMLInputElement;
+
+      if (element.classList.contains('button-clear')) {
+        searchInput.value = '';
+      }
 
       // if (element.getAttribute('data-filter') === null) {
       //   return;
@@ -39,8 +44,10 @@ export default class EventHandler {
 
       switch (control[0]) {
         case 'search':
+
           element = element as HTMLInputElement;
           filters.title = element.value;
+          searchInput.value = element.value || '';
           break;
 
         case 'category':

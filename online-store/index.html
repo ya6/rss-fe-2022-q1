@@ -5,11 +5,6 @@
   <meta charset="utf-8" />
   <title>online-store</title>
   <link rel="stylesheet" href="./assets/style.css">
-  <style>
-    .brd {
-      border: 2px solid red;
-    }
-  </style>
 </head>
 
 <body>
@@ -24,8 +19,11 @@
     </nav>
     <!-- search -->
     <div class="search-container">
-      <input type="search" id="search" name="search" placeholder="dress" data-filter="search">
-      <label class="search-label" for="search">search</button>
+      <label class="button-clear" data-filter="search" for="search-clear">X</label>
+      <input id="search-clear" type="text" disabled data-filter="search">
+      <input type="search" id="search" name="search" placeholder="dress" data-filter="search" autocomplete="off"
+        autofocus>
+      <label class="search-label" for="search">search</label>
     </div>
     <!-- cart -->
     <div class="cart">

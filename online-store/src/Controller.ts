@@ -10,8 +10,17 @@ export default class Controller {
   static drawCards(data: Array<ProductType>, filters: FilterType, sort:FilterType) {
     const container = document.querySelector('.content');
     const filteredData = Filters.complexFilter(data, filters, sort);
+
     let cards = null;
-    if (filteredData !== null) {
+    let emptyMessage;
+    if (filteredData.length === 0) {
+      emptyMessage = document.createElement('h2');
+      emptyMessage.className = 'centered';
+      emptyMessage.textContent = 'Извините, совпадений не обнаружено';
+
+      cards = [emptyMessage];
+    }
+    if (filteredData.length > 0) {
       cards = ProductCard.generateCards(filteredData);
     }
 

@@ -199,4 +199,15 @@ export default class EventHandler {
       Cart.showQ();
     }
   }
+
+  static searchDispatch(e:Event) {
+    const element = e.target as HTMLInputElement;
+
+    if (!element.value) {
+      const filters = Storage.loadFromStorage('filters');
+      filters.title = '';
+      Storage.saveToStorage('filters', filters);
+      Controller.drawCards(Storage.loadFromStorage('currentData'), Storage.loadFromStorage('filters'), Storage.loadFromStorage('sort'));
+    }
+  }
 }

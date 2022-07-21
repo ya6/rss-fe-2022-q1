@@ -9,6 +9,10 @@ export default class App {
   static async start() {
     // events
     document.body.addEventListener('click', EventHandler.dispatch);
+    const searchInput = document.querySelector('#search');
+    if (searchInput) {
+      searchInput.addEventListener('input', EventHandler.searchDispatch);
+    }
 
     // init
     const data = await DB.getAll();

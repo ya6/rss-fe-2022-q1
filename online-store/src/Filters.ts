@@ -39,9 +39,13 @@ export default class Filters {
       }
     }
 
-    filteredData = filteredData.filter((card) => Number(card.price) <= Number(price));
-    filteredData = filteredData.filter((card) => Number(card.quantity) <= Number(quantity));
-    filteredData = filteredData.filter((card) => Number(card.year) <= Number(year));
+    // filteredData = filteredData.filter((card) => Number(card.price) <= Number(price));
+    // filteredData = filteredData.filter((card) => Number(card.quantity) <= Number(quantity));
+    // filteredData = filteredData.filter((card) => Number(card.year) <= Number(year));
+
+    filteredData = filteredData.filter((card) => Number(card.price) <= Number(price)
+     && Number(card.quantity) <= Number(quantity) && Number(card.year) <= Number(year));
+
     if (brand) {
       filteredData = filteredData.filter((card) => card.brand === brand);
     }

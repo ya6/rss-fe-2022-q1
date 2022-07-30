@@ -3,7 +3,16 @@ import { ProductType } from './types';
 
 export default class Controls {
   static setControls(data: Array<ProductType>) {
-    // Category
+    Controls.setCategories(data);
+    Controls.setColors(data);
+    Controls.setPrises(data);
+    Controls.setYears(data);
+    Controls.setQuantities(data);
+    Controls.setBrands(data);
+    Controls.setSorts(data);
+  }
+
+  static setCategories(data: Array<ProductType>) {
     const categoryContainer = document.querySelector('.category');
 
     let categories = new Set(data.map((el) => el.category));
@@ -26,8 +35,9 @@ export default class Controls {
       DOM.appendElements(categoryContainer, [buttonAll]);
       DOM.appendElements(categoryContainer, categoriesArr2);
     }
+  }
 
-    // color
+  static setColors(data:Array<ProductType>) {
     const colorContainer = document.querySelector('.color');
     let colors = new Set(data.map((el) => el.color));
     colors = new Set(colors);
@@ -51,8 +61,9 @@ export default class Controls {
       DOM.appendElements(colorContainer, [divAll]);
       DOM.appendElements(colorContainer, colorsArr2);
     }
+  }
 
-    // price
+  static setPrises(data:Array<ProductType>) {
     const priceContainer = document.querySelector('.price');
     let prices = data.map((el) => el.price);
     prices = prices.sort((a, b) => Number(a) - Number(b));
@@ -72,8 +83,9 @@ export default class Controls {
     if (priceContainer !== null) {
       DOM.appendElements(priceContainer, [p, input]);
     }
+  }
 
-    // year
+  static setYears(data:Array<ProductType>) {
     const yearContainer = document.querySelector('.year');
     let years = data.map((el) => el.year);
     years = years.sort((a, b) => Number(a) - Number(b));
@@ -93,8 +105,9 @@ export default class Controls {
     if (yearContainer !== null) {
       DOM.appendElements(yearContainer, [p1, input1]);
     }
+  }
 
-    // quantity
+  static setQuantities(data:Array<ProductType>) {
     const quantityContainer = document.querySelector('.quantity');
     let quantities = data.map((el) => el.quantity);
     quantities = quantities.sort((a, b) => Number(a) - Number(b));
@@ -114,8 +127,9 @@ export default class Controls {
     if (quantityContainer !== null) {
       DOM.appendElements(quantityContainer, [p2, input2]);
     }
+  }
 
-    // brand
+  static setBrands(data:Array<ProductType>) {
     const brandContainer = document.querySelector('.brand');
     const select: HTMLElement = document.createElement('select');
     const option: HTMLElement = document.createElement('option');
@@ -139,8 +153,9 @@ export default class Controls {
       DOM.appendElements(select, brandsArr2);
       DOM.appendElements(brandContainer, [select]);
     }
+  }
 
-    // sorts
+  static setSorts(data:Array<ProductType>) {
     const sortContainer = document.querySelector('.sort-by');
 
     const div: HTMLElement = document.createElement('div');

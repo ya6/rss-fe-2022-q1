@@ -1,10 +1,6 @@
 import Storage from './Storage';
 
 export default class Cart {
-  static add() {
-
-  }
-
   static showQ() {
     const cart = Storage.loadFromStorage('cart');
     let count = 0;

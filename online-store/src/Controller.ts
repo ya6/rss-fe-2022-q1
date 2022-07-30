@@ -5,6 +5,7 @@ import ProductCard from './ProductCard';
 import Storage from './Storage';
 import Cart from './Cart';
 import Controls from './Controls';
+import config from './config';
 
 export default class Controller {
   static drawCards(data: Array<ProductType>, filters: FilterType, sort:FilterType) {
@@ -101,17 +102,6 @@ export default class Controller {
   }
 
   static clearFilters() {
-    const filters:FilterType = {
-      category: [],
-      title: '',
-      brand: '',
-      size: '',
-      color: [],
-      quantity: 10,
-      price: 125.95,
-      year: 2022,
-
-    };
     const categoryCont = document.querySelector('.category')?.children;
     // eslint-disable-next-line no-restricted-syntax
     for (const el of categoryCont!) {
@@ -155,7 +145,7 @@ export default class Controller {
       select.value = '';
     }
 
-    Storage.saveToStorage('filters', filters);
+    Storage.saveToStorage('filters', config.filters);
   }
 
   static restoreFilters() {

@@ -1,9 +1,9 @@
 import DB from './DB';
 
 import EventHandler from './EventHandler';
-import { FilterType } from './types';
 import Storage from './Storage';
 import Controller from './Controller';
+import config from './config';
 
 export default class App {
   static async start() {
@@ -24,30 +24,12 @@ export default class App {
       Storage.saveToStorage('cart', {});
     }
     if (!Storage.loadFromStorage('sort')) {
-      const sort:FilterType = {
-        titleSort: '',
-        yearSort: '',
-      };
-      Storage.saveToStorage('sort', sort);
+      Storage.saveToStorage('sort', config.sort);
     }
 
     if (!Storage.loadFromStorage('filters')) {
-      const filters:FilterType = {
-        category: [],
-        title: '',
-        brand: '',
-        size: '',
-        color: [],
-        quantity: 10,
-        price: 125.95,
-        year: 2022,
-
-      };
-
-      Storage.saveToStorage('filters', filters);
+      Storage.saveToStorage('filters', config.filters);
     }
-
-    //  todo  to settings,
 
     // view
     Controller.drawControls();

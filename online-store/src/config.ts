@@ -16,4 +16,6 @@ const sort:FilterType = {
   yearSort: '',
 };
 
-export default { filters, sort };
+const topNumber:string = '9999';
+
+export default { filters, sort, topNumber };

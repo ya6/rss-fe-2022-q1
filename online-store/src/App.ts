@@ -4,6 +4,7 @@ import EventHandler from './EventHandler';
 import Storage from './Storage';
 import Controller from './Controller';
 import config from './config';
+import Filters from './Filters';
 
 export default class App {
   static async start() {
@@ -32,6 +33,7 @@ export default class App {
     }
 
     // view
+    Filters.setStartValue();
     Controller.drawControls();
     Controller.restoreFilters();
     Controller.drawCartQ();

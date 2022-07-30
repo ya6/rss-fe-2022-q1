@@ -64,4 +64,24 @@ export default class Filters {
 
     return filteredData;
   }
+
+  static setStartValue() {
+    const data = Storage.loadFromStorage('currentData');
+    const filters = Storage.loadFromStorage('filters');
+    filters.price = data.reduce((price: string, el: ProductType) => {
+      const topPrice = el.price > price ? String(el.price) : String(price);
+      return topPrice;
+    }, '');
+    filters.quantity = data.reduce((quantity: string, el: ProductType) => {
+      const topQuantity = el.quantity > quantity ? String(el.quantity) : String(quantity);
+      return topQuantity;
+    }, '');
+
+    filters.year = data.reduce((year: string, el: ProductType) => {
+      const topYear = el.year > year ? String(el.year) : String(year);
+      return topYear;
+    }, '');
+
+    Storage.saveToStorage('filters', filters);
+  }
 }

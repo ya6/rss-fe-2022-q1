@@ -68,9 +68,9 @@ export default class Controls {
     let prices = data.map((el) => el.price);
     prices = prices.sort((a, b) => Number(a) - Number(b));
     const pol = prices[prices.length - 1];
-    const p: HTMLElement = document.createElement('p');
-    p.textContent = String(pol);
-    p.className = 'short-paragraph';
+    const paragraph: HTMLElement = document.createElement('p');
+    paragraph.textContent = String(pol);
+    paragraph.className = 'short-paragraph';
 
     const input: HTMLElement = document.createElement('input');
     input.setAttribute('data-filter', 'price');
@@ -81,7 +81,7 @@ export default class Controls {
     input.setAttribute('value', String(pol));
 
     if (priceContainer !== null) {
-      DOM.appendElements(priceContainer, [p, input]);
+      DOM.appendElements(priceContainer, [paragraph, input]);
     }
   }
 
@@ -90,20 +90,20 @@ export default class Controls {
     let years = data.map((el) => el.year);
     years = years.sort((a, b) => Number(a) - Number(b));
     const pol1 = years[years.length - 1];
-    const p1: HTMLElement = document.createElement('p');
-    p1.textContent = String(pol1);
-    p1.className = 'short-paragraph';
+    const paragraph: HTMLElement = document.createElement('p');
+    paragraph.textContent = String(pol1);
+    paragraph.className = 'short-paragraph';
 
-    const input1: HTMLElement = document.createElement('input');
-    input1.setAttribute('data-filter', 'year');
-    input1.setAttribute('type', 'range');
-    input1.setAttribute('min', String(years[0]));
-    input1.setAttribute('max', String(pol1));
-    input1.setAttribute('step', '1');
-    input1.setAttribute('value', String(pol1));
+    const input: HTMLElement = document.createElement('input');
+    input.setAttribute('data-filter', 'year');
+    input.setAttribute('type', 'range');
+    input.setAttribute('min', String(years[0]));
+    input.setAttribute('max', String(pol1));
+    input.setAttribute('step', '1');
+    input.setAttribute('value', String(pol1));
 
     if (yearContainer !== null) {
-      DOM.appendElements(yearContainer, [p1, input1]);
+      DOM.appendElements(yearContainer, [paragraph, input]);
     }
   }
 
@@ -112,20 +112,20 @@ export default class Controls {
     let quantities = data.map((el) => el.quantity);
     quantities = quantities.sort((a, b) => Number(a) - Number(b));
     const pol2 = quantities[quantities.length - 1];
-    const p2: HTMLElement = document.createElement('p');
-    p2.textContent = String(pol2);
-    p2.className = 'short-paragraph';
+    const paragraph: HTMLElement = document.createElement('p');
+    paragraph.textContent = String(pol2);
+    paragraph.className = 'short-paragraph';
 
-    const input2: HTMLElement = document.createElement('input');
-    input2.setAttribute('data-filter', 'quantity');
-    input2.setAttribute('type', 'range');
-    input2.setAttribute('min', '0');
-    input2.setAttribute('max', String(pol2));
-    input2.setAttribute('step', '1');
-    input2.setAttribute('value', String(pol2));
+    const input: HTMLElement = document.createElement('input');
+    input.setAttribute('data-filter', 'quantity');
+    input.setAttribute('type', 'range');
+    input.setAttribute('min', '0');
+    input.setAttribute('max', String(pol2));
+    input.setAttribute('step', '1');
+    input.setAttribute('value', String(pol2));
 
     if (quantityContainer !== null) {
-      DOM.appendElements(quantityContainer, [p2, input2]);
+      DOM.appendElements(quantityContainer, [paragraph, input]);
     }
   }
 

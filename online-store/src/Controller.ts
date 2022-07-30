@@ -66,29 +66,29 @@ export default class Controller {
 
     const priceCont = document.querySelector('.price');
     const input = priceCont?.lastElementChild as HTMLInputElement;
-    const p = priceCont?.firstElementChild;
+    const paragraph = priceCont?.firstElementChild;
 
-    if (priceCont !== null && p) {
-      input.value = '1000';
-      p.textContent = input.value;
+    if (priceCont !== null && paragraph) {
+      input.value = config.topNumber;
+      paragraph.textContent = input.value;
     }
 
     const yearCont = document.querySelector('.year');
     const input1 = yearCont?.lastElementChild as HTMLInputElement;
-    const p1 = yearCont?.firstElementChild;
+    const paragraph1 = yearCont?.firstElementChild;
 
-    if (yearCont !== null && p1) {
-      input1.value = '2022';
-      p1.textContent = input1.value;
+    if (yearCont !== null && paragraph1) {
+      input1.value = config.topNumber;
+      paragraph1.textContent = input1.value;
     }
 
     const quantityCont = document.querySelector('.quantity');
     const input2 = quantityCont?.lastElementChild as HTMLInputElement;
-    const p2 = quantityCont?.firstElementChild;
+    const paragraph2 = quantityCont?.firstElementChild;
 
-    if (quantityCont !== null && p2) {
-      input2.value = '100';
-      p2.textContent = input2.value;
+    if (quantityCont !== null && paragraph2) {
+      input2.value = config.topNumber;
+      paragraph2.textContent = input2.value;
     }
 
     const sortBy = document.querySelector('.sort-wrap');
@@ -115,37 +115,36 @@ export default class Controller {
     }
 
     const priceCont = document.querySelector('.price');
-    const input = priceCont?.lastElementChild as HTMLInputElement;
-    const p = priceCont?.firstElementChild;
+    const inputPrice = priceCont?.lastElementChild as HTMLInputElement;
+    const pPrice = priceCont?.firstElementChild;
 
-    if (priceCont !== null && p) {
-      input.value = '1000';
-      p.textContent = input.value;
+    if (priceCont !== null && pPrice) {
+      inputPrice.value = config.topNumber;
+      pPrice.textContent = inputPrice.value;
     }
 
     const yearCont = document.querySelector('.year');
-    const input1 = yearCont?.lastElementChild as HTMLInputElement;
-    const p1 = yearCont?.firstElementChild;
+    const inputYear = yearCont?.lastElementChild as HTMLInputElement;
+    const pYear = yearCont?.firstElementChild;
 
-    if (yearCont !== null && p1) {
-      input1.value = '2022';
-      p1.textContent = input1.value;
+    if (yearCont !== null && pYear) {
+      inputYear.value = config.topNumber;
+      pYear.textContent = inputYear.value;
     }
 
     const quantityCont = document.querySelector('.quantity');
-    const input2 = quantityCont?.lastElementChild as HTMLInputElement;
-    const p2 = quantityCont?.firstElementChild;
+    const inputQuantity = quantityCont?.lastElementChild as HTMLInputElement;
+    const pQuantity = quantityCont?.firstElementChild;
 
-    if (quantityCont !== null && p2) {
-      input2.value = '100';
-      p2.textContent = input2.value;
+    if (quantityCont !== null && pQuantity) {
+      inputQuantity.value = config.topNumber;
+      pQuantity.textContent = inputQuantity.value;
     }
     const select = document.querySelector('.select') as HTMLSelectElement;
     if (select) {
-      select.value = '';
+      select.value = 'All';
     }
-
-    Storage.saveToStorage('filters', config.filters);
+    Filters.setStartValue();
   }
 
   static restoreFilters() {
@@ -168,33 +167,33 @@ export default class Controller {
     }
 
     const priceCont = document.querySelector('.price');
-    const p = priceCont?.firstElementChild;
-    const input = priceCont?.lastElementChild as HTMLInputElement;
-    if (p) {
-      p.textContent = filters.price;
+    const paragraphPrice = priceCont?.firstElementChild;
+    const inputPrice = priceCont?.lastElementChild as HTMLInputElement;
+    if (paragraphPrice) {
+      paragraphPrice.textContent = filters.price;
     }
-    if (input) {
-      input.value = filters.price;
+    if (inputPrice) {
+      inputPrice.value = filters.price;
     }
 
     const quantityCont = document.querySelector('.quantity');
-    const p1 = quantityCont?.firstElementChild;
-    const input1 = quantityCont?.lastElementChild as HTMLInputElement;
-    if (p1) {
-      p1.textContent = filters.quantity;
+    const paragraphQuantity = quantityCont?.firstElementChild;
+    const inputQuantity = quantityCont?.lastElementChild as HTMLInputElement;
+    if (paragraphQuantity) {
+      paragraphQuantity.textContent = filters.quantity;
     }
-    if (input1) {
-      input1.value = filters.quantity;
+    if (inputQuantity) {
+      inputQuantity.value = filters.quantity;
     }
 
     const yearCont = document.querySelector('.year');
-    const p2 = yearCont?.firstElementChild;
-    const input2 = yearCont?.lastElementChild as HTMLInputElement;
-    if (p2) {
-      p2.textContent = filters.year;
+    const paragraphYear = yearCont?.firstElementChild;
+    const inputYear = yearCont?.lastElementChild as HTMLInputElement;
+    if (paragraphYear) {
+      paragraphYear.textContent = filters.year;
     }
-    if (input2) {
-      input2.value = filters.year;
+    if (inputYear) {
+      inputYear.value = filters.year;
     }
 
     const select = document.querySelector('.select') as HTMLSelectElement;

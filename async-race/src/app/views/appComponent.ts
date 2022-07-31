@@ -1,10 +1,10 @@
-const app = (() => {
+const appComponent = (() => {
   const appEl = document.createElement('div');
   appEl.className = 'app';
   const content = `
   <div>
-    <button class="neon-button" data-button="garage">Garage</button>
-    <button class="neon-button" data-button="top">Top scores</button>
+    <button class="neon-button" data-button="route garage">Garage</button>
+    <button class="neon-button" data-button="route top">Top scores</button>
     <div>
 
       <div>
@@ -17,9 +17,8 @@ const app = (() => {
         <input type="text" name="">
         <input type="color" class ="pick-color"  value="#ffffff"name="">
         <button class="fill-button" data-button="update">Update</button>
-      </div>
+      </div>   
       
-
       <div class="page-container"></div>
   `;
   appEl.insertAdjacentHTML('beforeend', content);
@@ -27,4 +26,4 @@ const app = (() => {
   return appEl;
 })();
 
-export default app;
+export default appComponent;

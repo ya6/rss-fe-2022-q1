@@ -26,4 +26,11 @@ export default class Dom {
     const elementToClear = element;
     elementToClear.innerHTML = '';
   }
+
+  static appendFromStringToDom(
+    parent: HTMLElement,
+    stringContent: string,
+  ) {
+    parent.insertAdjacentHTML('beforeend', stringContent);
+  }
 }

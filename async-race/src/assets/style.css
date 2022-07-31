@@ -10,7 +10,7 @@
   --darkblue: darkblue;
   /* --clr-neon: hsl(317 100% 54%); */
   --clr-neon: rgb(65, 134, 236);
-  --fill: #a972cb;
+  --gray2: #9091a3;
 }
 
 html,
@@ -20,7 +20,9 @@ body {
   padding: 0;
   margin: 0;
   overflow-x: hidden;
-  background: var(--dark2);
+  background-image: url("./img/back-2.jpg");
+  /* background: var(--dark2); */
+  /* background: var(--gray2); */
   color: var(--white);
 }
 
@@ -108,4 +110,10 @@ h6 {
   background: none;
   width: 50px;
   height: 30px;
+}
+
+.car-track {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
 }

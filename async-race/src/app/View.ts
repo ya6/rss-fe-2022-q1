@@ -1,8 +1,10 @@
 import Dom from './utils/Dom';
 import { CarType } from './types';
 import appComponent from './views/appComponent';
-import garage from './views/garage';
-import topScores from './views/topScores';
+import garage from './views/garageComponent';
+import topScores from './views/topScoresComponent';
+import carTrackComponent from './views/TrackComponent';
+import config from './config';
 
 export default class View {
   static async home() {
@@ -26,6 +28,14 @@ export default class View {
     if (app !== null) {
       Dom.delAllChildren(app);
       Dom.appendElemToDOM(app, topScores);
+    }
+  }
+
+  static carTrack(height: number, top: number, bottom: number) {
+    console.log('View => carTrack', height, top, bottom);
+    const garageContainer = document.querySelector('.garage') as HTMLElement;
+    if (garageContainer !== null) {
+      Dom.appendFromStringToDom(garageContainer, carTrackComponent(height, top, bottom));
     }
   }
 }

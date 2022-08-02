@@ -23,8 +23,25 @@ export default class Dom {
   };
 
   static delAllChildren(element: HTMLElement) {
+    console.log('Dom => delAllChildren');
+    console.log(element);
+
     const elementToClear = element;
     elementToClear.innerHTML = '';
+  }
+
+  static clearApp() {
+    const elementToClear = document.querySelector('.page-container');
+    if (elementToClear !== null) {
+      elementToClear.innerHTML = '';
+    }
+  }
+
+  static clearGarage() {
+    const elementToClear = document.querySelector('.garage');
+    if (elementToClear !== null) {
+      elementToClear.innerHTML = '';
+    }
   }
 
   static appendFromStringToDom(

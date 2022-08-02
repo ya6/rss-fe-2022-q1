@@ -4,4 +4,4 @@ import Dispatcher from './app/Dispatcher';
 
 document.body.addEventListener('click', Dispatcher.clickHandler);
 AppController.index();
-console.log(Math.trunc((window.innerHeight - 100) / 7));
+// console.log(Math.trunc((window.innerHeight - 100) / 7));

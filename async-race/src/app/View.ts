@@ -1,33 +1,29 @@
 import Dom from './utils/Dom';
 import { CarType } from './types';
-import appComponent from './views/appComponent';
-import garage from './views/garageComponent';
-import topScores from './views/topScoresComponent';
-import carTrackComponent from './views/TrackComponent';
-import config from './config';
+import appComponent from './components/appComponent';
+import garage from './components/garageComponent';
+import topScores from './components/topScoresComponent';
+import carTrackComponent from './components/TrackComponent';
 
 export default class View {
-  static async home() {
+  static home() {
     console.log('View => home');
     Dom.appendElemToDOM(document.body, appComponent);
   }
 
-  static async garage(data: Array<CarType>) {
-    console.log('View => garage', data);
-    const app = document.querySelector('.page-container') as HTMLElement;
-    if (app !== null) {
-      Dom.delAllChildren(app);
-
-      Dom.appendElemToDOM(app, garage);
+  static garage(/* data: Array<CarType> */) {
+    console.log('View => garage');
+    const pageContainer = document.querySelector('.page-container') as HTMLElement;
+    if (pageContainer !== null) {
+      Dom.appendElemToDOM(pageContainer, garage);
     }
   }
 
-  static async topScores(data: Array<CarType>) {
-    console.log('View => topScores', data);
-    const app = document.querySelector('.page-container') as HTMLElement;
-    if (app !== null) {
-      Dom.delAllChildren(app);
-      Dom.appendElemToDOM(app, topScores);
+  static topScores(/* data: Array<CarType> */) {
+    console.log('View => topScores');
+    const pageContainer = document.querySelector('.page-container') as HTMLElement;
+    if (pageContainer !== null) {
+      Dom.appendElemToDOM(pageContainer, topScores);
     }
   }
 

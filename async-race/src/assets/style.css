@@ -9,8 +9,10 @@
   --dark2: hsl(323 21% 16%);
   --darkblue: darkblue;
   /* --clr-neon: hsl(317 100% 54%); */
-  --clr-neon: rgb(65, 134, 236);
+  /* --clr-neon: rgb(65, 134, 236); */
+  --clr-neon: rgb(10, 255, 23);
   --gray2: #9091a3;
+  --darkOpacity: rgba(0, 0, 0, 0.5);
 }
 
 html,
@@ -37,17 +39,24 @@ h6 {
   margin: 0;
 }
 
-/* a {
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1rem;
-  color: var(l-gray);
-} */
 
 .app {
-  margin: 1rem 0.5rem;
+  margin: 0rem 0rem;
 }
 /* buttons */
+
+.neon-button-container {
+  height: 70px;
+  display: flex;
+  align-items: flex-start;
+  padding: 1rem;
+  background: var(--darkOpacity);
+  align-items: center;
+ 
+}
+.container {
+  padding: 1rem;
+}
 
 .neon-button {
   font-size: 1.25rem;
@@ -62,6 +71,7 @@ h6 {
   text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
   box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
   position: relative;
+  margin-right: 2rem;
 }
 
 .neon-button::after {

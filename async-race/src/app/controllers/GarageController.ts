@@ -1,12 +1,12 @@
-import Loader from '../utils/Loader';
+import Dom from '../utils/Dom';
 import View from '../View';
 import TrackController from './TrackController';
 
 export default class GarageController {
-  static async index() {
+  static index() {
     console.log('GarageController => index');
-    const cars = await Loader.getAllCars();
-    View.garage(cars);
+    Dom.clearApp();
+    View.garage();
     TrackController.index();
   }
 }

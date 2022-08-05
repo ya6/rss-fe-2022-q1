@@ -36,11 +36,11 @@ export default class View {
     }
   }
 
-  static car(parent: HTMLElement) {
+  static car(parent: HTMLElement, height: number) {
     console.log('View => car');
 
     if (parent !== null) {
-      Dom.appendFromStringToDom(parent, carComponent());
+      Dom.appendFromStringToDom(parent, carComponent(height));
     }
   }
 }

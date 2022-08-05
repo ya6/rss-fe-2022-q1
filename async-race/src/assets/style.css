@@ -13,7 +13,10 @@
   --clr-neon: rgb(10, 255, 23);
   --gray2: #9091a3;
   --darkOpacity: rgba(0, 0, 0, 0.5);
+  --remote: 100px;
 }
+
+.brd {border: 2px solid red}
 
 html,
 body {
@@ -39,7 +42,6 @@ h6 {
   margin: 0;
 }
 
-
 .app {
   margin: 0rem 0rem;
 }
@@ -52,7 +54,6 @@ h6 {
   padding: 1rem;
   background: var(--darkOpacity);
   align-items: center;
- 
 }
 .container {
   padding: 1rem;
@@ -127,6 +128,25 @@ h6 {
   display: flex;
   flex-direction: column;
   justify-content: end;
+  width: 100%;
+  border: 1px solid black;
 }
-.car {position: absolute;
-left: 0; bottom: 10px;}
+.control-remote {
+  width: var(--remote);
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: var(--dark);
+  height: 70%;
+  z-index: 100;
+}
+.car {
+  position: absolute;
+  left: var(--remote);
+  bottom: 10px;
+}
+.controls-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

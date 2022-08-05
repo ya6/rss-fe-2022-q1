@@ -18,7 +18,7 @@ export default class TrackController {
       const trackContainer = document.querySelector(`[data-track="${index}"]`) as HTMLElement;
       console.log(trackContainer);
       if (trackContainer !== null) {
-        CarController.index(trackContainer, { name: 'tesla', color: 'red', id: 1 }, 12);
+        CarController.index(trackContainer, { name: 'tesla', color: 'red', id: 1 }, track / 2);
       }
     }
   }

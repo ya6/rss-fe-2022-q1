@@ -1,7 +1,9 @@
 import { CarType } from '../types';
+import View from '../View';
 
 export default class CarController {
-  static async index(car:CarType) {
-    console.log('CarController => index', car);
+  static index(parent: HTMLElement, car:CarType, height: number = 12) {
+    console.log('CarController => index');
+    View.car(parent);
   }
 }

@@ -1,9 +1,10 @@
 import Dom from './utils/Dom';
-import { CarType } from './types';
+// import { CarType } from './types';
 import appComponent from './components/appComponent';
 import garage from './components/garageComponent';
 import topScores from './components/topScoresComponent';
 import carTrackComponent from './components/TrackComponent';
+import carComponent from './components/carComponent';
 
 export default class View {
   static home() {
@@ -27,11 +28,19 @@ export default class View {
     }
   }
 
-  static carTrack(height: number, top: number, bottom: number) {
+  static carTrack(height: number, top: number, bottom: number, index: number) {
     console.log('View => carTrack', height, top, bottom);
     const garageContainer = document.querySelector('.garage') as HTMLElement;
     if (garageContainer !== null) {
-      Dom.appendFromStringToDom(garageContainer, carTrackComponent(height, top, bottom));
+      Dom.appendFromStringToDom(garageContainer, carTrackComponent(height, top, bottom, index));
+    }
+  }
+
+  static car(parent: HTMLElement) {
+    console.log('View => car');
+
+    if (parent !== null) {
+      Dom.appendFromStringToDom(parent, carComponent());
     }
   }
 }

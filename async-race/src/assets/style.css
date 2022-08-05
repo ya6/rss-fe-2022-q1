@@ -123,7 +123,10 @@ h6 {
 }
 
 .car-track {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: end;
 }
+.car {position: absolute;
+left: 0; bottom: 10px;}

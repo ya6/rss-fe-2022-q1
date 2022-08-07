@@ -5,6 +5,7 @@ import garage from './components/garageComponent';
 import topScores from './components/topScoresComponent';
 import carTrackComponent from './components/TrackComponent';
 import carComponent from './components/carComponent';
+import { CarType } from './types';
 
 export default class View {
   static home() {
@@ -28,19 +29,22 @@ export default class View {
     }
   }
 
-  static carTrack(height: number, top: number, bottom: number, index: number) {
-    console.log('View => carTrack', height, top, bottom);
+  static carTrack(car: CarType, height: number, top: number, bottom: number, index: number) {
+    // console.log('View => carTrack', height, top, bottom);
     const garageContainer = document.querySelector('.garage') as HTMLElement;
     if (garageContainer !== null) {
-      Dom.appendFromStringToDom(garageContainer, carTrackComponent(height, top, bottom, index));
+      Dom.appendFromStringToDom(
+        garageContainer,
+        carTrackComponent(car, height, top, bottom, index),
+      );
     }
   }
 
-  static car(parent: HTMLElement, height: number) {
-    console.log('View => car');
+  static car(parent: HTMLElement, car: CarType, height: number) {
+    console.log('View => car', car);
 
     if (parent !== null) {
-      Dom.appendFromStringToDom(parent, carComponent(height));
+      Dom.appendFromStringToDom(parent, carComponent(car, height));
     }
   }
 }

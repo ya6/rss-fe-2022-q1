@@ -1,6 +1,14 @@
-const carTrack = ((height: number, top: number, bottom: number, index: number) => {
-  console.log(height, top, bottom, index);
+import { CarType } from '../types';
 
+const carTrack = ((
+  car: CarType,
+  height: number,
+  top: number,
+  bottom: number,
+  index: number,
+) => {
+  // console.log(height, top, bottom, index);
+  const { name = '' } = car || {};
   const carTrackEl = `
   <div class="car-track brd "  data-track="${index}" style="height:${height}px;">
     <div style="display: flex">
@@ -11,6 +19,7 @@ const carTrack = ((height: number, top: number, bottom: number, index: number) =
        <button class="" data-button="back">Back</button>
       </div>    
       <div class="" style="width: 100%">
+      <div class="car-name">${name}</div>
       <div style="width: 100%; height: ${top}px; background: linear-gradient(0deg, rgba(240,240,240,1) 0%,
       rgba(100,100,100,1) 100%); opacity: 1">
       </div>

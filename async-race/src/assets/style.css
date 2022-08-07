@@ -14,6 +14,7 @@
   --gray2: #9091a3;
   --darkOpacity: rgba(0, 0, 0, 0.5);
   --remote: 100px;
+  --remote-name: 105px;
 }
 
 .brd {border: 2px solid red}
@@ -144,6 +145,12 @@ h6 {
   position: absolute;
   left: var(--remote);
   bottom: 10px;
+}
+.car-name {
+  position: absolute;
+  left: var(--remote-name);
+  top: 0px;
+
 }
 .controls-container {
   display: flex;

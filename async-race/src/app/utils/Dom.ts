@@ -38,7 +38,7 @@ export default class Dom {
   }
 
   static clearGarage() {
-    const elementToClear = document.querySelector('.garage');
+    const elementToClear = document.querySelector('.tracks-container');
     if (elementToClear !== null) {
       elementToClear.innerHTML = '';
     }

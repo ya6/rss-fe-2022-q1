@@ -1,5 +1,5 @@
 import config from '../config';
-import { CarType } from '../types';
+import { AddCarType, CarType } from '../types';
 
 export default class Loader {
   static async getAllCars() {
@@ -11,5 +11,16 @@ export default class Loader {
       alert(`Ошибка HTTP: ${response.status}`);
     }
     return carsArray;
+  }
+
+  static async addNewCar(data: AddCarType) {
+    const response = await fetch(config.garageUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+    return response.json();
   }
 }

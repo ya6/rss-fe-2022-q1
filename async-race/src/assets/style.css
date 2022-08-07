@@ -110,7 +110,9 @@ h6 {
   transition: 0.25s;
 }
 
-.fill-button:hover,
+.fill-button:hover {
+  color: var(--clr-neon);
+}
 .fill-button:focus {
   box-shadow: inset 0 0 0 2em var(--hover);
   border-color: var(--fill);
@@ -118,10 +120,14 @@ h6 {
 }
 
 .pick-color {
-  border: 0;
+  vertical-align:middle;
+  border: none;
   background: none;
   width: 50px;
   height: 30px;
+  padding: 0;
+  margin: 0;
+  padding-bottom: 3px;
 }
 
 .car-track {
@@ -152,6 +158,13 @@ h6 {
   top: 0px;
 
 }
+.cars-count {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color:var(--clr-neon);
+  text-shadow: 2px 2px var(--dark);
+}
+
 .controls-container {
   display: flex;
   justify-content: space-around;

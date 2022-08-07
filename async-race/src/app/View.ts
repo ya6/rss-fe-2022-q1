@@ -13,11 +13,11 @@ export default class View {
     Dom.appendElemToDOM(document.body, appComponent);
   }
 
-  static garage(/* data: Array<CarType> */) {
+  static garage(cars: Array<CarType>) {
     console.log('View => garage');
     const pageContainer = document.querySelector('.page-container') as HTMLElement;
     if (pageContainer !== null) {
-      Dom.appendElemToDOM(pageContainer, garage);
+      Dom.appendElemToDOM(pageContainer, garage(cars));
     }
   }
 

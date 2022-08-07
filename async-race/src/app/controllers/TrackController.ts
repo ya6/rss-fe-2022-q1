@@ -1,18 +1,18 @@
 import config from '../config';
+import { CarType } from '../types';
 import Dom from '../utils/Dom';
-import Loader from '../utils/Loader';
 import View from '../View';
 import CarController from './CarController';
 
 export default class TrackController {
-  static async index() {
+  static async index(cars:Array<CarType>) {
     console.log('TopScoresController => index');
     const track = Math.trunc((window.innerHeight - config.header) / config.tracks);
     const trackBottom = Math.trunc(track / (30));
     const trackTop = track / 3;
 
     Dom.clearGarage();
-    const cars = await Loader.getAllCars();
+    // const cars = await Loader.getAllCars();
     console.log('cars', cars);
 
     for (let index = 0; index < config.tracks; index += 1) {

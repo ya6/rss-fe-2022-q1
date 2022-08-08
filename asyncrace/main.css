@@ -1,0 +1,175 @@
+@charset "utf-8";
+
+:root {
+  --white: #fff;
+  --gray: gray;
+  --l-gray: #f5f5f5;
+  --tiffany: #1abc9c;
+  --dark: #080707;
+  --dark2: hsl(323 21% 16%);
+  --darkblue: darkblue;
+  /* --clr-neon: hsl(317 100% 54%); */
+  /* --clr-neon: rgb(65, 134, 236); */
+  --clr-neon: rgb(10, 255, 23);
+  --gray2: #9091a3;
+  --darkOpacity: rgba(0, 0, 0, 0.5);
+  --remote: 100px;
+  --remote-name: 105px;
+}
+
+.brd {border: 2px solid red}
+
+html,
+body {
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  background-image: url(606a84687d25f472f312.jpg);
+  /* background: var(--dark2); */
+  /* background: var(--gray2); */
+  color: var(--white);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.app {
+  margin: 0rem 0rem;
+}
+/* buttons */
+
+.neon-button-container {
+  height: 70px;
+  display: flex;
+  align-items: flex-start;
+  padding: 1rem;
+  background: var(--darkOpacity);
+  align-items: center;
+}
+.container {
+  padding: 1rem;
+}
+
+.neon-button {
+  font-size: 1.25rem;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--clr-neon);
+  border: var(--clr-neon) 0.125em solid;
+  padding: 0.25em 1em;
+  border-radius: 0.25em;
+  background: transparent;
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+  box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
+  position: relative;
+  margin-right: 2rem;
+}
+
+.neon-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 2em 0.5em var(--clr-neon);
+  opacity: 0;
+  transition: opacity 100ms linear;
+}
+
+.neon-button:focus {
+  text-shadow: none;
+}
+
+.neon-button:hover::after {
+  opacity: 1;
+}
+
+.neon-button:focus::after {
+  opacity: 1;
+}
+
+.fill-button {
+  background: none;
+  border: 2px solid;
+  border-radius: 0.25em;
+  margin: 0.5em;
+  padding: 0.5em 1em;
+  color: var(--fill);
+  transition: 0.25s;
+}
+
+.fill-button:hover {
+  color: var(--clr-neon);
+}
+.fill-button:focus {
+  box-shadow: inset 0 0 0 2em var(--hover);
+  border-color: var(--fill);
+  color: #fff;
+}
+
+.pick-color {
+  vertical-align:middle;
+  border: none;
+  background: none;
+  width: 50px;
+  height: 30px;
+  padding: 0;
+  margin: 0;
+  padding-bottom: 3px;
+}
+
+.car-track {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  width: 100%;
+  border: 1px solid black;
+}
+.control-remote {
+  width: var(--remote);
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: var(--dark);
+  height: 70%;
+  z-index: 100;
+}
+.car {
+  position: absolute;
+  left: var(--remote);
+  bottom: 10px;
+}
+.car-name {
+  position: absolute;
+  left: var(--remote-name);
+  top: 0px;
+
+}
+.cars-count {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color:var(--clr-neon);
+  text-shadow: 2px 2px var(--dark);
+}
+
+.controls-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+/*# sourceMappingURL=main.css.map*/

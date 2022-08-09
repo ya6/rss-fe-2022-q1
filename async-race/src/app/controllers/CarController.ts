@@ -3,15 +3,17 @@ import Loader from '../utils/Loader';
 import View from '../View';
 import { carNames, carColors } from '../data';
 import random from '../utils/random';
+import PageController from './PageController';
 
 export default class CarController {
   static index(parent: HTMLElement, car:CarType, height: number) {
-    console.log('CarController => index', car);
+    // console.log('CarController => index', car);
     View.car(parent, car, height);
   }
 
   static createCar(car: AddCarType) {
     Loader.createCar(car);
+    PageController.addCar();
   }
 
   static updateCar(id: string, data: AddCarType) {
@@ -20,11 +22,13 @@ export default class CarController {
 
   static delCar(id: string) {
     Loader.delCar(id);
+    PageController.delCar();
   }
 
   static generateCars(val: number) {
     for (let index = 0; index < val; index += 1) {
       Loader.createCar({ name: carNames[random(0, 10)], color: carColors[random(0, 10)] });
+      PageController.addCar();
     }
   }
 }

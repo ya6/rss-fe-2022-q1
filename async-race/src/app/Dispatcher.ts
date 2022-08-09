@@ -1,5 +1,6 @@
 import CarController from './controllers/CarController';
 import GarageController from './controllers/GarageController';
+import PageController from './controllers/PageController';
 import TopScoresController from './controllers/TopScoresController';
 
 export default class Dispatcher {
@@ -7,7 +8,7 @@ export default class Dispatcher {
     // e.preventDefault();
     let button: Array<string>;
     const element = e.target as HTMLElement;
-    console.log('Dispatcher => clickDispatcher', element);
+    // console.log('Dispatcher => clickDispatcher', element);
 
     if (element !== null && element.getAttribute('data-button')) {
       button = element.getAttribute('data-button')!.split(' ');
@@ -63,12 +64,19 @@ export default class Dispatcher {
       GarageController.index();
     }
     if (action === 'generate') {
-      CarController.generateCars(2);
+      CarController.generateCars(10);
       GarageController.index();
     }
   }
 
   static pageControlDispatcher(action:string, element: HTMLElement) {
-    // CarController
+    if (action === 'prev') {
+      PageController.prevPage();
+      GarageController.index();
+    }
+    if (action === 'next') {
+      PageController.nextPage();
+      GarageController.index();
+    }
   }
 }

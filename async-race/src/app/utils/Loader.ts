@@ -17,7 +17,7 @@ export default class Loader {
     const cars = await Loader.getAllCars();
     const firstCarNumber = (page - 1) * config.tracks;
     const lastCarNumber = firstCarNumber + config.tracks;
-    console.log(firstCarNumber, '---', lastCarNumber);
+    // console.log(firstCarNumber, '---', lastCarNumber);
     return cars.slice(firstCarNumber, lastCarNumber);
   }
 

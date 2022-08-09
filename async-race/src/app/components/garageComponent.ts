@@ -1,17 +1,20 @@
-import { CarType } from '../types';
+import { PageDataType } from '../types';
 
-const garage = (page:number, cars: Array<CarType>) => {
+const garage = (pageData: PageDataType) => {
+  const {
+    firstPage, currentPage, lastPage, cars,
+  } = pageData;
   const garageEl = document.createElement('div');
   garageEl.className = 'garage';
   const content = `
   <div class="container">
     <div class ="controls-container">
       <div>
-      <div class="cars-count">Garage ( ${cars.length} cars )</div>
+      <div class="cars-count">Garage ( ${cars} cars )</div>
       <div class="cars-count">
-      <button type="button"  data-button="pageControl prev"> < </button>
-      <button type="button"  data-button="pageControl current" disabled> ${page} </button>
-      <button type="button"  data-button="pageControl next"> > </button>
+      <button type="button"  data-button="pageControl prev">${firstPage} < </button>
+      <button type="button"  data-button="pageControl current" disabled> ${currentPage} </button>
+      <button type="button"  data-button="pageControl next"> > ${lastPage} </button>
 
 
       </div>

@@ -23,8 +23,8 @@ export default class Dom {
   };
 
   static delAllChildren(element: HTMLElement) {
-    console.log('Dom => delAllChildren');
-    console.log(element);
+    // console.log('Dom => delAllChildren');
+    // console.log(element);
 
     const elementToClear = element;
     elementToClear.innerHTML = '';

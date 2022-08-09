@@ -4,24 +4,25 @@ import garage from './components/garageComponent';
 import topScores from './components/topScoresComponent';
 import carTrackComponent from './components/TrackComponent';
 import carComponent from './components/carComponent';
-import { CarType } from './types';
+import { CarType, PageDataType } from './types';
 
 export default class View {
   static home() {
-    console.log('View => home');
+    // console.log('View => home');
     Dom.appendElemToDOM(document.body, appComponent);
   }
 
-  static garage(page: number, cars: Array<CarType>) {
+  static garage(pageData: PageDataType, cars: Array<CarType>) {
     console.log('View => garage');
+
     const pageContainer = document.querySelector('.page-container') as HTMLElement;
     if (pageContainer !== null) {
-      Dom.appendElemToDOM(pageContainer, garage(page, cars));
+      Dom.appendElemToDOM(pageContainer, garage(pageData));
     }
   }
 
   static topScores(/* data: Array<CarType> */) {
-    console.log('View => topScores');
+    // console.log('View => topScores');
     const pageContainer = document.querySelector('.page-container') as HTMLElement;
     if (pageContainer !== null) {
       Dom.appendElemToDOM(pageContainer, topScores);
@@ -40,7 +41,7 @@ export default class View {
   }
 
   static car(parent: HTMLElement, car: CarType, height: number) {
-    console.log('View => car', car);
+    // console.log('View => car', car);
 
     if (parent !== null) {
       Dom.appendFromStringToDom(parent, carComponent(car, height));

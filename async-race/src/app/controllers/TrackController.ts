@@ -6,14 +6,14 @@ import CarController from './CarController';
 
 export default class TrackController {
   static async index(cars:Array<CarType>) {
-    console.log('TopScoresController => index');
+    // console.log('TopScoresController => index');
     const track = Math.trunc((window.innerHeight - config.header) / config.tracks);
     const trackBottom = Math.trunc(track / (30));
     const trackTop = track / 3;
 
     Dom.clearGarage();
     // const cars = await Loader.getAllCars();
-    console.log('cars', cars);
+    // console.log('cars', cars);
 
     for (let index = 0; index < config.tracks; index += 1) {
       View.carTrack(cars[index], track, trackTop, trackBottom, index);

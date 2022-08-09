@@ -2,17 +2,18 @@ import Dom from '../utils/Dom';
 import Loader from '../utils/Loader';
 import View from '../View';
 import TrackController from './TrackController';
-import config from '../config';
+
+import PageController from './PageController';
 
 export default class GarageController {
   static async index() {
-    console.log('GarageController => index');
+    // console.log('GarageController => index');
     Dom.clearApp();
-    // const cars = await Loader.getAllCars();
-    const cars = await Loader.getPageOfCars(config.startPage);
-    // load page
 
-    View.garage(config.startPage, cars);
+    const pageData = PageController.getPageData();
+    const cars = await Loader.getPageOfCars(pageData.currentPage);
+
+    View.garage(pageData, cars);
     TrackController.index(cars);
   }
 }

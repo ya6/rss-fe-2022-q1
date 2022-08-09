@@ -18,6 +18,9 @@ export default class Dispatcher {
       if (button[0] === 'control') {
         Dispatcher.controlDispatcher(button[1], element);
       }
+      if (button[0] === 'pageControl') {
+        Dispatcher.pageControlDispatcher(button[1], element);
+      }
     }
   }
 
@@ -63,5 +66,9 @@ export default class Dispatcher {
       CarController.generateCars(2);
       GarageController.index();
     }
+  }
+
+  static pageControlDispatcher(action:string, element: HTMLElement) {
+    // CarController
   }
 }

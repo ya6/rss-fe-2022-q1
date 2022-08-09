@@ -1,5 +1,4 @@
 import Dom from './utils/Dom';
-// import { CarType } from './types';
 import appComponent from './components/appComponent';
 import garage from './components/garageComponent';
 import topScores from './components/topScoresComponent';
@@ -13,11 +12,11 @@ export default class View {
     Dom.appendElemToDOM(document.body, appComponent);
   }
 
-  static garage(cars: Array<CarType>) {
+  static garage(page: number, cars: Array<CarType>) {
     console.log('View => garage');
     const pageContainer = document.querySelector('.page-container') as HTMLElement;
     if (pageContainer !== null) {
-      Dom.appendElemToDOM(pageContainer, garage(cars));
+      Dom.appendElemToDOM(pageContainer, garage(page, cars));
     }
   }
 

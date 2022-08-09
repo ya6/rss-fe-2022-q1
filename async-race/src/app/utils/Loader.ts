@@ -13,6 +13,14 @@ export default class Loader {
     return carsArray;
   }
 
+  static async getPageOfCars(page: number) {
+    const cars = await Loader.getAllCars();
+    const firstCarNumber = (page - 1) * config.tracks;
+    const lastCarNumber = firstCarNumber + config.tracks;
+    console.log(firstCarNumber, '---', lastCarNumber);
+    return cars.slice(firstCarNumber, lastCarNumber);
+  }
+
   static async createCar(data: AddCarType) {
     const response = await fetch(config.garageUrl, {
       method: 'POST',

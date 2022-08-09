@@ -1,6 +1,6 @@
 import { CarType } from '../types';
 
-const garage = (cars: Array<CarType>) => {
+const garage = (page:number, cars: Array<CarType>) => {
   const garageEl = document.createElement('div');
   garageEl.className = 'garage';
   const content = `
@@ -8,6 +8,13 @@ const garage = (cars: Array<CarType>) => {
     <div class ="controls-container">
       <div>
       <div class="cars-count">Garage ( ${cars.length} cars )</div>
+      <div class="cars-count">
+      <button type="button"  data-button="pageControl prev"> < </button>
+      <button type="button"  data-button="pageControl current" disabled> ${page} </button>
+      <button type="button"  data-button="pageControl next"> > </button>
+
+
+      </div>
       </div>
       <div>
         <div>

@@ -13,20 +13,21 @@ const garage = (cars: Array<CarType>) => {
         <div>
         <form>
           <input type="text" name="" data-create="name" required>
-          <input type="color" class ="pick-color" data-create="color" style=" text-align: top">
-          <button type="submit" class="fill-button" data-button="control create">Crete</button>
+          <input type="color" class ="pick-color" data-create="color">
+          <button type="button" class="fill-button" data-button="control create">Crete</button>
           </form>
           </div>
         <div>
         <form>
           <input type="text" name=""  data-update="name" required>
-          <input type="color" class ="pick-color" data-update="color"  value="#ffffff"name="">
-          <button type="submit" class="fill-button" data-button="control update">Update</button>
+          <input type="hidden" name=""  data-update-id="">
+          <input type="color" class ="pick-color" data-update="color">
+          <button type="button" class="fill-button" data-button="control update">Update</button>
         </form>
           </div> 
       </div>
       <div>
-        <button class="fill-button" data-button="generate">Generate Cars Set</button>
+        <button class="fill-button" data-button="control generate">Generate Cars Set</button>
       </div>
       <div>
         <button class="fill-button" data-button="race">Race</button>

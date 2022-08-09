@@ -1,9 +1,10 @@
+import CarController from './controllers/CarController';
 import GarageController from './controllers/GarageController';
 import TopScoresController from './controllers/TopScoresController';
 
 export default class Dispatcher {
   static clickHandler(e:Event) {
-    e.preventDefault();
+    // e.preventDefault();
     let button: Array<string>;
     const element = e.target as HTMLElement;
     console.log('Dispatcher => clickDispatcher', element);
@@ -15,7 +16,7 @@ export default class Dispatcher {
         Dispatcher.routeDispatcher(button[1]);
       }
       if (button[0] === 'control') {
-        Dispatcher.controlDispatcher(button[1]);
+        Dispatcher.controlDispatcher(button[1], element);
       }
     }
   }
@@ -29,18 +30,38 @@ export default class Dispatcher {
     }
   }
 
-  static controlDispatcher(action:string) {
-    console.log(action);
-
+  static controlDispatcher(action:string, element: HTMLElement) {
     if (action === 'create') {
       const nameInputC = document.querySelector('[data-create="name"]') as HTMLInputElement;
       const colorInputC = document.querySelector('[data-create="color"]') as HTMLInputElement;
-      console.log(nameInputC.value, colorInputC.value);
+      if (nameInputC.value.length > 0) {
+        CarController.createCar({ name: nameInputC.value, color: colorInputC.value });
+        GarageController.index();
+      } else return;
     }
     if (action === 'update') {
       const nameInputU = document.querySelector('[data-update="name"]') as HTMLInputElement;
       const colorInputU = document.querySelector('[data-update="color"]') as HTMLInputElement;
-      console.log(nameInputU!.value, colorInputU.value);
+      const idInputU = document.querySelector('[data-update-id]') as HTMLInputElement;
+      CarController.updateCar(idInputU.value, { name: nameInputU.value, color: colorInputU.value });
+      GarageController.index();
+    }
+    if (action === 'select') {
+      const nameInputU = document.querySelector('[data-update="name"]') as HTMLInputElement;
+      const colorInputU = document.querySelector('[data-update="color"]') as HTMLInputElement;
+      const idInputU = document.querySelector('[data-update-id]') as HTMLInputElement;
+      const [name, color] = element.getAttribute('data-name')!.split(' ');
+      idInputU.value = element.getAttribute('data-id')!;
+      nameInputU.value = name;
+      colorInputU.value = color;
+    }
+    if (action === 'del') {
+      CarController.delCar(element.getAttribute('data-id')!);
+      GarageController.index();
+    }
+    if (action === 'generate') {
+      CarController.generateCars(2);
+      GarageController.index();
     }
   }
 }

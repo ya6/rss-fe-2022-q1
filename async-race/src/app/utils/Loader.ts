@@ -13,13 +13,31 @@ export default class Loader {
     return carsArray;
   }
 
-  static async addNewCar(data: AddCarType) {
+  static async createCar(data: AddCarType) {
     const response = await fetch(config.garageUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(data),
+    });
+    return response.json();
+  }
+
+  static async updateCar(id: string, data: AddCarType) {
+    const response = await fetch(`${config.garageUrl}${Number(id)}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+    return response.json();
+  }
+
+  static async delCar(id: string) {
+    const response = await fetch(`${config.garageUrl}${Number(id)}`, {
+      method: 'DELETE',
     });
     return response.json();
   }

@@ -8,15 +8,15 @@ const carTrack = ((
   index: number,
 ) => {
   // console.log(height, top, bottom, index);
-  const { name = '' } = car || {};
+  const { name = '', id = '', color = '' } = car || {};
   const carTrackEl = `
   <div class="car-track brd "  data-track="${index}" style="height:${height}px;">
     <div style="display: flex">
       <div class="control-remote">
-       <button class="" data-button="select">Select</button>
-       <button class="" data-button="del">del</button>
-       <button class="" data-button="run">Run</button>
-       <button class="" data-button="back">Back</button>
+       <button class="" data-button="control select" data-id="${id}" data-name="${name} ${color}">Select</button>
+       <button class="" data-button="control del" data-id="${id}">del</button>
+       <button class="" data-button="control run" data-id="${id}">Run</button>
+       <button class="" data-button="control back" data-id="${id}">Back</button>
       </div>    
       <div class="" style="width: 100%">
       <div class="car-name">${name}</div>

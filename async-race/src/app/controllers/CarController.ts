@@ -34,6 +34,8 @@ export default class CarController {
 
   static async runCar(id: string) {
     const resp = await Loader.runCar(id);
+    console.log(resp);
+
     const time = resp.distance / (resp.velocity * 1000);
     const car = document.querySelector(`[data-car="${id}"]`) as HTMLElement;
     const way = document.body.clientWidth;

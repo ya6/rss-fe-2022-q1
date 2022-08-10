@@ -40,8 +40,8 @@ const garage = (pageData: PageDataType) => {
         <button class="fill-button" data-button="control generate">Generate Cars Set</button>
       </div>
       <div>
-        <button class="fill-button" data-button="race">Race</button>
-        <button class="fill-button" data-button="reset">Reset</button>
+        <button class="fill-button" data-button="race race">Race</button>
+        <button class="fill-button" data-button="race reset">Reset</button>
       </div> 
     </div>
       <div class="tracks-container"></div>

@@ -2,6 +2,7 @@ import config from './config';
 import CarController from './controllers/CarController';
 import GarageController from './controllers/GarageController';
 import PageController from './controllers/PageController';
+import RaceController from './controllers/RaceController';
 import TopScoresController from './controllers/TopScoresController';
 
 export default class Dispatcher {
@@ -22,6 +23,10 @@ export default class Dispatcher {
       }
       if (button[0] === 'pageControl') {
         Dispatcher.pageControlDispatcher(button[1], element);
+      }
+
+      if (button[0] === 'race') {
+        Dispatcher.raceControlDispatcher(button[1], element);
       }
     }
   }
@@ -86,6 +91,17 @@ export default class Dispatcher {
     }
     if (action === 'next') {
       PageController.nextPage();
+      GarageController.index();
+    }
+  }
+
+  static raceControlDispatcher(action:string, element: HTMLElement) {
+    if (action === 'race') {
+      RaceController.race();
+      GarageController.index();
+    }
+    if (action === 'reset') {
+      RaceController.reset();
       GarageController.index();
     }
   }

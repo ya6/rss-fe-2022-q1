@@ -1,5 +1,6 @@
 import config from '../config';
 import { AddCarType, CarType } from '../types';
+import getCurrentPageCarsID from './getCurrentPageCarsID';
 
 export default class Loader {
   static async getAllCars() {
@@ -15,9 +16,7 @@ export default class Loader {
 
   static async getPageOfCars(page: number) {
     const cars = await Loader.getAllCars();
-    const firstCarNumber = (page - 1) * config.tracks;
-    const lastCarNumber = firstCarNumber + config.tracks;
-    // console.log(firstCarNumber, '---', lastCarNumber);
+    const { firstCarNumber, lastCarNumber } = getCurrentPageCarsID(page);
     return cars.slice(firstCarNumber, lastCarNumber);
   }
 

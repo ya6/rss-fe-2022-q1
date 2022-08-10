@@ -171,5 +171,12 @@ h6 {
   align-items: center;
 }
 
+.run {
+  transform: translateX(100px);
+  
+ transition: all 10s;
+ 
+}
+
 
 /*# sourceMappingURL=main.css.map*/

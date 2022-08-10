@@ -31,4 +31,19 @@ export default class CarController {
       PageController.addCar();
     }
   }
+
+  static async runCar(id: string) {
+    const resp = await Loader.runCar(id);
+    const time = resp.distance / (resp.velocity * 1000);
+    const car = document.querySelector(`[data-car="${id}"]`) as HTMLElement;
+    const way = document.body.clientWidth;
+    car.style.transform = `translateX(${way - 250}px)`;
+    car.style.transition = `all ease-in ${time}s`;
+  }
+
+  static async backCar(id: string) {
+    const car = document.querySelector(`[data-car="${id}"]`) as HTMLElement;
+    car.style.transform = `translateX(${0}px)`;
+    car.style.transition = `all ease-in ${0.5}s`;
+  }
 }

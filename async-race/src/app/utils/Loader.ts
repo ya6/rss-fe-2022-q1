@@ -49,4 +49,11 @@ export default class Loader {
     });
     return response.json();
   }
+
+  static async runCar(id: string) {
+    const response = await fetch(`${config.engineUrl}?id=${Number(id)}&status=started`, {
+      method: 'PATCH',
+    });
+    return response.json();
+  }
 }

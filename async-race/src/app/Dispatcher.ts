@@ -1,3 +1,4 @@
+import config from './config';
 import CarController from './controllers/CarController';
 import GarageController from './controllers/GarageController';
 import PageController from './controllers/PageController';
@@ -64,8 +65,17 @@ export default class Dispatcher {
       GarageController.index();
     }
     if (action === 'generate') {
-      CarController.generateCars(10);
+      CarController.generateCars(config.generateCars);
       GarageController.index();
+    }
+
+    if (action === 'run') {
+      const id = element.getAttribute('data-id')!;
+      CarController.runCar(id);
+    }
+    if (action === 'back') {
+      const id = element.getAttribute('data-id')!;
+      CarController.backCar(id);
     }
   }
 

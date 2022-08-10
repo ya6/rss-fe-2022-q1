@@ -34,7 +34,6 @@ export default class CarController {
 
   static async runCar(id: string) {
     const resp = await Loader.runCar(id);
-    console.log(resp);
 
     const time = resp.distance / (resp.velocity * 1000);
     const car = document.querySelector(`[data-car="${id}"]`) as HTMLElement;
@@ -43,9 +42,19 @@ export default class CarController {
     car.style.transition = `all ease-in ${time}s`;
   }
 
-  static async backCar(id: string) {
+  static async stopCar(id: string) {
     const car = document.querySelector(`[data-car="${id}"]`) as HTMLElement;
-    car.style.transform = `translateX(${0}px)`;
-    car.style.transition = `all ease-in ${0.5}s`;
+    const resp = await Loader.stopCar(id);
+    if (resp.velocity === 0) {
+      const style = window.getComputedStyle(car);
+      // eslint-disable-next-line no-undef
+      const matrix = new WebKitCSSMatrix(style.transform);
+      car.style.transform = `translateX(${matrix.m41}px)`;
+
+      setTimeout(() => {
+        car.style.transform = `translateX(${0}px)`;
+        car.style.transition = `all ease-in ${1}s`;
+      }, 1000);
+    }
   }
 }

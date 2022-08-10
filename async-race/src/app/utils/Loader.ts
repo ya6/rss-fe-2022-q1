@@ -55,4 +55,11 @@ export default class Loader {
     });
     return response.json();
   }
+
+  static async stopCar(id: string) {
+    const response = await fetch(`${config.engineUrl}?id=${Number(id)}&status=stopped`, {
+      method: 'PATCH',
+    });
+    return response.json();
+  }
 }

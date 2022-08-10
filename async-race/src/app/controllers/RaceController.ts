@@ -1,21 +1,21 @@
-import getCurrentPageCarsID from '../utils/getCurrentPageCarsID';
 import CarController from './CarController';
-import PageController from './PageController';
 
 export default class RaceController {
   static async race() {
-    const { currentPage } = PageController.getPageData();
-    const { firstCarNumber, lastCarNumber } = getCurrentPageCarsID(currentPage);
-    for (let index = firstCarNumber; index <= lastCarNumber; index += 1) {
-      CarController.runCar(String(index));
+    const cars = [...document.querySelectorAll('[data-car]')];
+    const ids = cars.map((el) => el.getAttribute('data-car'));
+    // eslint-disable-next-line no-restricted-syntax
+    for await (const id of ids) {
+      CarController.runCar(String(id));
     }
   }
 
   static async reset() {
-    const { currentPage } = PageController.getPageData();
-    const { firstCarNumber, lastCarNumber } = getCurrentPageCarsID(currentPage);
-    for (let index = firstCarNumber; index <= lastCarNumber; index += 1) {
-      CarController.backCar(String(index));
+    const cars = [...document.querySelectorAll('[data-car]')];
+    const ids = cars.map((el) => el.getAttribute('data-car'));
+    // eslint-disable-next-line no-restricted-syntax
+    for await (const id of ids) {
+      CarController.stopCar(String(id));
     }
   }
 }

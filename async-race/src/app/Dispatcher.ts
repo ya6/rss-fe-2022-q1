@@ -80,7 +80,7 @@ export default class Dispatcher {
     }
     if (action === 'back') {
       const id = element.getAttribute('data-id')!;
-      CarController.backCar(id);
+      CarController.stopCar(id);
     }
   }
 
@@ -98,11 +98,11 @@ export default class Dispatcher {
   static raceControlDispatcher(action:string, element: HTMLElement) {
     if (action === 'race') {
       RaceController.race();
-      GarageController.index();
+      // GarageController.index();
     }
     if (action === 'reset') {
       RaceController.reset();
-      GarageController.index();
+      // GarageController.index();
     }
   }
 }

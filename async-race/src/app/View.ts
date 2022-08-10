@@ -13,7 +13,7 @@ export default class View {
   }
 
   static garage(pageData: PageDataType, cars: Array<CarType>) {
-    console.log('View => garage');
+    // console.log('View => garage');
 
     const pageContainer = document.querySelector('.page-container') as HTMLElement;
     if (pageContainer !== null) {

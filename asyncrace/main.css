@@ -143,10 +143,13 @@ h6 {
   position: absolute;
   left: 0;
   top: 0;
+
   background: var(--dark);
   height: 70%;
   z-index: 100;
 }
+.track-button {margin-top: 0.1rem;
+margin-left: 0.1rem;}
 .car {
   position: absolute;
   left: var(--remote);

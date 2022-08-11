@@ -12,7 +12,8 @@
   /* --clr-neon: rgb(65, 134, 236); */
   --clr-neon: rgb(10, 255, 23);
   --gray2: #9091a3;
-  --darkOpacity: rgba(0, 0, 0, 0.5);
+  --darkOpacity: rgba(0, 0, 0, 0.6);
+  --lightOpacity: rgba(10, 255, 23, 0.7);
   --remote: 100px;
   --remote-name: 105px;
 }
@@ -194,6 +195,24 @@ margin-left: 0.1rem;}
 .table-item {
 text-align: center;
 flex: 1;
+}
+.popup {
+  width: 40vw;
+  height: 30vh;
+  background: var(--lightOpacity);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 1s;
+  border-radius: 1rem;
+  box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.75);
+  color: var(--dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 1rem;
+  font-size: 1.5rem;
 }
 
 /*# sourceMappingURL=main.css.map*/

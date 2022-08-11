@@ -66,7 +66,7 @@ export default class CarController {
             );
           } else {
             winners[winnerID] = winnerTime;
-            // await WinnersLoader.createWinner({ id: Number(id), wins: 1, time: winnerTime });
+            await WinnersLoader.createWinner({ id: Number(id), wins: 1, time: winnerTime });
           }
 
           //  WinnerController.popupWinner(car.getAttribute('data-name')!, winnerTime);

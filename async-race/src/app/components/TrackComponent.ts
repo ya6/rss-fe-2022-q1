@@ -7,7 +7,6 @@ const carTrack = ((
   bottom: number,
   index: number,
 ) => {
-  // console.log(height, top, bottom, index);
   const { name = '', id = '', color = '' } = car || {};
   const carTrackEl = `
   <div class="car-track brd "  data-track="${index}" style="height:${height}px;">

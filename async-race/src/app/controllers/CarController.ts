@@ -11,7 +11,6 @@ import WinnerController from './WinnerController';
 
 export default class CarController {
   static index(parent: HTMLElement, car:CarType, height: number) {
-    // console.log('CarController => index', car);
     View.car(parent, car, height);
   }
 
@@ -38,7 +37,7 @@ export default class CarController {
 
   static async runCar(id: string) {
     const resp = await Loader.runCar(id);
-    const time = resp.distance / (resp.velocity * 5000);
+    const time = resp.distance / (resp.velocity * 2000);
     const car = document.querySelector(`[data-car="${id}"]`) as HTMLElement;
 
     const handler = async (e:Event) => {
@@ -50,7 +49,7 @@ export default class CarController {
         if (currentWinner[1] === 0 && currentWinner[2] === 1) {
           const winnerTime = Math.floor(time * 100) / 100;
           Storage.saveToStorage('currentWinner', [winnerID, winnerTime, 0]);
-          console.log('winnerID-->', winnerID);
+
           WinnerController.popupWinner(car.getAttribute('data-name')!, winnerTime);
 
           if (winnerID in winners) {
@@ -58,7 +57,6 @@ export default class CarController {
               ? winnerTime : winners[winnerID];
 
             const winner = await WinnersLoader.getWinner(String(winnerID));
-            console.log('winnerID-->', winnerID, 'winner-->', winner);
 
             await WinnersLoader.updateWinner(
               String(winnerID),
@@ -68,11 +66,6 @@ export default class CarController {
             winners[winnerID] = winnerTime;
             await WinnersLoader.createWinner({ id: Number(id), wins: 1, time: winnerTime });
           }
-
-          //  WinnerController.popupWinner(car.getAttribute('data-name')!, winnerTime);
-          // alert(winnerTime);
-          // console.log(car.getAttribute('data-name'));
-          // console.log(winners);
 
           Storage.saveToStorage('winners', winners);
         }

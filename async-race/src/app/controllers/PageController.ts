@@ -4,7 +4,6 @@ import Storage from '../utils/Storage';
 
 export default class PageController {
   static async index() {
-    // console.log('pageController->index');
     const cars = await Loader.getAllCars();
 
     const pageData = {
@@ -27,7 +26,6 @@ export default class PageController {
       pageData.lastPage += 1;
     }
     Storage.saveToStorage('pageData', pageData);
-    // console.log('pageController->addCar', pageData);
   }
 
   static delCar() {
@@ -37,7 +35,6 @@ export default class PageController {
       pageData.lastPage -= 1;
     }
     Storage.saveToStorage('pageData', pageData);
-    // console.log('pageController->delCar', pageData);
   }
 
   static prevPage() {

@@ -7,7 +7,6 @@ import PageController from './PageController';
 
 export default class GarageController {
   static async index() {
-    // console.log('GarageController => index');
     Dom.clearApp();
 
     const pageData = PageController.getPageData();

@@ -5,7 +5,6 @@ import { WinnersType } from '../types';
 
 export default class TopScoresController {
   static async index() {
-    // console.log('TopScoresController => index');
     Dom.clearApp();
     const winners = await WinnersLoader.getWinners();
     View.topScores(winners);

@@ -9,13 +9,10 @@ import winnersRowComp from './components/winnersRowComponent';
 
 export default class View {
   static home() {
-    // console.log('View => home');
     Dom.appendElemToDOM(document.body, appComponent);
   }
 
   static garage(pageData: PageDataType, cars: Array<CarType>) {
-    // console.log('View => garage');
-
     const pageContainer = document.querySelector('.page-container') as HTMLElement;
     if (pageContainer !== null) {
       Dom.appendElemToDOM(pageContainer, garage(pageData));
@@ -23,7 +20,6 @@ export default class View {
   }
 
   static topScores(winners: Array<WinnersType>) {
-    // console.log('View => topScores');
     const pageContainer = document.querySelector('.page-container') as HTMLElement;
     if (pageContainer !== null) {
       Dom.appendElemToDOM(pageContainer, topScores(winners));
@@ -31,7 +27,6 @@ export default class View {
   }
 
   static carTrack(car: CarType, height: number, top: number, bottom: number, index: number) {
-    // console.log('View => carTrack', height, top, bottom);
     const garageContainer = document.querySelector('.garage') as HTMLElement;
     if (garageContainer !== null) {
       Dom.appendFromStringToDom(
@@ -42,15 +37,12 @@ export default class View {
   }
 
   static car(parent: HTMLElement, car: CarType, height: number) {
-    // console.log('View => car', car);
     if (parent !== null) {
       Dom.appendFromStringToDom(parent, carComponent(car, height));
     }
   }
 
   static winnersRow(parent: HTMLElement, winner: WinnersType) {
-    console.log('View ->winnersRow-->', parent, winner);
-
     if (parent !== null) {
       Dom.appendElemToDOM(parent, winnersRowComp(winner));
     }

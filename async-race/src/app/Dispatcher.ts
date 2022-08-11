@@ -7,10 +7,10 @@ import TopScoresController from './controllers/TopScoresController';
 
 export default class Dispatcher {
   static clickHandler(e:Event) {
-    // e.preventDefault();
+   
     let button: Array<string>;
     const element = e.target as HTMLElement;
-    // console.log('Dispatcher => clickDispatcher', element);
+   
 
     if (element !== null && element.getAttribute('data-button')) {
       button = element.getAttribute('data-button')!.split(' ');

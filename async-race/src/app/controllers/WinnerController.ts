@@ -11,7 +11,6 @@ export default class WinnerController {
   }
 
   static async popupWinner(name: string, time: number) {
-    console.log('popupWinner');
     const popup = popupComp(name, time);
     Dom.appendElemToDOM(document.body, popup);
     setTimeout(() => {

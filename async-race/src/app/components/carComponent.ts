@@ -1,7 +1,7 @@
 import { CarType } from '../types';
 
 const car = ((theCar: CarType, height: number) => {
-  // console.log('car=> height', height);
+  
   const { color, id, name } = theCar;
   const content = `
   <svg class = "car" data-car="${id}" data-name="${name}" height="${height}px" clip-rule="evenodd" fill-rule="evenodd" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" version="1.0" viewBox="0 0 5273 1612.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">

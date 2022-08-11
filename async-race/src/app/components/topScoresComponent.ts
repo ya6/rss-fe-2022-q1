@@ -1,14 +1,16 @@
-const topScores = () => {
+import { WinnersType } from '../types';
+
+const topScores = (winners:Array<WinnersType>) => {
   const topScoresEl = document.createElement('div');
   topScoresEl.className = 'top-scores';
   const content = `
   <div class="container">
   <div>
-  <div class="cars-count">Winner ( ??? cars )</div>
+  <div class="cars-count">Winner ( ${winners.length} cars )</div>
         <div class="cars-count">
-          <button type="button"  data-button="pageControl prev">${1} < </button>
+          <button type="button"  data-button="pageControl prev" disabled>${1} < </button>
           <button type="button"  data-button="pageControl current" disabled> ${1} </button>
-          <button type="button"  data-button="pageControl next"> > ${1} </button>
+          <button type="button"  data-button="pageControl next" disabled> > ${1} </button>
         </div>
 
         <div class="table-head">

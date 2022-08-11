@@ -6,6 +6,7 @@ import random from '../utils/random';
 import PageController from './PageController';
 import getTranslatePosition from '../utils/getTanslatePosition';
 import Storage from '../utils/Storage';
+import WinnersLoader from '../utils/WinnersLoader';
 
 export default class CarController {
   static index(parent: HTMLElement, car:CarType, height: number) {
@@ -36,10 +37,10 @@ export default class CarController {
 
   static async runCar(id: string) {
     const resp = await Loader.runCar(id);
-    const time = resp.distance / (resp.velocity * 10000);
+    const time = resp.distance / (resp.velocity * 5000);
     const car = document.querySelector(`[data-car="${id}"]`) as HTMLElement;
 
-    const handler = (e:Event) => {
+    const handler = async (e:Event) => {
       const element = e.target as HTMLElement;
       const winnerID = element.getAttribute('data-car');
       const currentWinner = Storage.loadFromStorage('currentWinner');
@@ -52,11 +53,21 @@ export default class CarController {
           if (winnerID in winners) {
             winners[winnerID] = winners[winnerID] > winnerTime
               ? winnerTime : winners[winnerID];
-          } else winners[winnerID] = winnerTime;
+
+            const winner = await WinnersLoader.getWinner(String(winnerID));
+            await WinnersLoader.updateWinner(
+              String(winnerID),
+              { wins: winner.wins + 1, time: winnerTime },
+            );
+          } else {
+            winners[winnerID] = winnerTime;
+            await WinnersLoader.createWinner({ wins: 1, time: winnerTime });
+          }
           alert(winnerTime);
           console.log(winners);
+
+          Storage.saveToStorage('winners', winners);
         }
-        Storage.saveToStorage('winners', winners);
         //
       }
 

@@ -12,8 +12,6 @@ export default class TrackController {
     const trackTop = track / 3;
 
     Dom.clearGarage();
-    // const cars = await Loader.getAllCars();
-    // console.log('cars', cars);
 
     for (let index = 0; index < config.tracks; index += 1) {
       View.carTrack(cars[index], track, trackTop, trackBottom, index);

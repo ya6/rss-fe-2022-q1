@@ -13,3 +13,14 @@ export type PageDataType = {
   lastPage: number;
   cars: number;
 };
+
+export type WinnersType = {
+  id: number;
+  wins: number,
+  time: number
+};
+
+export type UpdateWinnersType = {
+  wins: number,
+  time: number
+};

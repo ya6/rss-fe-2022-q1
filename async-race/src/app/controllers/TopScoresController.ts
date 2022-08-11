@@ -13,7 +13,6 @@ export default class TopScoresController {
   }
 
   static async setWinners(winners: Array<WinnersType>) {
-    // console.log('setWinner', winners);
     const tableContainer = document.querySelector('.container') as HTMLElement;
     if (tableContainer !== null) {
       // eslint-disable-next-line no-restricted-syntax

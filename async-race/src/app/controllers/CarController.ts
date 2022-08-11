@@ -7,6 +7,7 @@ import PageController from './PageController';
 import getTranslatePosition from '../utils/getTanslatePosition';
 import Storage from '../utils/Storage';
 import WinnersLoader from '../utils/WinnersLoader';
+import WinnerController from './WinnerController';
 
 export default class CarController {
   static index(parent: HTMLElement, car:CarType, height: number) {
@@ -49,22 +50,29 @@ export default class CarController {
         if (currentWinner[1] === 0 && currentWinner[2] === 1) {
           const winnerTime = Math.floor(time * 100) / 100;
           Storage.saveToStorage('currentWinner', [winnerID, winnerTime, 0]);
+          console.log('winnerID-->', winnerID);
+          WinnerController.popupWinner(car.getAttribute('data-name')!, winnerTime);
 
           if (winnerID in winners) {
             winners[winnerID] = winners[winnerID] > winnerTime
               ? winnerTime : winners[winnerID];
 
             const winner = await WinnersLoader.getWinner(String(winnerID));
+            console.log('winnerID-->', winnerID, 'winner-->', winner);
+
             await WinnersLoader.updateWinner(
               String(winnerID),
               { wins: winner.wins + 1, time: winnerTime },
             );
           } else {
             winners[winnerID] = winnerTime;
-            await WinnersLoader.createWinner({ wins: 1, time: winnerTime });
+            // await WinnersLoader.createWinner({ id: Number(id), wins: 1, time: winnerTime });
           }
-          alert(winnerTime);
-          console.log(winners);
+
+          //  WinnerController.popupWinner(car.getAttribute('data-name')!, winnerTime);
+          // alert(winnerTime);
+          // console.log(car.getAttribute('data-name'));
+          // console.log(winners);
 
           Storage.saveToStorage('winners', winners);
         }

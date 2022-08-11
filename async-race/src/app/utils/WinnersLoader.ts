@@ -25,7 +25,7 @@ export default class WinnersLoader {
     return winner;
   }
 
-  static async createWinner(data: UpdateWinnersType) {
+  static async createWinner(data: WinnersType) {
     const response = await fetch(config.winnersUrl, {
       method: 'POST',
       headers: {

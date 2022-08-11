@@ -178,9 +178,19 @@ margin-left: 0.1rem;}
   display: flex;
   justify-content: space-around;
   align-items: center;
- 
-
 }
+
+.table-row {
+  margin: 0.1rem auto;
+  width: 62vw;
+  background: var(--gray2);
+  color: var(--dark);
+  height: 2rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 /* table-head {
   display: flex; 
   justify-content: space-around;

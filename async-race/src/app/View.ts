@@ -25,7 +25,7 @@ export default class View {
     // console.log('View => topScores');
     const pageContainer = document.querySelector('.page-container') as HTMLElement;
     if (pageContainer !== null) {
-      Dom.appendElemToDOM(pageContainer, topScores);
+      Dom.appendElemToDOM(pageContainer, topScores());
     }
   }
 

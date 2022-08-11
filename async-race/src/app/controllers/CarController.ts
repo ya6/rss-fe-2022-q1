@@ -4,6 +4,8 @@ import View from '../View';
 import { carNames, carColors } from '../data';
 import random from '../utils/random';
 import PageController from './PageController';
+import getTranslatePosition from '../utils/getTanslatePosition';
+import Storage from '../utils/Storage';
 
 export default class CarController {
   static index(parent: HTMLElement, car:CarType, height: number) {
@@ -34,9 +36,35 @@ export default class CarController {
 
   static async runCar(id: string) {
     const resp = await Loader.runCar(id);
-
-    const time = resp.distance / (resp.velocity * 1000);
+    const time = resp.distance / (resp.velocity * 10000);
     const car = document.querySelector(`[data-car="${id}"]`) as HTMLElement;
+
+    const handler = (e:Event) => {
+      const element = e.target as HTMLElement;
+      const winnerID = element.getAttribute('data-car');
+      const currentWinner = Storage.loadFromStorage('currentWinner');
+      const winners = Storage.loadFromStorage('winners');
+      if (winnerID) {
+        if (currentWinner[1] === 0 && currentWinner[2] === 1) {
+          const winnerTime = Math.floor(time * 100) / 100;
+          Storage.saveToStorage('currentWinner', [winnerID, winnerTime, 0]);
+
+          if (winnerID in winners) {
+            winners[winnerID] = winners[winnerID] > winnerTime
+              ? winnerTime : winners[winnerID];
+          } else winners[winnerID] = winnerTime;
+          alert(winnerTime);
+          console.log(winners);
+        }
+        Storage.saveToStorage('winners', winners);
+        //
+      }
+
+      element!.removeEventListener('transitionend', handler);
+    };
+
+    car.addEventListener('transitionend', handler);
+
     const way = document.body.clientWidth;
     car.style.transform = `translateX(${way - 250}px)`;
     car.style.transition = `all ease-in ${time}s`;
@@ -46,10 +74,8 @@ export default class CarController {
     const car = document.querySelector(`[data-car="${id}"]`) as HTMLElement;
     const resp = await Loader.stopCar(id);
     if (resp.velocity === 0) {
-      const style = window.getComputedStyle(car);
-      // eslint-disable-next-line no-undef
-      const matrix = new WebKitCSSMatrix(style.transform);
-      car.style.transform = `translateX(${matrix.m41}px)`;
+      const currentX = getTranslatePosition(car);
+      car.style.transform = `translateX(${currentX}px)`;
 
       setTimeout(() => {
         car.style.transform = `translateX(${0}px)`;

@@ -10,15 +10,14 @@ const garage = (pageData: PageDataType) => {
   <div class="container">
     <div class ="controls-container">
       <div>
-      <div class="cars-count">Garage ( ${cars} cars )</div>
-      <div class="cars-count">
-      <button type="button"  data-button="pageControl prev">${firstPage} < </button>
-      <button type="button"  data-button="pageControl current" disabled> ${currentPage} </button>
-      <button type="button"  data-button="pageControl next"> > ${lastPage} </button>
-
-
+        <div class="cars-count">Garage ( ${cars} cars )</div>
+        <div class="cars-count">
+        <button type="button"  data-button="pageControl prev">${firstPage} < </button>
+        <button type="button"  data-button="pageControl current" disabled> ${currentPage} </button>
+        <button type="button"  data-button="pageControl next"> > ${lastPage} </button>
+        </div>
       </div>
-      </div>
+      
       <div>
         <div>
         <form>

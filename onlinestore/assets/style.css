@@ -58,6 +58,29 @@ select {
   flex-direction: row;
 }
 
+.custom-container {
+  margin: 0 auto;
+  width: 95%;
+}
+
+@media (min-width: 576px) {
+  .custom-container {
+    width: 80%;
+  }
+}
+
+@media (min-width: 768px) {
+  .custom-container {
+    width: 70%;
+  }
+}
+
+@media (min-width: 992px) {}
+
+@media (min-width: 1200px) {}
+
+@media (min-width: 1400px) {}
+
 .logo {
   flex: 1.5;
   border: 1px solid var(--l-gray);
@@ -272,7 +295,7 @@ select {
 }
 
 .controls-color {
-  width: 3rem;
+  width: 3.5rem;
   height: 1.2rem;
   padding: 0.5rem;
   text-align: center;
@@ -280,6 +303,7 @@ select {
   border-radius: 5px;
   cursor: pointer;
 }
+
 
 .short-paragraph {
   margin-top: 0.2rem;
